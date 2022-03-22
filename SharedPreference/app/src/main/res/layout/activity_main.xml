@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:id="@+id/tv1"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="For Placing Text"
+         />
+
+    <EditText
+        android:layout_centerHorizontal="true"
+        android:hint="Enter text here"
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv1">
+    </EditText>
+    <Switch
+        android:layout_marginTop="10dp"
+        android:id="@id/switchy1"
+        android:layout_below="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+    </Switch>
+    <Button
+        android:text="APPLY TEXT"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btn1"
+        android:layout_below="@+id/switchy1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+    </Button>
+    <Button
+        android:text="SAVE DATA"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btn2"
+        android:layout_below="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+    </Button>
+
+</RelativeLayout>
