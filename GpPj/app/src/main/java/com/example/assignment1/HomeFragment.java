@@ -1,35 +1,24 @@
 package com.example.assignment1;
 
-import android.app.Activity;
-import android.app.DatePickerDialog;
-import android.content.Context;
-import android.os.Build;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.RadioGroup;
-import android.widget.Switch;
-import android.widget.Toast;
+import android.widget.ImageView;
 
-import java.util.Calendar;
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements View.OnClickListener {
+    ImageView iv1, iv2;
 
     /* Update when needed
     public interface passDataListener{
@@ -101,7 +90,9 @@ public class HomeFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
         init(v);
 
-
+        //Register the event listener
+        iv1.setOnClickListener(this);
+        iv2.setOnClickListener(this);
 
 
         //Return the view that we have defined. Instead of the default one below!!
@@ -110,10 +101,28 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_home, container, false);
     }
+
     public void init(View v){
+        iv1 = v.findViewById(R.id.sport1);
+        iv2 = v.findViewById(R.id.sport2);
 
     }
 
 
+    @Override
+    public void onClick(View view) {
+        Intent i = new Intent(getActivity(), SportInstruction.class);
+        switch(view.getId()){
+            case R.id.sport1:
+                i.putExtra("sportType", R.id.sport1);
+                startActivity(i);
+                break;
 
+            case R.id.sport2:
+                i.putExtra("sportType", R.id.sport2);
+                startActivity(i);
+                break;
+        }
+
+    }
 }

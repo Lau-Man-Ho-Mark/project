@@ -106,12 +106,10 @@ public class MainActivity extends AppCompatActivity /*implements HomeFragment.pa
 
     private void passData(int i) {
             switch (i){
-                //BMI fragment
                 case 1:
                     calorie.setArguments(bd);
                     break;
 
-                //Zodiac fragment
                 case 2:
                     progress.setArguments(bd);
                     break;

@@ -3,5 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
+    <string name="sport1Instruc">This set aims to guide the users to workout at home without equipment. Please follow the correct posture.\n\nEstimated Calories burnt:</string>
+    <string name="sport2Instruc">This set is more intense as it requires more muscle strength. Please follow the correct posture for maximising the training effect.\n\nEstimated Calories burnt:</string>
 
 </resources>

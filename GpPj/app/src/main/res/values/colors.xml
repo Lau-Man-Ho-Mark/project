@@ -12,4 +12,11 @@
     <color name="aquamarine">#7FFFD4</color>
     <color name="lemonchiffon">#FFFACD</color>
     <color name="DarkSlateBlue">#9370DB</color>
+
+    <color name="fadedPurple">#CC99C9</color>
+    <color name="fadedBlue">#9EC1CF</color>
+    <color name="fadedGreen">#9EE09E</color>
+    <color name="fadedYellow">#FDFD97</color>
+    <color name="fadedOrange">#FEB144</color>
+    <color name="fadedRed">#FF6663</color>
 </resources>
