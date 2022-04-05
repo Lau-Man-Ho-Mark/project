@@ -1,33 +1,30 @@
-package com.example.assignment1;
+package com.example.assignment2;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ProgressFragment#newInstance} factory method to
+ * Use the {@link SettingFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ProgressFragment extends Fragment {
+public class SettingFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    public ProgressFragment() {
+    public SettingFragment() {
         // Required empty public constructor
     }
 
@@ -37,11 +34,11 @@ public class ProgressFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ZodiacFragment.
+     * @return A new instance of fragment SettingFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ProgressFragment newInstance(String param1, String param2) {
-        ProgressFragment fragment = new ProgressFragment();
+    public static SettingFragment newInstance(String param1, String param2) {
+        SettingFragment fragment = new SettingFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,25 +58,10 @@ public class ProgressFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_progress, container, false);
-        //Get the data
-        //init(v);
-        /*
-        bundle = this.getArguments();
-        if(bundle != null){
-            getData(bundle);
-            setData(bundle);
-            setGender(gender);
-            zodiacTv.setText(zodiacDetermination(forDay, forMonth));
-            zodiacImage(zodiacDetermination(forDay, forMonth));
-        }*/
 
+        View v = inflater.inflate(R.layout.fragment_setting, container, false);
 
-        Log.d("Success", "progress fragment ready to leave");
-        return v;
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_zodiac, container, false);
+        return v;
     }
-
-
 }

@@ -1,4 +1,4 @@
-package com.example.assignment1;
+package com.example.assignment2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
