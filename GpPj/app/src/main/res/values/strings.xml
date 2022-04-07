@@ -3,7 +3,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
-    <string name="sport1Instruc">This set aims to guide the users to workout at home without equipment. Please follow the correct posture.\n\nEstimated Calories burnt:</string>
-    <string name="sport2Instruc">This set is more intense as it requires more muscle strength. Please follow the correct posture for maximising the training effect.\n\nEstimated Calories burnt:</string>
-
+    <string name="sport1Instruc">This set aims to guide the users to workout at home without equipment. Please follow the correct posture. Press the start button to start the instruction\n\nEstimated Calories burnt:</string>
+    <string name="sport2Instruc">This set is more intense as it requires more muscle strength. Please follow the correct posture for maximising the training effect. Press the start button to start the instruction\n\nEstimated Calories burnt:</string>
+    <string name="sport3Instruc">This set is aim to exercise with your chest muscle, it will help you gain muscle weight. Press the start button to start the instruction\n\nEstimated Calories burnt:</string>
+    <string name="sport4Instruc">This set is aim to exercise with your leg muscle, it will help you gain muscle weight. Press the start button to start the instruction\n\nEstimated Calories burnt:</string>
+    <string name="sport5Instruc">This set is aim to introduce yoga to user, it will help you to relax your body and mind. Press the start button to start the instruction\n\nEstimated Calories burnt:</string>
+    <string name="sport6Instruc">This warm up exercise helps the user to be prepared for the upcoming exercise or alleviate the muscle pain after vigorous sport. Press the start button to start the instruction\n\nEstimated Calories burnt:</string>
 </resources>

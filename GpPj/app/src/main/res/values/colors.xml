@@ -19,4 +19,5 @@
     <color name="fadedYellow">#FDFD97</color>
     <color name="fadedOrange">#FEB144</color>
     <color name="fadedRed">#FF6663</color>
+    <color name="colorPrimary">#1B1B1B</color>
 </resources>

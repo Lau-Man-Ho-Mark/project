@@ -16,7 +16,7 @@ import android.widget.ImageView;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment implements View.OnClickListener {
-    ImageView iv1, iv2;
+    ImageView iv1, iv2, iv3, iv4, iv5, iv6;
 
     /* Update when needed
     public interface passDataListener{
@@ -88,11 +88,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
         init(v);
 
-        //Register the event listener
-        iv1.setOnClickListener(this);
-        iv2.setOnClickListener(this);
-
-
         //Return the view that we have defined. Instead of the default one below!!
         return v;
 
@@ -103,7 +98,18 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void init(View v){
         iv1 = v.findViewById(R.id.sport1);
         iv2 = v.findViewById(R.id.sport2);
+        iv3 = v.findViewById(R.id.sport3);
+        iv4 = v.findViewById(R.id.sport4);
+        iv5 = v.findViewById(R.id.sport5);
+        iv6 = v.findViewById(R.id.sport6);
 
+        //Register the event listener
+        iv1.setOnClickListener(this);
+        iv2.setOnClickListener(this);
+        iv3.setOnClickListener(this);
+        iv4.setOnClickListener(this);
+        iv5.setOnClickListener(this);
+        iv6.setOnClickListener(this);
     }
 
 
@@ -118,6 +124,26 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             case R.id.sport2:
                 i.putExtra("sportType", R.id.sport2);
+                startActivity(i);
+                break;
+
+            case R.id.sport3:
+                i.putExtra("sportType", R.id.sport3);
+                startActivity(i);
+                break;
+
+            case R.id.sport4:
+                i.putExtra("sportType", R.id.sport4);
+                startActivity(i);
+                break;
+
+            case R.id.sport5:
+                i.putExtra("sportType", R.id.sport5);
+                startActivity(i);
+                break;
+
+            case R.id.sport6:
+                i.putExtra("sportType", R.id.sport6);
                 startActivity(i);
                 break;
         }
