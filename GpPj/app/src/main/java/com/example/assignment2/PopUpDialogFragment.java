@@ -1,5 +1,6 @@
 package com.example.assignment2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,15 +11,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
+import java.util.ArrayList;
+
 public class PopUpDialogFragment extends DialogFragment{
     TextView xTv, burntCaloriesNumber, repsDoneNumber;
     double burntCalories;
     int repsDone;
+    Intent i;
 
     //Constructor
-    PopUpDialogFragment(double burntCalories, int repsDone){
+    PopUpDialogFragment(double burntCalories, int repsDone, Intent i){
         this.burntCalories = burntCalories;
         this.repsDone = repsDone;
+        this.i = i;
     }
 
     @Nullable
@@ -38,11 +43,14 @@ public class PopUpDialogFragment extends DialogFragment{
          xTv.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 getActivity().onBackPressed();
+                 //start Activity after the back button is pressed
+                 startActivity(i);
              }
          });
 
-         return v;
+
+
+     return v;
     }
 
 

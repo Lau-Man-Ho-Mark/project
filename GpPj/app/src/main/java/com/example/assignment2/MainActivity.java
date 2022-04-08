@@ -5,31 +5,46 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Display;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Locale;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity /*implements HomeFragment.passDataListener*/ {
 
     static Locale locale1;
-   private Fragment home, calorie, progress, setting;
-   private BottomNavigationView bottomView;
+    Intent i;
+    private Fragment home, calorie, progress, setting;
+    private BottomNavigationView bottomView;
 
 
     Bundle bd;
-    boolean isChecked;
+        //boolean isChecked;
 
+    ArrayList<String> repList = new ArrayList<>();
+    ArrayList<String> caloList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Intent i = getIntent();
-        isChecked = i.getBooleanExtra("isChecked", false);
 
+            //isChecked = i.getBooleanExtra("isChecked", false);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        i = getIntent();
+        repList =  i.getStringArrayListExtra("repSecList");
+        caloList =  i.getStringArrayListExtra("calorList");
+
+
+
         home = new HomeFragment();
         calorie = new CalorieFragment();
         progress = new ProgressFragment();
@@ -70,7 +85,7 @@ public class MainActivity extends AppCompatActivity /*implements HomeFragment.pa
                 break;
 
             case R.id.proFrag:
-               // passData(2);
+               passData();
                 getSupportFragmentManager().
                         beginTransaction().
                         replace(R.id.frameLayout, progress).commit();
@@ -85,17 +100,26 @@ public class MainActivity extends AppCompatActivity /*implements HomeFragment.pa
         }
     }
 
-    private void passData(int i) {
-            switch (i){
-                case 1:
-                    calorie.setArguments(bd);
-                    break;
+    private void passData() {
 
-                case 2:
-                    progress.setArguments(bd);
-                    break;
-            }
+        bd = new Bundle();
+            //Update by fragment B ppl
+                    //Bundle fragBBundle = new Bundle();
+        //bd.putBundle("FragABundle", fragABundle);
+                    //bd.putBundle("FragBBundle", fragBBundle);
 
+        /*
+        //Represent how many seconds did the user do for all sports
+        for (String data: repList)
+            System.out.println(data);
+           */
+
+        Bundle fragABundle = new Bundle();
+        fragABundle.putStringArrayList("repList", repList);
+        fragABundle.putStringArrayList("burntCaloriesList", caloList);
+        bd.putBundle("fragA", fragABundle);
+
+        progress.setArguments(bd);
 
     }
 

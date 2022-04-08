@@ -2,8 +2,8 @@ package com.example.assignment2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class SportInstruction extends AppCompatActivity implements View.OnClickListener {
     PopUpDialogFragment myDialog;
@@ -26,6 +28,18 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
     Runnable currentSportRunnable;
     TextView instructionTV, caloriesBurnt, repsDone, txtclose;
     ArrayList<Integer> pictureList;
+    boolean isRunning = false;
+
+
+    SharedPreferences preferences;
+    public static final String SHARED_PREFERENCE = "shared_pref";
+    public static final String REP_LIST = "rep_list";
+    public static final String CALO_LIST = "calo_list";
+    public static boolean isFirstTime = true;
+
+    ArrayList<String> data = new ArrayList<String>();
+    ArrayList<String> data2 = new ArrayList<String>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +48,30 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
 
         //initialise views and set event listener
         init();
-
+        loadData();
 
         //Determining what type of sport is pressed to get into this activity
         Intent i = getIntent();
         sport = i.getIntExtra("sportType", 0);
         playSportInstruction(sport);
 
+    }
 
+    private void loadData() {
+        preferences = getSharedPreferences(SHARED_PREFERENCE, MODE_PRIVATE);
+        if(isFirstTime){
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.clear();
+            editor.commit();
+            isFirstTime = false;
+        }
+        else{
+            data.addAll(preferences.getStringSet(REP_LIST, null));
+            data2.addAll(preferences.getStringSet(CALO_LIST, null));
+        }
 
     }
+
     public void init(){
         instructionTV = findViewById(R.id.instructionTV);
         instructionImage = findViewById(R.id.instructionImage);
@@ -55,20 +83,6 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
         stopBtn.setOnClickListener(this);
     }
 
-
-    /*
-    public void StopBtnPopup(View v){
-        //saveBtn = findViewById(R.id.saveBtn);
-        myDialog.setContentView(R.layout.popup);
-        txtclose = (TextView) myDialog.findViewById(R.id.txtclose);
-        txtclose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                myDialog.dismiss();
-            }
-        });
-        myDialog.show();
-    }*/
 
     private void playSportInstruction(int sport) {
 
@@ -268,26 +282,56 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
     }
 
 
+
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.stopBtn:
+                isRunning = false;
                 Log.d("Success", "Runnable stopped");
-               handler.removeCallbacks(currentSportRunnable);
-                //Change to pop up dialog?
-                repsDone.setText("Reps done: "+ repsDoneTotal);
+                handler.removeCallbacks(currentSportRunnable);
 
-                myDialog = new PopUpDialogFragment(currentBurntCalories, repsDoneTotal);
+                saveData();
+                Intent i = new Intent(SportInstruction.this, MainActivity.class);
+                i.putStringArrayListExtra("repSecList", data);
+                i.putStringArrayListExtra("calorList", data2);
+
+
+                myDialog = new PopUpDialogFragment(currentBurntCalories, repsDoneTotal, i);
                 myDialog.show(getSupportFragmentManager(), "MyPopUpFrag");
 
-                //StopBtnPopup(view);
                 break;
 
             case R.id.startBtn:
+                if (isRunning == false){
                 Log.d("Success", "Runnable started");
                 handler.postDelayed(currentSportRunnable, 0);
+                    isRunning = true;
+                }
+                else
+
+
                 break;
         }
 
     }
+
+    private void saveData() {
+
+        preferences = getSharedPreferences(SHARED_PREFERENCE, MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+
+        data.add(data.size() + ":" + repsDoneTotal*2);
+        data2.add(data2.size() + ":"+ String.format("%.2f", currentBurntCalories));
+        Set<String> list1 = new HashSet<String>();
+        list1.addAll(data);
+
+        Set<String> list2 = new HashSet<String>();
+        list2.addAll(data2);
+
+        editor.putStringSet(REP_LIST, list1);
+        editor.putStringSet(CALO_LIST, list2);
+        editor.apply();
+    }
+
 }
