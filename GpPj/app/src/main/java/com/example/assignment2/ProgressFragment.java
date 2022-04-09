@@ -80,10 +80,10 @@ public class ProgressFragment extends Fragment implements View.OnClickListener{
 
                 if(arr1 != null || arr2 != null){
                     for (String data: arr1)
-                        System.out.println(data);
+                        Log.d("Success", data);
 
                     for (String data: arr2)
-                        System.out.println(data);
+                        Log.d("Success", data);
                 }
 
 
