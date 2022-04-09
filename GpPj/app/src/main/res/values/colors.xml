@@ -20,4 +20,13 @@
     <color name="fadedOrange">#FEB144</color>
     <color name="fadedRed">#FF6663</color>
     <color name="colorPrimary">#1B1B1B</color>
+
+
+    <color name="Glaucous">#6082B6</color>
+    <color name="Azure">#F0FFFF</color>
+    <color name="BloodRed">#880808</color>
+    <color name="BrickRed">#d5615a</color>
+    <color name="Crimson">#DC143C</color>
+    <color name="LightPink">#FFB6C1</color>
+    <color name="Celadon">#AFE1AF</color>
 </resources>
