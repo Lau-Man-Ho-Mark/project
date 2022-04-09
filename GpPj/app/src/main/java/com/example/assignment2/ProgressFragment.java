@@ -75,14 +75,18 @@ public class ProgressFragment extends Fragment implements View.OnClickListener{
         Bundle bundle = this.getArguments();
         if(bundle != null){
             Bundle FragABundle = bundle.getBundle("fragA");
-            arr1 = FragABundle.getStringArrayList("repList");
-            arr2 = FragABundle.getStringArrayList("burntCaloriesList");
+                arr1 = FragABundle.getStringArrayList("repList");
+                arr2 = FragABundle.getStringArrayList("burntCaloriesList");
 
-            for (String data: arr1)
-                System.out.println(data);
+                if(arr1 != null || arr2 != null){
+                    for (String data: arr1)
+                        System.out.println(data);
 
-            for (String data: arr2)
-                System.out.println(data);
+                    for (String data: arr2)
+                        System.out.println(data);
+                }
+
+
         }
 
 
