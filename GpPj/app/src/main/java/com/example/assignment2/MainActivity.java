@@ -24,8 +24,6 @@ public class MainActivity extends AppCompatActivity /*implements HomeFragment.pa
     Intent i;
     private Fragment home, calorie, progress, setting;
     private BottomNavigationView bottomView;
-
-
     Bundle bd;
         //boolean isChecked;
 
@@ -103,17 +101,6 @@ public class MainActivity extends AppCompatActivity /*implements HomeFragment.pa
     private void passData() {
 
         bd = new Bundle();
-            //Update by fragment B ppl
-                    //Bundle fragBBundle = new Bundle();
-        //bd.putBundle("FragABundle", fragABundle);
-                    //bd.putBundle("FragBBundle", fragBBundle);
-
-        /*
-        //Represent how many seconds did the user do for all sports
-        for (String data: repList)
-            System.out.println(data);
-           */
-
         Bundle fragABundle = new Bundle();
         fragABundle.putStringArrayList("repList", repList);
         fragABundle.putStringArrayList("burntCaloriesList", caloList);

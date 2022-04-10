@@ -1,7 +1,10 @@
 package com.example.assignment2;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.MonthDisplayHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +24,10 @@ public class ProgressFragment extends Fragment implements View.OnClickListener{
     ImageButton day1,day2,day3,day4,day6,day7,day8,day9,day11,day12,day13,day14,day16,day17,day18,day19,day21,day22,day23,day24,day26,day27,day28,day29,restday;
     ArrayList<String> arr1 = new ArrayList<>();
     ArrayList<String> arr2 = new ArrayList<>();
+    Bundle bundle;
+    String height, weight, age, carb, calories, protein;
+    int fruitPortion = 0;
+    SharedPreferences fragBData;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -72,29 +79,44 @@ public class ProgressFragment extends Fragment implements View.OnClickListener{
         //Get the data
         //init(v);
 
-        Bundle bundle = this.getArguments();
-        if(bundle != null){
-            Bundle FragABundle = bundle.getBundle("fragA");
-                arr1 = FragABundle.getStringArrayList("repList");
-                arr2 = FragABundle.getStringArrayList("burntCaloriesList");
-
-                if(arr1 != null || arr2 != null){
-                    for (String data: arr1)
-                        Log.d("Success", data);
-
-                    for (String data: arr2)
-                        Log.d("Success", data);
-                }
-
-
-        }
-
+        bundle = this.getArguments();
+        wrapData(bundle);
 
 
         Log.d("Success", "progress fragment ready to leave");
         return v;
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_zodiac, container, false);
+    }
+
+    private void wrapData(Bundle bundle) {
+
+        //Get Fragment A data here
+        if(bundle != null){
+            Bundle FragABundle = bundle.getBundle("fragA");
+            arr1 = FragABundle.getStringArrayList("repList");
+            arr2 = FragABundle.getStringArrayList("burntCaloriesList");
+
+            if(arr1 != null && arr2 != null){
+                for (String data: arr1)
+                    Log.d("Success", data);
+
+                for (String data: arr2)
+                    Log.d("Success", data);
+
+            }
+        }
+        //Get Fragment B data here
+        fragBData = getActivity().getSharedPreferences(CalorieFragment.mypreference, Context.MODE_PRIVATE);
+        height = fragBData.getString(CalorieFragment.User_Height, "");
+        weight = fragBData.getString(CalorieFragment.User_Weight, "");
+        age = fragBData.getString(CalorieFragment.User_Age, "");
+        calories = fragBData.getString(CalorieFragment.User_Calories, "");
+        protein = fragBData.getString(CalorieFragment.User_Protein, "");
+        fruitPortion = fragBData.getInt(CalorieFragment.User_fruitPortion, 0);
+
+        Log.d("Success", calories);
+        Log.d("Success", fruitPortion + " is eaten");
     }
 
     public void init(View v){
