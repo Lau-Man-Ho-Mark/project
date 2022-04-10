@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android App/GpPj/app/src/main/res/layout/activity_listview.xml" value="0.18425925925925926" />
+        <entry key="..\:/Android App/GpPj/app/src/main/res/layout/activity_progress_listview.xml" value="0.33061594202898553" />
+        <entry key="..\:/Android App/GpPj/app/src/main/res/layout/fragment_calorie.xml" value="0.22146739130434784" />
+        <entry key="..\:/Android App/GpPj/app/src/main/res/layout/fragment_progress.xml" value="0.33061594202898553" />
+        <entry key="..\:/Android App/GpPj/app/src/main/res/layout/summary.xml" value="0.33061594202898553" />
         <entry key="..\:/Androidapplication/Assignment1/app/src/main/res/drawable/ic_bmi.xml" value="0.2814814814814815" />
         <entry key="..\:/Androidapplication/Assignment1/app/src/main/res/drawable/ic_home.xml" value="0.2814814814814815" />
         <entry key="..\:/Androidapplication/Assignment1/app/src/main/res/drawable/ic_zodiac.xml" value="0.396875" />
@@ -18,10 +23,20 @@
         <entry key="..\:/Androidapplication/GpPj/app/src/main/res/layout/fragment_progress.xml" value="0.17916666666666667" />
         <entry key="..\:/Androidapplication/GpPj/app/src/main/res/layout/fragment_setting.xml" value="0.31614583333333335" />
         <entry key="..\:/Androidapplication/GpPj/app/src/main/res/menu/fragmentmenu.xml" value="0.2609375" />
-        <entry key="..\:/git/project/GpPj/app/src/main/res/layout/activity_main.xml" value="0.38645833333333335" />
+        <entry key="..\:/Users/user/project/C/project-FragmentC/project-FragmentC/GpPj/app/src/main/res/drawable/buttonshape.xml" value="0.321" />
+        <entry key="..\:/Users/user/project/C/project-FragmentC/project-FragmentC/GpPj/app/src/main/res/layout/activity_listview.xml" value="0.67" />
+        <entry key="..\:/Users/user/project/C/project-FragmentC/project-FragmentC/GpPj/app/src/main/res/layout/activity_main.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/user/project/C/project-FragmentC/project-FragmentC/GpPj/app/src/main/res/layout/activity_progress_listview.xml" value="0.14814814814814814" />
+        <entry key="..\:/Users/user/project/C/project-FragmentC/project-FragmentC/GpPj/app/src/main/res/layout/activity_sport1.xml" value="0.21739130434782608" />
+        <entry key="..\:/Users/user/project/C/project-FragmentC/project-FragmentC/GpPj/app/src/main/res/layout/fragment_calorie.xml" value="0.2984375" />
+        <entry key="..\:/Users/user/project/C/project-FragmentC/project-FragmentC/GpPj/app/src/main/res/layout/fragment_home.xml" value="0.225" />
+        <entry key="..\:/Users/user/project/C/project-FragmentC/project-FragmentC/GpPj/app/src/main/res/layout/fragment_progress.xml" value="0.1" />
+        <entry key="..\:/Users/user/project/C/project-FragmentC/project-FragmentC/GpPj/app/src/main/res/layout/fragment_setting.xml" value="0.225" />
+        <entry key="..\:/Users/user/project/C/project-FragmentC/project-FragmentC/GpPj/app/src/main/res/layout/popup.xml" value="0.15217391304347827" />
+        <entry key="..\:/git/project/GpPj/app/src/main/res/layout/activity_main.xml" value="0.2441123188405797" />
+        <entry key="..\:/git/project/GpPj/app/src/main/res/layout/activity_progress_listview.xml" value="0.38645833333333335" />
         <entry key="..\:/git/project/GpPj/app/src/main/res/layout/fragment_calorie.xml" value="0.2441123188405797" />
-        <entry key="..\:/git/project/GpPj/app/src/main/res/layout/fragment_home.xml" value="0.1879432624113475" />
-        <entry key="..\:/git/project/GpPj/app/src/main/res/layout/fragment_progress.xml" value="0.37681159420289856" />
+        <entry key="..\:/git/project/GpPj/app/src/main/res/layout/fragment_progress.xml" value="0.1" />
       </map>
     </option>
   </component>

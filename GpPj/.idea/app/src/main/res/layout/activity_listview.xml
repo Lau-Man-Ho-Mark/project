@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/List_Food"
+        android:layout_width="64dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@color/aquamarine"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Food"
+        android:textSize="13sp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/List_Quantity"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@color/aquamarine"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Quantity" />
+
+    <TextView
+        android:id="@+id/List_Serving_size"
+        android:layout_width="97dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@color/aquamarine"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Serving size" />
+
+    <TextView
+        android:id="@+id/List_Calories"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@color/aquamarine"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Calories" />
+
+    <TextView
+        android:id="@+id/List_Protein"
+        android:layout_width="63dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@color/aquamarine"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Protein" />
+
+    <TextView
+        android:id="@+id/List_Carbs"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@color/aquamarine"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Carbs" />
+
+    <ImageButton
+        android:id="@+id/List_Delete"
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@color/aquamarine"
+        android:src="@android:drawable/ic_delete" />
+</LinearLayout>
