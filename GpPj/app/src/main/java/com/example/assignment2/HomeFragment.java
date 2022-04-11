@@ -1,14 +1,19 @@
 package com.example.assignment2;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ScrollView;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,27 +22,8 @@ import android.widget.ImageView;
  */
 public class HomeFragment extends Fragment implements View.OnClickListener {
     ImageView iv1, iv2, iv3, iv4, iv5, iv6;
-
-    /* Update when needed
-    public interface passDataListener{
-        public void passData(String name, String height,String weight, int gender, boolean isChecked);
-    }
-
-    passDataListener listener;
-    Switch switchy;
-
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            listener = (passDataListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString() + " must implement onSomeEventListener");
-        }
-    }
-*/
-
+    Button showMap;
+    ScrollView sv1;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -88,20 +74,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
         init(v);
 
-        //Return the view that we have defined. Instead of the default one below!!
-        return v;
 
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_home, container, false);
+        return v;
     }
 
-    public void init(View v){
+
+    public void init(View v) {
         iv1 = v.findViewById(R.id.sport1);
         iv2 = v.findViewById(R.id.sport2);
         iv3 = v.findViewById(R.id.sport3);
         iv4 = v.findViewById(R.id.sport4);
         iv5 = v.findViewById(R.id.sport5);
         iv6 = v.findViewById(R.id.sport6);
+        sv1 = v.findViewById(R.id.scrollv1);
+        showMap = v.findViewById(R.id.ShowMap);
+
 
         //Register the event listener
         iv1.setOnClickListener(this);
@@ -110,6 +97,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         iv4.setOnClickListener(this);
         iv5.setOnClickListener(this);
         iv6.setOnClickListener(this);
+        showMap.setOnClickListener(this);
+
+
     }
 
 
@@ -146,7 +136,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 i.putExtra("sportType", R.id.sport6);
                 startActivity(i);
                 break;
+
+            case R.id.ShowMap:
+                Intent intent = new Intent(getActivity(), MapActivity.class);
+                startActivity(intent);
+
+                break;
         }
 
     }
+
 }

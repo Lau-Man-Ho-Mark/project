@@ -1,5 +1,9 @@
 package com.example.assignment2;
 
+
+import android.app.Activity;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +11,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +22,9 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class SettingFragment extends Fragment {
+
+    Switch switchy;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,7 +72,24 @@ public class SettingFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_setting, container, false);
 
+        switchy = v.findViewById(R.id.switchy);
+        /*
+        switchy.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    listener.passLocale(b);
+                }
+                else{
+                    listener.passLocale(!b);
+                }
+
+            }
+        });*/
+
         // Inflate the layout for this fragment
         return v;
     }
+
+
 }

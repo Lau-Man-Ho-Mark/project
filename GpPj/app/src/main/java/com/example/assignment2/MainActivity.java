@@ -3,9 +3,12 @@ package com.example.assignment2;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
@@ -18,23 +21,24 @@ import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
 
-public class MainActivity extends AppCompatActivity /*implements HomeFragment.passDataListener*/ {
+public class MainActivity extends AppCompatActivity{
 
     static Locale locale1;
     Intent i;
     private Fragment home, calorie, progress, setting;
     private BottomNavigationView bottomView;
     Bundle bd;
-        //boolean isChecked;
 
     ArrayList<String> repList = new ArrayList<>();
     ArrayList<String> caloList = new ArrayList<>();
     ArrayList<String> sportTypeList = new ArrayList<>();
 
+    boolean isChecked;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-            //isChecked = i.getBooleanExtra("isChecked", false);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -114,74 +118,5 @@ public class MainActivity extends AppCompatActivity /*implements HomeFragment.pa
     }
 
 
-
-    /*
-        Interface in Home, update when needed
-    @Override
-    public void passData(String name, String height, String weight, int gender, boolean isChecked) {
-            setLanguage(isChecked);
-            //wrapData();
-
-    }
-    */
-
-
-    /* Reuse in Setting when needed
-    private void setLanguage(boolean isChecked) {
-        if(!isChecked){
-            locale1 = new Locale("en_US");
-            changeLocale(locale1, isChecked);
-
-        }
-        else{
-            locale1 = new Locale("zh","HK");
-            changeLocale(locale1, isChecked);
-        }
-    }
-    private void changeLocale(Locale locale, Boolean isChecked){
-
-        //Resetting the configuration
-        //And resetting the locale to be trad chinese
-        locale.setDefault(locale);
-        Resources resources = this.getResources();
-        Configuration config = resources.getConfiguration();
-        config.locale = locale;
-        resources.updateConfiguration(config, getApplicationContext().getResources().getDisplayMetrics());
-
-        //Detach and attach the fragment for refreshing the fragment
-        //the if else statement assures this trick work for the new api levels
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().detach(home).commitNow();
-        fragmentManager.beginTransaction().attach(home).commitNow();
-
-
-    }*/
-
-    /*
-    //date picker method
-    public void datePicker(View v){
-        View view = this.getCurrentFocus();
-        if(view != null){
-            Log.d("Success", "Closing keyboard");
-            InputMethodManager manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            manager.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        }
-
-
-        EditText dateET = (EditText) findViewById(R.id.et4);
-        DatePickerDialog picker = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                        month = month + 1;
-                        String date = day + "/" + month + "/" + year;
-                        forDay = day;
-                        forMonth = month;
-                        forYear = year;
-                        dateET.setText(date);
-                        Log.d("Success", "Date is successfully picked");
-                    }
-                }, year, month, day);
-                picker.show();
-    }*/
 
 }
