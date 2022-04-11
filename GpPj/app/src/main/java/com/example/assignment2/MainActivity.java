@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity /*implements HomeFragment.pa
 
     ArrayList<String> repList = new ArrayList<>();
     ArrayList<String> caloList = new ArrayList<>();
+    ArrayList<String> sportTypeList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity /*implements HomeFragment.pa
         i = getIntent();
         repList =  i.getStringArrayListExtra("repSecList");
         caloList =  i.getStringArrayListExtra("calorList");
+        sportTypeList = i.getStringArrayListExtra("sportstypeList");
 
 
 
@@ -104,6 +106,7 @@ public class MainActivity extends AppCompatActivity /*implements HomeFragment.pa
         Bundle fragABundle = new Bundle();
         fragABundle.putStringArrayList("repList", repList);
         fragABundle.putStringArrayList("burntCaloriesList", caloList);
+        fragABundle.putStringArrayList("sportstypeList", sportTypeList);
         bd.putBundle("fragA", fragABundle);
 
         progress.setArguments(bd);

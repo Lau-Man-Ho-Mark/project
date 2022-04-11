@@ -9,7 +9,7 @@
     android:layout_gravity="center">
 
     <LinearLayout
-        android:background="@drawable/popupnew_background"
+        android:background="@color/black"
         android:layout_width="350dp"
         android:layout_height="475dp"
         android:orientation="vertical"
@@ -36,7 +36,7 @@
             android:layout_height="199dp"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:src="@drawable/popupnew_image" />
+            android:src="@drawable/popupimage" />
         <TextView
             android:textSize="16sp"
             android:layout_width="wrap_content"
