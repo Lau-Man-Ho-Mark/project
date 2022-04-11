@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/aquamarine"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".CalorieFragment">
 
     <ScrollView
@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Form_Height"
                 android:textSize="20sp"
-                android:visibility="gone" />
+                android:visibility="visible" />
 
             <EditText
                 android:id="@+id/Input_Height"
@@ -32,7 +32,7 @@
                 android:hint="@string/Hint_Height"
                 android:inputType="textPersonName"
                 android:textSize="20sp"
-                android:visibility="gone" />
+                android:visibility="visible" />
 
             <TextView
                 android:id="@+id/Form_Weight"
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Form_Weight"
                 android:textSize="20sp"
-                android:visibility="gone" />
+                android:visibility="visible" />
 
             <EditText
                 android:id="@+id/Input_Weight"
@@ -50,7 +50,7 @@
                 android:hint="@string/Hint_Weight"
                 android:inputType="textPersonName"
                 android:textSize="20sp"
-                android:visibility="gone" />
+                android:visibility="visible" />
 
             <TextView
                 android:id="@+id/Form_Age"
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Form_Age"
                 android:textSize="20sp"
-                android:visibility="gone" />
+                android:visibility="visible" />
 
             <EditText
                 android:id="@+id/Input_Age"
@@ -68,13 +68,13 @@
                 android:hint="@string/Hint_Age"
                 android:inputType="textPersonName"
                 android:textSize="20sp"
-                android:visibility="gone" />
+                android:visibility="visible" />
 
             <Button
                 android:id="@+id/Grains"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/aquamarine"
+                android:backgroundTint="@android:color/holo_orange_light"
                 android:text="@string/Grains"
                 android:textColor="@color/purple_700" />
 
@@ -82,6 +82,7 @@
                 android:id="@+id/Grains_List"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#FFEB3B"
                 android:visibility="gone"
                 tools:visibility="visible">
 
@@ -89,6 +90,7 @@
                     android:id="@+id/Grains_Food"
                     android:layout_width="70dp"
                     android:layout_height="33dp"
+                    android:background="#FFEB3B"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Food"
                     android:visibility="visible" />
@@ -186,7 +188,7 @@
                     android:id="@+id/Rice_Add"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/aquamarine"
+                    android:background="@color/white"
                     android:src="@android:drawable/ic_input_add" />
 
             </TableRow>
@@ -247,7 +249,7 @@
                     android:id="@+id/Oats_Add"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/aquamarine"
+                    android:background="@color/white"
                     android:src="@android:drawable/ic_input_add" />
             </TableRow>
 
@@ -307,7 +309,7 @@
                     android:id="@+id/Corn_Add"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/aquamarine"
+                    android:background="@color/white"
                     android:src="@android:drawable/ic_input_add" />
 
             </TableRow>
@@ -368,7 +370,7 @@
                     android:id="@+id/Bread_Add"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/aquamarine"
+                    android:background="@color/white"
                     android:src="@android:drawable/ic_input_add" />
 
             </TableRow>
@@ -429,7 +431,7 @@
                     android:id="@+id/Pasta_Add"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/aquamarine"
+                    android:background="@color/white"
                     android:src="@android:drawable/ic_input_add" />
 
             </TableRow>
@@ -490,7 +492,7 @@
                     android:id="@+id/Sorghum_Add"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/aquamarine"
+                    android:background="@color/white"
                     android:src="@android:drawable/ic_input_add" />
 
             </TableRow>
@@ -499,7 +501,7 @@
                 android:id="@+id/Vegetable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/aquamarine"
+                android:backgroundTint="@color/teal_700"
                 android:text="@string/Vegetable"
                 android:textColor="@color/purple_700" />
 
@@ -507,6 +509,7 @@
                 android:id="@+id/Vegetable_List"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#FFEB3B"
                 android:visibility="gone"
                 tools:visibility="visible">
 
@@ -611,7 +614,7 @@
                     android:id="@+id/Lettuce_Add"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/aquamarine"
+                    android:background="@color/white"
                     android:src="@android:drawable/ic_input_add" />
 
             </TableRow>
@@ -672,7 +675,7 @@
                     android:id="@+id/Tomatoes_Add"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/aquamarine"
+                    android:background="@color/white"
                     android:src="@android:drawable/ic_input_add" />
 
             </TableRow>
@@ -733,7 +736,7 @@
                     android:id="@+id/Potatoes_Add"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/aquamarine"
+                    android:background="@color/white"
                     android:src="@android:drawable/ic_input_add" />
 
             </TableRow>
@@ -794,7 +797,7 @@
                     android:id="@+id/Carrots_Add"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/aquamarine"
+                    android:background="@color/white"
                     android:src="@android:drawable/ic_input_add" />
 
             </TableRow>
@@ -855,7 +858,7 @@
                     android:id="@+id/Broccoli_Add"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/aquamarine"
+                    android:background="@color/white"
                     android:src="@android:drawable/ic_input_add" />
 
             </TableRow>
@@ -917,7 +920,7 @@
                     android:id="@+id/Cucumber_Add"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/aquamarine"
+                    android:background="@color/white"
                     android:src="@android:drawable/ic_input_add" />
 
             </TableRow>
@@ -978,7 +981,7 @@
                     android:id="@+id/Pumpkin_Add"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/aquamarine"
+                    android:background="@color/white"
                     android:src="@android:drawable/ic_input_add" />
 
             </TableRow>
@@ -1039,8 +1042,1483 @@
                     android:id="@+id/Okra_Add"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/aquamarine"
+                    android:background="@color/white"
                     android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <Button
+                android:id="@+id/Meat_And_Seafood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:text="@string/Meat_And_Seafood"
+                android:textColor="@color/purple_700" />
+
+            <TableRow
+                android:id="@+id/Meat_And_Seafood_List"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFEB3B"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Meat_And_Seafood_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Food"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/Meat_And_Seafood_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Quantity" />
+
+                <TextView
+                    android:id="@+id/Meat_And_Seafood_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Serving_Size" />
+
+                <TextView
+                    android:id="@+id/Meat_And_Seafood_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Calories" />
+
+                <TextView
+                    android:id="@+id/Meat_And_Seafood_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Protein" />
+
+                <TextView
+                    android:id="@+id/Meat_And_Seafood_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Carbs" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Meat_And_Seafood_Beef"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Beef_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Beef_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Beef_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Beef_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Beef_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Beef_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Beef_Calories" />
+
+                <TextView
+                    android:id="@+id/Beef_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Beef_Protein" />
+
+                <TextView
+                    android:id="@+id/Beef_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Beef_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Beef_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Meat_And_Seafood_Pork"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Pork_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Pork_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Pork_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Pork_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Pork_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Pork_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Pork_Calories" />
+
+                <TextView
+                    android:id="@+id/Pork_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Pork_Protein" />
+
+                <TextView
+                    android:id="@+id/Pork_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Pork_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Pork_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Meat_And_Seafood_Chicken"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Chicken_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Chicken_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Chicken_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Chicken_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Chicken_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Chicken_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Chicken_Calories" />
+
+                <TextView
+                    android:id="@+id/Chicken_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Chicken_Protein" />
+
+                <TextView
+                    android:id="@+id/Chicken_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Chicken_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Chicken_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Meat_And_Seafood_Lamb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Lamb_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Lamb_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Lamb_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Lamb_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Lamb_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Lamb_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Lamb_Calories" />
+
+                <TextView
+                    android:id="@+id/Lamb_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Lamb_Protein" />
+
+                <TextView
+                    android:id="@+id/Lamb_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Lamb_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Lamb_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Meat_And_Seafood_Steamed_Fish"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Steamed_Fish_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Steamed_Fish_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Steamed_Fish_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Steamed_Fish_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Steamed_Fish_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Steamed_Fish_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Steamed_Fish_Calories" />
+
+                <TextView
+                    android:id="@+id/Steamed_Fish_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Steamed_Fish_Protein" />
+
+                <TextView
+                    android:id="@+id/Steamed_Fish_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Steamed_Fish_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Steamed_Fish_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Meat_And_Seafood_Salmon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Salmon_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Salmon_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Salmon_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Salmon_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Salmon_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Salmon_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Salmon_Calories" />
+
+                <TextView
+                    android:id="@+id/Salmon_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Salmon_Protein" />
+
+                <TextView
+                    android:id="@+id/Salmon_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Salmon_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Salmon_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Meat_And_Seafood_Shrimp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Shrimp_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Shrimp_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Shrimp_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Shrimp_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Shrimp_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Shrimp_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Shrimp_Calories" />
+
+                <TextView
+                    android:id="@+id/Shrimp_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Shrimp_Protein" />
+
+                <TextView
+                    android:id="@+id/Shrimp_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Shrimp_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Shrimp_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <Button
+                android:id="@+id/Fruit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:text="@string/Fruit"
+                android:textColor="@color/purple_700" />
+
+            <TableRow
+                android:id="@+id/Fruit_List"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFEB3B"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Fruit_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:background="#FFEB3B"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Food"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/Fruit_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Quantity" />
+
+                <TextView
+                    android:id="@+id/Fruit_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Serving_Size" />
+
+                <TextView
+                    android:id="@+id/Fruit_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Calories" />
+
+                <TextView
+                    android:id="@+id/Fruit_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Protein" />
+
+                <TextView
+                    android:id="@+id/Fruit_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Carbs" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Fruit_Apple"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Apple_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Apple_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Apple_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Apple_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Apple_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Apple_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Apple_Calories" />
+
+                <TextView
+                    android:id="@+id/Apple_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Apple_Protein" />
+
+                <TextView
+                    android:id="@+id/Apple_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Apple_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Apple_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Fruit_Banana"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Banana_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Banana_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Banana_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Banana_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Banana_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Banana_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Banana_Calories" />
+
+                <TextView
+                    android:id="@+id/Banana_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Banana_Protein" />
+
+                <TextView
+                    android:id="@+id/Banana_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Banana_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Banana_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Fruit_Orange"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Orange_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Orange_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Orange_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Orange_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Orange_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Orange_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Orange_Calories" />
+
+                <TextView
+                    android:id="@+id/Orange_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Orange_Protein" />
+
+                <TextView
+                    android:id="@+id/Orange_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Orange_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Orange_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Fruit_Pear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Pear_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Pear_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Pear_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Pear_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Pear_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Pear_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Pear_Calories" />
+
+                <TextView
+                    android:id="@+id/Pear_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Pear_Protein" />
+
+                <TextView
+                    android:id="@+id/Pear_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Pear_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Pear_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Fruit_Grape"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Grape_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Grape_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Grape_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Grape_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Grape_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Grape_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Grape_Calories" />
+
+                <TextView
+                    android:id="@+id/Grape_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Grape_Protein" />
+
+                <TextView
+                    android:id="@+id/Grape_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Grape_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Grape_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Fruit_Strawberry"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Strawberry_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Strawberry_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Strawberry_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Strawberry_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Strawberry_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Strawberry_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Strawberry_Calories" />
+
+                <TextView
+                    android:id="@+id/Strawberry_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Strawberry_Protein" />
+
+                <TextView
+                    android:id="@+id/Strawberry_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Strawberry_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Strawberry_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Fruit_Cherry"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Cherry_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Cherry_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Cherry_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Cherry_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Cherry_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Cherry_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Cherry_Calories" />
+
+                <TextView
+                    android:id="@+id/Cherry_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Cherry_Protein" />
+
+                <TextView
+                    android:id="@+id/Cherry_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Cherry_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Cherry_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <Button
+                android:id="@+id/Diary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/purple_200"
+                android:text="@string/Diary"
+                android:textColor="@color/purple_700" />
+
+            <TableRow
+                android:id="@+id/Diary_List"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFEB3B"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Diary_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:background="#FFEB3B"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Food"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/Diary_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Quantity" />
+
+                <TextView
+                    android:id="@+id/Diary_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Serving_Size" />
+
+                <TextView
+                    android:id="@+id/Diary_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Calories" />
+
+                <TextView
+                    android:id="@+id/Diary_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Protein" />
+
+                <TextView
+                    android:id="@+id/Diary_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Carbs" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Diary_Egg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Egg_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Egg_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Egg_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Egg_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Egg_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Egg_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Egg_Calories" />
+
+                <TextView
+                    android:id="@+id/Egg_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Egg_Protein" />
+
+                <TextView
+                    android:id="@+id/Egg_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Egg_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Egg_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Diary_Milk"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Milk_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Milk_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Milk_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Milk_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Milk_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Milk_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Milk_Calories" />
+
+                <TextView
+                    android:id="@+id/Milk_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Milk_Protein" />
+
+                <TextView
+                    android:id="@+id/Milk_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Milk_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Milk_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Diary_Butter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Butter_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Butter_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Butter_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Butter_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Butter_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Butter_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Butter_Calories" />
+
+                <TextView
+                    android:id="@+id/Butter_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Butter_Protein" />
+
+                <TextView
+                    android:id="@+id/Butter_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Butter_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Butter_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Diary_Cheese"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Cheese_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Cheese_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Cheese_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Cheese_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Cheese_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Cheese_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Cheese_Calories" />
+
+                <TextView
+                    android:id="@+id/Cheese_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Cheese_Protein" />
+
+                <TextView
+                    android:id="@+id/Cheese_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Cheese_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Cheese_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Diary_Yogurt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Yogurt_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Yogurt_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Yogurt_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Yogurt_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Yogurt_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Yogurt_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Yogurt_Calories" />
+
+                <TextView
+                    android:id="@+id/Yogurt_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Yogurt_Protein" />
+
+                <TextView
+                    android:id="@+id/Yogurt_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Yogurt_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Yogurt_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Diary_Ice_Cream"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Ice_Cream_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Ice_Cream_Food"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/Ice_Cream_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/Ice_Cream_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Ice_Cream_Serving_size" />
+
+                <TextView
+                    android:id="@+id/Ice_Cream_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Ice_Cream_Calories" />
+
+                <TextView
+                    android:id="@+id/Ice_Cream_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Ice_Cream_Protein" />
+
+                <TextView
+                    android:id="@+id/Ice_Cream_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Ice_Cream_Carbs" />
+
+                <ImageButton
+                    android:id="@+id/Ice_Cream_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:src="@android:drawable/ic_input_add" />
+
+            </TableRow>
+
+            <TextView
+                android:id="@+id/space2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+            <TextView
+                android:id="@+id/Total_title"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@android:color/darker_gray"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/Total_title"
+                android:textSize="18sp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TableRow
+                android:id="@+id/Total_list_List"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFEB3B"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/Total_list_Food"
+                    android:layout_width="70dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Food"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/Total_list_Quantity"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Quantity" />
+
+                <TextView
+                    android:id="@+id/Total_list_Serving_size"
+                    android:layout_width="90dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Serving_Size" />
+
+                <TextView
+                    android:id="@+id/Total_list_Calories"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Calories" />
+
+                <TextView
+                    android:id="@+id/Total_list_Protein"
+                    android:layout_width="63dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Protein" />
+
+                <TextView
+                    android:id="@+id/Total_list_Carbs"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/Carbs" />
 
             </TableRow>
 
@@ -1056,6 +2534,8 @@
                 android:id="@+id/Total_List"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#FFC107"
+                android:visibility="gone"
                 tools:visibility="visible">
 
                 <TextView
@@ -1093,6 +2573,17 @@
                 android:id="@+id/space"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
+
+            <Button
+                android:id="@+id/Save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Save" />
+
+            <TextView
+                android:id="@+id/space3"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
 
         </LinearLayout>
     </ScrollView>

@@ -21,53 +21,102 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/display_day"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/Glaucous"
-                android:gravity="center_horizontal"
-                android:text="TextView"
-                android:textColor="@color/colorPrimary"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/Progress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Progress of Today" />
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/Glaucous"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/display_day"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
                     android:layout_weight="1"
-                    android:text="0%" />
+                    android:background="@color/Glaucous"
+                    android:gravity="center_horizontal"
+                    android:text="TextView"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/finish"
-                    android:layout_width="match_parent"
+                <ImageButton
+                    android:id="@+id/delete"
+                    android:layout_width="60dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="1"
-                    android:text="100%"
-                    android:textAlignment="textEnd" />
+                    android:background="@color/Glaucous"
+                    app:srcCompat="@android:drawable/ic_delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <ProgressBar
+                        android:id="@+id/calor_pro"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <ProgressBar
+                        android:id="@+id/protain_pro"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <ProgressBar
+                        android:id="@+id/carbon_pro"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_calor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Calories(take in)"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/tv_protain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Protain"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/tv_carbon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Carbohydrates"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout

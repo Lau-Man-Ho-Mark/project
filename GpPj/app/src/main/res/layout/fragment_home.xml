@@ -55,12 +55,13 @@
                         android:src="@drawable/withoutt_equip" />
 
                     <TextView
-                        android:textStyle="bold"
-                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/tv_sport1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:text="Home gym"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
 
 
                 </LinearLayout>
@@ -94,12 +95,13 @@
                         android:src="@drawable/with_equip" />
 
                     <TextView
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/tv_sport2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Gym with equipment"/>
+                        android:layout_gravity="center_horizontal"
+                        android:text="Gym with equipment"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -132,13 +134,13 @@
                         android:src="@drawable/chest_logo" />
 
                     <TextView
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/tv_sport3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:text="Chest training"
-                        />
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -171,13 +173,13 @@
                         android:src="@drawable/leg_logo" />
 
                     <TextView
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
+                        android:id="@+id/tv_sport4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Leg day"
                         android:layout_gravity="center_horizontal"
-                        />
+                        android:text="Leg day"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -210,13 +212,13 @@
                         android:src="@drawable/yoga" />
 
                     <TextView
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
+                        android:id="@+id/tv_sport5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Yoga"
                         android:layout_gravity="center_horizontal"
-                        />
+                        android:text="Yoga"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -249,13 +251,13 @@
                         android:src="@drawable/warm_up" />
 
                     <TextView
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
+                        android:id="@+id/tv_sport6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Warm up"
                         android:layout_gravity="center_horizontal"
-                        />
+                        android:text="Warm up"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 

@@ -3,8 +3,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
-
-
     <string name="sport1Instruc">This set aims to guide the users to workout at home without equipment. Please follow the correct posture. Press the start button to start the instruction\n\nEstimated Calories burnt:</string>
     <string name="sport2Instruc">This set is more intense as it requires more muscle strength. Please follow the correct posture for maximising the training effect. Press the start button to start the instruction\n\nEstimated Calories burnt:</string>
     <string name="sport3Instruc">This set is aim to exercise with your chest muscle, it will help you gain muscle weight. Press the start button to start the instruction\n\nEstimated Calories burnt:</string>
@@ -12,7 +10,8 @@
     <string name="sport5Instruc">This set is aim to introduce yoga to user, it will help you to relax your body and mind. Press the start button to start the instruction\n\nEstimated Calories burnt:</string>
     <string name="sport6Instruc">This warm up exercise helps the user to be prepared for the upcoming exercise or alleviate the muscle pain after vigorous sport. Press the start button to start the instruction\n\nEstimated Calories burnt:</string>
 
-    <string name="Form_Height" translatable="false">Height:</string>
+
+    <string name="Form_Height">Height:</string>
     <string name="Form_Weight">Weight:</string>
     <string name="Form_Age">Age:</string>
     <string name="Hint_Height">Enter your height in cm</string>
@@ -102,10 +101,121 @@
     <string name="Okra_Protein">1</string>
     <string name="Okra_Carbs">7</string>
 
+    <string name="Meat_And_Seafood">Meat And Seafood</string>
 
+    <string name="Beef_Food">Beef</string>
+    <string name="Beef_Serving_size">100 gr</string>
+    <string name="Beef_Calories">170</string>
+    <string name="Beef_Protein">20</string>
+    <string name="Beef_Carbs">15</string>
+    <string name="Pork_Food">Pork</string>
+    <string name="Pork_Serving_size">100 gr</string>
+    <string name="Pork_Calories">130</string>
+    <string name="Pork_Protein">5</string>
+    <string name="Pork_Carbs">15</string>
+    <string name="Chicken_Food">Chicken</string>
+    <string name="Chicken_Serving_size">100 gr</string>
+    <string name="Chicken_Calories">140</string>
+    <string name="Chicken_Protein">30</string>
+    <string name="Chicken_Carbs">0</string>
+    <string name="Lamb_Food">Lamb</string>
+    <string name="Lamb_Serving_size">100 gr</string>
+    <string name="Lamb_Calories">112</string>
+    <string name="Lamb_Protein">5</string>
+    <string name="Lamb_Carbs">15</string>
+    <string name="Steamed_Fish_Food">Steamed Fish</string>
+    <string name="Steamed_Fish_Serving_size">100 gr</string>
+    <string name="Steamed_Fish_Calories">130</string>
+    <string name="Steamed_Fish_Protein">26</string>
+    <string name="Steamed_Fish_Carbs">0</string>
+    <string name="Salmon_Food">Salmon</string>
+    <string name="Salmon_Serving_size">100 gr</string>
+    <string name="Salmon_Calories">180</string>
+    <string name="Salmon_Protein">19</string>
+    <string name="Salmon_Carbs">0</string>
+    <string name="Shrimp_Food">Shrimp</string>
+    <string name="Shrimp_Serving_size">100 gr</string>
+    <string name="Shrimp_Calories">81</string>
+    <string name="Shrimp_Protein">2</string>
+    <string name="Shrimp_Carbs">6</string>
+
+    <string name="Fruit">Fruit</string>
+
+    <string name="Apple_Food">Apple</string>
+    <string name="Apple_Serving_size">100 gr</string>
+    <string name="Apple_Calories">52</string>
+    <string name="Apple_Protein">0</string>
+    <string name="Apple_Carbs">13</string>
+    <string name="Banana_Food">Banana</string>
+    <string name="Banana_Serving_size">100 gr</string>
+    <string name="Banana_Calories">55</string>
+    <string name="Banana_Protein">0</string>
+    <string name="Banana_Carbs">15</string>
+    <string name="Orange_Food">Orange</string>
+    <string name="Orange_Serving_size">100 gr</string>
+    <string name="Orange_Calories">45</string>
+    <string name="Orange_Protein">0</string>
+    <string name="Orange_Carbs">11</string>
+    <string name="Pear_Food">Pear</string>
+    <string name="Pear_Serving_size">100 gr</string>
+    <string name="Pear_Calories">57</string>
+    <string name="Pear_Protein">0</string>
+    <string name="Pear_Carbs">15</string>
+    <string name="Grape_Food">Grape</string>
+    <string name="Grape_Serving_size">100 gr</string>
+    <string name="Grape_Calories">57</string>
+    <string name="Grape_Protein">0</string>
+    <string name="Grape_Carbs">13</string>
+    <string name="Strawberry_Food">Strawberry</string>
+    <string name="Strawberry_Serving_size">100 gr</string>
+    <string name="Strawberry_Calories">30</string>
+    <string name="Strawberry_Protein">0</string>
+    <string name="Strawberry_Carbs">7</string>
+    <string name="Cherry_Food">Cherry</string>
+    <string name="Cherry_Serving_size">100 gr</string>
+    <string name="Cherry_Calories">50</string>
+    <string name="Cherry_Protein">1</string>
+    <string name="Cherry_Carbs">12</string>
+
+    <string name="Diary">Diary</string>
+
+    <string name="Egg_Food">Egg</string>
+    <string name="Egg_Serving_size">100 gr</string>
+    <string name="Egg_Calories">143</string>
+    <string name="Egg_Protein">12</string>
+    <string name="Egg_Carbs">0</string>
+    <string name="Milk_Food">Milk</string>
+    <string name="Milk_Serving_size">100 gr</string>
+    <string name="Milk_Calories">170</string>
+    <string name="Milk_Protein">10</string>
+    <string name="Milk_Carbs">3</string>
+    <string name="Butter_Food">Butter</string>
+    <string name="Butter_Serving_size">100 gr</string>
+    <string name="Butter_Calories">710</string>
+    <string name="Butter_Protein">0</string>
+    <string name="Butter_Carbs">0</string>
+    <string name="Cheese_Food">Cheese</string>
+    <string name="Cheese_Serving_size">100 gr</string>
+    <string name="Cheese_Calories">350</string>
+    <string name="Cheese_Protein">22</string>
+    <string name="Cheese_Carbs">4</string>
+    <string name="Yogurt_Food">Yogurt</string>
+    <string name="Yogurt_Serving_size">100 gr</string>
+    <string name="Yogurt_Calories">100</string>
+    <string name="Yogurt_Protein">4</string>
+    <string name="Yogurt_Carbs">18</string>
+    <string name="Ice_Cream_Food">Ice Cream</string>
+    <string name="Ice_Cream_Serving_size">100 gr</string>
+    <string name="Ice_Cream_Calories">240</string>
+    <string name="Ice_Cream_Protein">3</string>
+    <string name="Ice_Cream_Carbs">22</string>
+
+
+    <string name="Total_title">Total</string>
     <string name="Total">Total:</string>
     <string name="Total_Calories">0</string>
     <string name="Total_Protein">0</string>
     <string name="Total_Carbs">0</string>
 
+    <string name="Save">Save</string>
 </resources>
