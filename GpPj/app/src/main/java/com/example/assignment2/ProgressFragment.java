@@ -133,6 +133,8 @@ public class ProgressFragment extends Fragment{
             //Tv Calories is missing, update yourself
          pb1 = v.findViewById(R.id.progressBar1);
          pb2 = v.findViewById(R.id.progressBar2);
+         pb3 = v.findViewById(R.id.progressBar3);
+
 
 
     }
@@ -155,13 +157,13 @@ public class ProgressFragment extends Fragment{
 
         int targetProtein, targetCarbs;
         targetProtein = (int)(0.8*weightInDouble);
-        targetCarbs = (int)(0.55*carbs);
+        targetCarbs = (int)(0.55*calories);
         //Roughly
         pb2.setMax(targetProtein);
         pb2.setProgress((int) protein);
         tv_protein.setText(String.valueOf(targetProtein));
 
-        pb3 = v.findViewById(R.id.progressBar3);
+
         pb3.setMax(targetCarbs);
         pb3.setProgress((int)carbs);
         tv_carb.setText(String.valueOf(targetCarbs));
