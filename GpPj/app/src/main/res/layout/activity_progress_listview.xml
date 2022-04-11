@@ -57,7 +57,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="vertical"
-                android:visibility="invisible">
+                android:visibility="visible">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -65,26 +65,96 @@
                     android:orientation="horizontal"
                     android:weightSum="3">
 
-                    <ProgressBar
-                        android:id="@+id/calor_pro"
-                        style="?android:attr/progressBarStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                    <RelativeLayout
+                        android:id="@+id/cal_progress_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="150dp"
+                        android:layout_weight="1">
 
-                    <ProgressBar
-                        android:id="@+id/protain_pro"
-                        style="?android:attr/progressBarStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        <ProgressBar
+                            android:id="@+id/cal_progress_bar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/circle"
+                            android:indeterminate="false"
+                            android:progressDrawable="@drawable/circular_progressbar"
+                            android:textAlignment="center" />
 
-                    <ProgressBar
-                        android:id="@+id/carbon_pro"
-                        style="?android:attr/progressBarStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        <TextView
+                            android:id="@+id/cal_progress_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:text="---"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pro_progress_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="150dp"
+                        android:layout_weight="1">
+
+                        <ProgressBar
+                            android:id="@+id/pro_progress_bar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/circle"
+                            android:indeterminate="false"
+                            android:progressDrawable="@drawable/circular_progressbar"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/pro_progress_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:text="---"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/carb_progress_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="150dp"
+                        android:layout_weight="1">
+
+                        <ProgressBar
+                            android:id="@+id/carb_progress_bar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/circle"
+                            android:indeterminate="false"
+                            android:progressDrawable="@drawable/circular_progressbar"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/carb_progress_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:text="---"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -97,7 +167,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Calories(take in)"
+                        android:text="Calories(take in)\nTarget: 2000kcal"
                         android:textAlignment="center" />
 
                     <TextView
@@ -105,7 +175,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Protain"
+                        android:text="Protain\nTarget: 56g"
                         android:textAlignment="center" />
 
                     <TextView
@@ -113,7 +183,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Carbohydrates"
+                        android:text="Carbohydrates\nTarget: 375g"
                         android:textAlignment="center" />
                 </LinearLayout>
 

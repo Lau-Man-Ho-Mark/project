@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android App/GpPj/app/src/main/res/layout/activity_progress_listview.xml" value="0.2758152173913043" />
+        <entry key="..\:/Android App/GpPj/app/src/main/res/drawable/circle.xml" value="0.1" />
+        <entry key="..\:/Android App/GpPj/app/src/main/res/drawable/circular_progressbar.xml" value="0.1" />
+        <entry key="..\:/Android App/GpPj/app/src/main/res/layout/activity_progress_listview.xml" value="0.33" />
+        <entry key="..\:/Android App/GpPj/app/src/main/res/layout/circlr.xml" value="0.2758152173913043" />
+        <entry key="..\:/Android App/GpPj/app/src/main/res/layout/fragment_calorie.xml" value="0.358695652173913" />
         <entry key="..\:/Androidapplication/Assignment1/app/src/main/res/drawable/ic_bmi.xml" value="0.2814814814814815" />
         <entry key="..\:/Androidapplication/Assignment1/app/src/main/res/drawable/ic_home.xml" value="0.2814814814814815" />
         <entry key="..\:/Androidapplication/Assignment1/app/src/main/res/drawable/ic_zodiac.xml" value="0.396875" />

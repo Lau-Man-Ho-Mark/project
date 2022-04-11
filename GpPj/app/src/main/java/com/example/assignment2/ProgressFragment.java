@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.util.MonthDisplayHelper;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -36,6 +38,7 @@ public class ProgressFragment extends Fragment implements View.OnClickListener{
     Bundle bundle;
     String height, weight, age, carb, calories, protein;
     String repslist, calolist;
+    ProgressBar cal_progress_bar, pro_progress_bar,carb_progress_bar;
     int fruitPortion = 0;
     SharedPreferences fragBData;
 
@@ -46,14 +49,16 @@ public class ProgressFragment extends Fragment implements View.OnClickListener{
     String[] sport1 = {};
     String[] reps1 = {};
     String[] cal_in1 = {};
+    String[] pro_in1 = {};
+    String[] carb_in1 = {};
     String[] cal1 = {};
-
-
 
     ArrayList<String> day = new ArrayList<String>(Arrays.asList(day1));
     ArrayList<String> sport = new ArrayList<String>(Arrays.asList(sport1));
     ArrayList<String> reps= new ArrayList<String>(Arrays.asList(reps1));
     ArrayList<String> cal_in = new ArrayList<String>(Arrays.asList(cal_in1));
+    ArrayList<String> pro_in = new ArrayList<String>(Arrays.asList(pro_in1));
+    ArrayList<String> carb_in = new ArrayList<String>(Arrays.asList(carb_in1));
     ArrayList<String> cal = new ArrayList<String>(Arrays.asList(cal1));
 
     public static final String SPORT_TYPE = "Sport_Type";
@@ -116,10 +121,13 @@ public class ProgressFragment extends Fragment implements View.OnClickListener{
         bundle = this.getArguments();
         wrapData(bundle);
 
+        cal_progress_bar=v.findViewById(R.id.cal_progress_bar);
+        pro_progress_bar=v.findViewById(R.id.pro_progress_bar);
+        carb_progress_bar=v.findViewById(R.id.carb_progress_bar);
 
 
         progress_lv = v.findViewById(R.id.progresslv);
-        MyListAdapter2 adapter = new MyListAdapter2(getContext(),  day,sport,reps,cal_in,cal);
+        MyListAdapter2 adapter = new MyListAdapter2(getContext(), day,sport,reps,cal_in,pro_in,carb_in,cal);
         progress_lv.setAdapter(adapter);
 
 
@@ -153,7 +161,9 @@ public class ProgressFragment extends Fragment implements View.OnClickListener{
                         sport.add(homePreferences.getString(HomeFragment.SPORTTYPE, ""));
                         reps.add(arr1.get(0));
                         cal.add(arr2.get(0));
-                        cal_in.add(calories);
+                        cal_in.add(calories.toString());
+                        pro_in.add(protein.toString());
+                        carb_in.add(carb.toString());
                         adapter.notifyDataSetChanged();
                         //reps.add()
                         // then new item is added
@@ -212,6 +222,7 @@ public class ProgressFragment extends Fragment implements View.OnClickListener{
         height = fragBData.getString(CalorieFragment.User_Height, "");
         weight = fragBData.getString(CalorieFragment.User_Weight, "");
         age = fragBData.getString(CalorieFragment.User_Age, "");
+        carb = fragBData.getString(CalorieFragment.User_Carbs,"");
         calories = fragBData.getString(CalorieFragment.User_Calories, "");
         protein = fragBData.getString(CalorieFragment.User_Protein, "");
         fruitPortion = fragBData.getInt(CalorieFragment.User_fruitPortion, 0);
