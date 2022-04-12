@@ -65,8 +65,8 @@ public class ProgressFragment extends Fragment{
 
 
     Bundle bundle;
-    TextView display_day, display_sport, display_reps, display_cal_in, display_cal, tv_protein, tv_carb,tv_calo,cal_pt,pro_pt,carb_pt;
-    ProgressBar pb1, pb2, pb3;
+    TextView display_day, display_sport, display_reps, display_cal_in, display_cal, tv_protein, tv_carb,tv_calo,tv_veget,cal_pt,pro_pt,carb_pt,veget_pt;
+    ProgressBar pb1, pb2, pb3, pb4;
 
     //For containing the data from fragment A
     ArrayList<String> caloriesBurnt = new ArrayList<>();
@@ -77,7 +77,7 @@ public class ProgressFragment extends Fragment{
     SharedPreferences sharedpreferences;
     String height, weight, age;
     double weightInDouble, heightInDouble;
-    double calories,  carbs, protein;
+    double calories, carbs, protein;
     int fruitPortion, age_int;
 
     //For the data from fragment A
@@ -129,14 +129,17 @@ public class ProgressFragment extends Fragment{
          tv_protein = v.findViewById(R.id.tv_protain);
          tv_carb = v.findViewById(R.id.tv_carbon);
          tv_calo=v.findViewById(R.id.tv_calor);
+         tv_veget=v.findViewById(R.id.tv_veget);
          cal_pt=v.findViewById(R.id.cal_progress_text);
          pro_pt=v.findViewById(R.id.pro_progress_text);
          carb_pt=v.findViewById(R.id.carb_progress_text);
+         veget_pt=v.findViewById(R.id.veget_progress_text);
 
             //Tv Calories is missing, update yourself
          pb1 = v.findViewById(R.id.progressBar1);
          pb2 = v.findViewById(R.id.progressBar2);
          pb3 = v.findViewById(R.id.progressBar3);
+         pb4=v.findViewById(R.id.progressBar4);
 
 
 
@@ -161,8 +164,9 @@ public class ProgressFragment extends Fragment{
         cal_pt.setText(Double.toString(calories));
         pro_pt.setText(Double.toString(protein));
         carb_pt.setText(Double.toString(carbs));
+        veget_pt.setText(Integer.toString(fruitPortion));
 
-        int targetCal, targetProtein, targetCarbs;
+        int targetCal, targetProtein, targetCarbs,targetVeget;
 
 
         age_int=Integer.parseInt(age);
@@ -183,20 +187,26 @@ public class ProgressFragment extends Fragment{
         }
 
         targetProtein = (int)(0.8*weightInDouble);
-        targetCarbs = (int)(0.55*calories);
+        targetCarbs = (int)(0.55*targetCal);
+        targetVeget=(int)(4);
         //Roughly
         pb1.setMax(targetCal);
-        pb1.setProgress((int)calories);
+        pb1.setProgress((int) calories);
         tv_calo.setText("Calories(take in)\nTarget: "+String.valueOf(targetCal)+" kcal");
 
         pb2.setMax(targetProtein);
         pb2.setProgress((int) protein);
-        tv_protein.setText("Protein\nTarget: "+String.valueOf(targetProtein)+" per kilo weight");
+        tv_protein.setText("Protein\nTarget: "+String.valueOf(targetProtein));
 
 
         pb3.setMax(targetCarbs);
         pb3.setProgress((int)carbs);
-        tv_carb.setText("Carbohydrates\nTarget: "+String.valueOf(targetCarbs)+"% of total Calories");
+        tv_carb.setText("Carbohydrates\nTarget: "+String.valueOf(targetCarbs));
+
+        pb4.setMax(targetVeget);
+        pb4.setProgress((int)fruitPortion);
+        tv_veget.setText("Vegetable \n Target: "+targetVeget);
+
 
     }
 
