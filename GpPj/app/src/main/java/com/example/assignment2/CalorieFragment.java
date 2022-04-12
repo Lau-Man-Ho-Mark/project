@@ -86,7 +86,6 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
     static TextView Total_title;
 
     static int fruitPortion = 0;
-
     //Grains Table//
 
     Button Grains;
@@ -1552,19 +1551,22 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.Save:
-                SharedPreferences.Editor editor = sharedpreferences.edit();
-                editor.putString(User_Height, Input_Height.getText().toString());
-                editor.putString(User_Weight, Input_Weight.getText().toString());
-                editor.putString(User_Age, Input_Age.getText().toString());
 
-                editor.putString(User_Calories, String.valueOf((int)Total_calories));
-                editor.putString(User_Protein, String.valueOf((int)Total_protein));
-                editor.putString(User_Carbs, String.valueOf((int)Total_carbs));
-                editor.putInt(User_fruitPortion, fruitPortion);
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    editor.putString(User_Height, Input_Height.getText().toString());
+                    editor.putString(User_Weight, Input_Weight.getText().toString());
+                    editor.putString(User_Age, Input_Age.getText().toString());
 
-                editor.commit();
-                // inform user about SAVE completed
-                Toast.makeText(getActivity(), "Saved", Toast.LENGTH_SHORT).show();
+                    editor.putString(User_Calories, String.valueOf((int)Total_calories));
+                    editor.putString(User_Protein, String.valueOf((int)Total_protein));
+                    editor.putString(User_Carbs, String.valueOf((int)Total_carbs));
+                    editor.putInt(User_fruitPortion, fruitPortion);
+
+
+                    editor.commit();
+                    // inform user about SAVE completed
+                    Toast.makeText(getActivity(), "Saved", Toast.LENGTH_SHORT).show();
+
                 break;
         }
 

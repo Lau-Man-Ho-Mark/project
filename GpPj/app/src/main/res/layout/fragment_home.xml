@@ -7,265 +7,289 @@
     android:background="@color/teal_200"
     tools:context=".HomeFragment">
 
+
     <TextView
+
+        android:textColor="@color/black"
+        android:background="@color/lemonchiffon"
+        android:layout_centerHorizontal="true"
         android:id="@+id/titleTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="15dp"
-        android:text="Sport Guide with Posture Instruction"
+        android:text=" Sport Guide with Posture Instruction "
         android:textSize="18sp" />
 
-    <LinearLayout
-        android:id="@+id/sv1"
+    <ScrollView
+        android:id="@+id/scrollv1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/titleTV"
-        android:orientation="vertical">
+        android:layout_below="@id/titleTV">
 
-        <GridLayout
+        <LinearLayout
+            android:id="@+id/sv1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:columnCount="2">
+            android:layout_below="@+id/titleTV"
+            android:orientation="vertical">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="25dp"
-                android:background="@color/white"
-                app:cardBackgroundColor="@color/fadedPurple"
-                app:cardCornerRadius="20dp">
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:columnCount="2">
 
-                <LinearLayout
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="25dp"
+                    android:background="@color/white"
+                    app:cardBackgroundColor="@color/fadedPurple"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/sport1"
+                            android:layout_width="150dp"
+                            android:layout_height="120dp"
+                            android:background="@null"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/withoutt_equip" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Home gym"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv2"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:orientation="vertical">
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="25dp"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/fadedBlue"
+                    app:cardCornerRadius="20dp">
 
-                    <ImageButton
-                        android:id="@+id/sport1"
-                        android:layout_width="150dp"
-                        android:layout_height="120dp"
-                        android:background="@null"
-                        android:clickable="false"
-                        android:focusable="false"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/withoutt_equip" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/tv_sport1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Home gym"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
+                        <ImageButton
+                            android:id="@+id/sport2"
+                            android:layout_width="150dp"
+                            android:layout_height="120dp"
+                            android:background="@null"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/with_equip" />
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Gym with equipment"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
 
-                </LinearLayout>
+                    </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv2"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="25dp"
-                android:background="@color/white"
-                android:backgroundTint="@color/fadedBlue"
-                app:cardCornerRadius="20dp">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv3"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="25dp"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/fadedGreen"
+                    app:cardCornerRadius="20dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                    <ImageButton
-                        android:id="@+id/sport2"
-                        android:layout_width="150dp"
-                        android:layout_height="120dp"
-                        android:background="@null"
-                        android:clickable="false"
-                        android:focusable="false"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/with_equip" />
+                        <ImageButton
+                            android:id="@+id/sport3"
+                            android:layout_width="150dp"
+                            android:layout_height="120dp"
+                            android:background="@null"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/chest_logo" />
 
-                    <TextView
-                        android:id="@+id/tv_sport2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Gym with equipment"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Chest training"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
 
-                </LinearLayout>
+                    </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv3"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="25dp"
-                android:background="@color/white"
-                android:backgroundTint="@color/fadedGreen"
-                app:cardCornerRadius="20dp">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv4"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="25dp"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/fadedOrange"
+                    app:cardCornerRadius="20dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                    <ImageButton
-                        android:id="@+id/sport3"
-                        android:layout_width="150dp"
-                        android:layout_height="120dp"
-                        android:background="@null"
-                        android:clickable="false"
-                        android:focusable="false"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/chest_logo" />
+                        <ImageButton
+                            android:id="@+id/sport4"
+                            android:layout_width="150dp"
+                            android:layout_height="120dp"
+                            android:background="@null"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/leg_logo" />
 
-                    <TextView
-                        android:id="@+id/tv_sport3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Chest training"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Leg day"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
 
-                </LinearLayout>
+                    </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv4"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="25dp"
-                android:background="@color/white"
-                android:backgroundTint="@color/fadedOrange"
-                app:cardCornerRadius="20dp">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv5"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="25dp"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/fadedYellow"
+                    app:cardCornerRadius="20dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                    <ImageButton
-                        android:id="@+id/sport4"
-                        android:layout_width="150dp"
-                        android:layout_height="120dp"
-                        android:background="@null"
-                        android:clickable="false"
-                        android:focusable="false"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/leg_logo" />
+                        <ImageButton
+                            android:id="@+id/sport5"
+                            android:layout_width="150dp"
+                            android:layout_height="120dp"
+                            android:background="@null"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/yoga" />
 
-                    <TextView
-                        android:id="@+id/tv_sport4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Leg day"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Yoga"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
 
-                </LinearLayout>
+                    </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv5"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="25dp"
-                android:background="@color/white"
-                android:backgroundTint="@color/fadedYellow"
-                app:cardCornerRadius="20dp">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv6"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="25dp"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/fadedRed"
+                    app:cardCornerRadius="20dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                    <ImageButton
-                        android:id="@+id/sport5"
-                        android:layout_width="150dp"
-                        android:layout_height="120dp"
-                        android:background="@null"
-                        android:clickable="false"
-                        android:focusable="false"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/yoga" />
+                        <ImageButton
+                            android:id="@+id/sport6"
+                            android:layout_width="150dp"
+                            android:layout_height="120dp"
+                            android:background="@null"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/warm_up" />
 
-                    <TextView
-                        android:id="@+id/tv_sport5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Yoga"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Warm up"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
 
-                </LinearLayout>
+                    </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv6"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="25dp"
-                android:background="@color/white"
-                android:backgroundTint="@color/fadedRed"
-                app:cardCornerRadius="20dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:id="@+id/sport6"
-                        android:layout_width="150dp"
-                        android:layout_height="120dp"
-                        android:background="@null"
-                        android:clickable="false"
-                        android:focusable="false"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/warm_up" />
-
-                    <TextView
-                        android:id="@+id/tv_sport6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Warm up"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
 
-        </GridLayout>
-    </LinearLayout>
+            </GridLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/ShowMap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Sport Venues Nearby" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+</ScrollView>
+
 
 
 

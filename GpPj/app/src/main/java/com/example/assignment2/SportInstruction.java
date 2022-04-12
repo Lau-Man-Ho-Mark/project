@@ -2,9 +2,11 @@ package com.example.assignment2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Instrumentation;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -23,25 +25,22 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
     double  currentBurntCalories = 0;
     Handler handler;
     Button stopBtn, startBtn;
-    Button saveBtn;
-            //Button StopBtnPopup;
     Runnable currentSportRunnable;
-    TextView instructionTV, caloriesBurnt, repsDone, txtclose;
+    TextView instructionTV, caloriesBurnt, repsDone;
     ArrayList<Integer> pictureList;
     boolean isRunning = false;
-    TextView tvsport1,tvsport2,tvsport3,tvsport4,tvsport5,tvsport6;
 
 
     SharedPreferences preferences;
     public static final String SHARED_PREFERENCE = "shared_pref";
     public static final String REP_LIST = "rep_list";
     public static final String CALO_LIST = "calo_list";
-    public static final String SPORT_TYPE = "sport_type";
+    public static final String TYPE_LIST = "type_list";
     public static boolean isFirstTime = true;
 
     ArrayList<String> data = new ArrayList<String>();
     ArrayList<String> data2 = new ArrayList<String>();
-    ArrayList<String> sportType = new ArrayList<String>();
+    ArrayList<String> data3 = new ArrayList<String>();
 
 
     @Override
@@ -56,6 +55,7 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
         //Determining what type of sport is pressed to get into this activity
         Intent i = getIntent();
         sport = i.getIntExtra("sportType", 0);
+        data3.add(data3.size() + ":" + sport);
         playSportInstruction(sport);
 
     }
@@ -71,7 +71,7 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
         else{
             data.addAll(preferences.getStringSet(REP_LIST, null));
             data2.addAll(preferences.getStringSet(CALO_LIST, null));
-
+            data3.addAll(preferences.getStringSet(TYPE_LIST, null));
         }
 
     }
@@ -85,18 +85,15 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
         stopBtn = findViewById(R.id.stopBtn);
         startBtn.setOnClickListener(this);
         stopBtn.setOnClickListener(this);
-        tvsport1 = findViewById(R.id.tv_sport1);
     }
 
 
     private void playSportInstruction(int sport) {
-
         double caloriesBurntPerRep = 0;
         switch (sport)
         {
             case R.id.sport1:
                 caloriesBurntPerRep = 0.8;
-
                 break;
             case R.id.sport2:
                 caloriesBurntPerRep = 1.2;
@@ -114,19 +111,14 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
                 caloriesBurntPerRep = 0.2;
                 break;
         }
-//        SharedPreferences.Editor editor = preferences.edit();
-//        editor.putString(SPORT_TYPE, tvsport1.getText().toString());
-//        editor.commit();
 
         handler = new Handler();
         switch(sport){
             case R.id.sport1:
-
                 instructionTV.setText(R.string.sport1Instruc);
                 repsDoneTotal = 0;
                 sport1();
                 currentSportRunnable = createRunnable(pictureList, caloriesBurntPerRep);
-
                 break;
 
             case R.id.sport2:
@@ -152,7 +144,6 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
 
             case R.id.sport5:
                 instructionTV.setText(R.string.sport5Instruc);
-
                 repsDoneTotal = 0;
                 sport5();
                 currentSportRunnable = createRunnable(pictureList, caloriesBurntPerRep);
@@ -255,7 +246,6 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
         pictureList.add(R.drawable.s1_five_2);
         pictureList.add(R.drawable.s1_six_1);
         pictureList.add(R.drawable.s1_six_2);
-
     }
 
     private Runnable createRunnable(ArrayList<Integer> list, double caloriesBurntPerRep) {
@@ -267,23 +257,30 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
                 caloriesBurnt.setText(String.format("%.2f", currentBurntCalories));
                 instructionImage.setBackgroundResource(list.get(i));
                 handler.postDelayed(this, 1000);
-                //Toast.makeText(SportInstruction.this, "Executed", Toast.LENGTH_SHORT).show();
                 if(i%2==0)
                     i+=1;
                 else{
-                    currentBurntCalories += caloriesBurntPerRep;
-                    i-=1;
-                    repsDoneTotal++;
+                    //Since two moves = 1 reps.
+                    //Change the times >= for more reps. Usually 12 reps for 1 move
+                    if(times >= 11){
+                        times = 0;
+                        i+=2;
+                        //Wait 5 seconds here
+                        try {
+                            Thread.sleep(5000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    else{
+                        currentBurntCalories += caloriesBurntPerRep;
+                        i-=1;
+                        repsDoneTotal++;
+                    }
                 }
 
 
-                //Since two moves = 1 reps.
-                //Change the times >= for more reps. Usually 12 reps for 1 move
                 times++;
-                if (times >= 4){
-                    times = 0;
-                    i+=2;
-                }
                 //Return to initial values
                 if(i>=list.size()){
                     i=0;
@@ -295,20 +292,18 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
     }
 
 
-
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.stopBtn:
                 isRunning = false;
-                Log.d("Success", "Runnable stopped");
                 handler.removeCallbacks(currentSportRunnable);
 
                 saveData();
                 Intent i = new Intent(SportInstruction.this, MainActivity.class);
                 i.putStringArrayListExtra("repSecList", data);
                 i.putStringArrayListExtra("calorList", data2);
-                i.putStringArrayListExtra("sportType",sportType);
+                i.putStringArrayListExtra("sportstypeList", data3);
 
 
                 myDialog = new PopUpDialogFragment(currentBurntCalories, repsDoneTotal, i);
@@ -318,7 +313,6 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
 
             case R.id.startBtn:
                 if (isRunning == false){
-                Log.d("Success", "Runnable started");
                 handler.postDelayed(currentSportRunnable, 0);
                     isRunning = true;
                 }
@@ -335,27 +329,21 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
         preferences = getSharedPreferences(SHARED_PREFERENCE, MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
 
-        data.add( "" + repsDoneTotal*2);
-        data2.add(String.format("%.2f", currentBurntCalories));
+        data.add(data.size() + ":" + repsDoneTotal*2);
+        data2.add(data2.size() + ":"+ String.format("%.2f", currentBurntCalories));
         Set<String> list1 = new HashSet<String>();
         list1.addAll(data);
 
         Set<String> list2 = new HashSet<String>();
         list2.addAll(data2);
 
+        Set<String> list3 = new HashSet<String>();
+        list3.addAll(data3);
+
         editor.putStringSet(REP_LIST, list1);
         editor.putStringSet(CALO_LIST, list2);
-
-//        editor.commit();
-
+        editor.putStringSet(TYPE_LIST, list3);
         editor.apply();
     }
-//    private void saveSportType(){
-//
-//        preferences = getSharedPreferences(SHARED_PREFERENCE, MODE_PRIVATE);
-//        SharedPreferences.Editor editor = preferences.edit();
-//
-//        sportType.add(" " + sport);
-//        editor.putStringSet(SPORT_TYPE, "");
-//    }
+
 }

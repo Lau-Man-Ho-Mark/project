@@ -4,19 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
-import android.util.MonthDisplayHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -24,49 +20,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.concurrent.atomic.AtomicReferenceArray;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ProgressFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ProgressFragment extends Fragment implements View.OnClickListener{
-
-    Integer selected_pos = -1;
-    ArrayList<String> arr1 = new ArrayList<>();
-    ArrayList<String> arr2 = new ArrayList<>();
-    Bundle bundle;
-    String height, weight, age, carb, calories, protein;
-    String repslist, calolist;
-    ProgressBar cal_progress_bar, pro_progress_bar,carb_progress_bar;
-    int fruitPortion = 0;
-    SharedPreferences fragBData;
-
-    ListView progress_lv;
-    Button btn_add;
-
-    String[] day1 = {};
-    String[] sport1 = {};
-    String[] reps1 = {};
-    String[] cal_in1 = {};
-    String[] pro_in1 = {};
-    String[] carb_in1 = {};
-    String[] cal1 = {};
-
-    ArrayList<String> day = new ArrayList<String>(Arrays.asList(day1));
-    ArrayList<String> sport = new ArrayList<String>(Arrays.asList(sport1));
-    ArrayList<String> reps= new ArrayList<String>(Arrays.asList(reps1));
-    ArrayList<String> cal_in = new ArrayList<String>(Arrays.asList(cal_in1));
-    ArrayList<String> pro_in = new ArrayList<String>(Arrays.asList(pro_in1));
-    ArrayList<String> carb_in = new ArrayList<String>(Arrays.asList(carb_in1));
-    ArrayList<String> cal = new ArrayList<String>(Arrays.asList(cal1));
-
-    public static final String SPORT_TYPE = "Sport_Type";
-    SharedPreferences fragAdata;
-
-    SharedPreferences homePreferences;
-    public static final String mypreference = "mypref";
-    public static final String SPORTTYPE = "sport_type";
+public class ProgressFragment extends Fragment{
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -100,6 +61,33 @@ public class ProgressFragment extends Fragment implements View.OnClickListener{
         return fragment;
     }
 
+
+
+
+    Bundle bundle;
+    TextView display_day, display_sport, display_reps, display_cal_in, display_cal, tv_protein, tv_carb,tv_calo,cal_pt,pro_pt,carb_pt;
+    ProgressBar pb1, pb2, pb3;
+
+    //For containing the data from fragment A
+    ArrayList<String> caloriesBurnt = new ArrayList<>();
+    ArrayList<String> secondsDoneInSport = new ArrayList<>();
+    ArrayList<String> sportType = new ArrayList<>();
+
+    //For the data from fragment B
+    SharedPreferences sharedpreferences;
+    String height, weight, age;
+    double weightInDouble, heightInDouble;
+    double calories,  carbs, protein;
+    int fruitPortion, age_int;
+
+    //For the data from fragment A
+    double totalBurntCalories = 0;
+    int totalSecondsDoneInSports = 0;
+    ArrayList<Integer> sportRecentDone = new ArrayList<>();
+    ArrayList<String> sportsName = new ArrayList<>();
+
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,131 +100,221 @@ public class ProgressFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View v = inflater.inflate(R.layout.fragment_progress, container, false);
 
-
-        //Get the data
-        //init(v);
-
-        bundle = this.getArguments();
-        wrapData(bundle);
-
-        cal_progress_bar=v.findViewById(R.id.cal_progress_bar);
-        pro_progress_bar=v.findViewById(R.id.pro_progress_bar);
-        carb_progress_bar=v.findViewById(R.id.carb_progress_bar);
+        init(v);
+        bundle = getArguments();
+        if(bundle != null)
+            wrapData();
 
 
-        progress_lv = v.findViewById(R.id.progresslv);
-        MyListAdapter2 adapter = new MyListAdapter2(getContext(), day,sport,reps,cal_in,pro_in,carb_in,cal);
-        progress_lv.setAdapter(adapter);
-
-
-        progress_lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selected = (String) parent.getItemAtPosition(position);
-                Toast.makeText(getActivity().getApplicationContext(),
-                        String.valueOf(position)+": "+selected,
-                        Toast.LENGTH_LONG).show();
-                Log.d("Jack check", String.valueOf(position)+": "+selected);
-
-                selected_pos = position; // remember which item is selected
-                //et1.setText(selected); // show selected season to edittext
-            }
-        });
-
+        setData(v);
+        /*Not used
         SimpleDateFormat systime = new SimpleDateFormat("dd.MM.yyyy");
-        String currentDateandTime = systime.format(new Date());
-        btn_add = v.findViewById(R.id.btn_add);
-        btn_add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (selected_pos == -1) { // means nothing selected to update
-
-                    try {
-                        homePreferences = getActivity().getSharedPreferences(HomeFragment.mypreference, Context.MODE_PRIVATE);
-
-                        day.add(String.valueOf(currentDateandTime));
-                        sport.add(homePreferences.getString(HomeFragment.SPORTTYPE, ""));
-                        reps.add(arr1.get(0));
-                        cal.add(arr2.get(0));
-                        cal_in.add(calories.toString());
-                        pro_in.add(protein.toString());
-                        carb_in.add(carb.toString());
-                        adapter.notifyDataSetChanged();
-                        //reps.add()
-                        // then new item is added
-                        //season.add(warp.getString(REP_LIST,""));
-                        //arr1.add(sharedpreferences.getString(REP_LIST,""));
-                        Log.d("ChecK", "success");
-                        //icon.add(android.R.drawable.ic_dialog_map);
-                    }catch (Exception exception){
-                        Log.d("Check", " No Input ");
-                    };
-                } else { //  something is selected to udpate
-                    reps.set(selected_pos, arr1.get(0).toString());
-                    cal.set(selected_pos, arr2.get(0).toString());
-                }
-                adapter.notifyDataSetChanged();
-                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-            }
-        });
+        String currentDateandTime = systime.format(new Date());*/
 
 
-        Log.d("Success", "progress fragment ready to leave");
         return v;
-
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_zodiac, container, false);+
+        //return inflater.inflate(R.layout.fragment_zodiac, container, false);
+    }
+
+    private void init(View v) {
+
+         display_sport = v.findViewById(R.id.display_sport);
+         display_reps = v.findViewById(R.id.display_reps);
+         display_cal_in = v.findViewById(R.id.display_calories_in);
+         display_cal = v.findViewById(R.id.display_calories);
+         tv_protein = v.findViewById(R.id.tv_protain);
+         tv_carb = v.findViewById(R.id.tv_carbon);
+         tv_calo=v.findViewById(R.id.tv_calor);
+         cal_pt=v.findViewById(R.id.cal_progress_text);
+         pro_pt=v.findViewById(R.id.pro_progress_text);
+         carb_pt=v.findViewById(R.id.carb_progress_text);
+
+            //Tv Calories is missing, update yourself
+         pb1 = v.findViewById(R.id.progressBar1);
+         pb2 = v.findViewById(R.id.progressBar2);
+         pb3 = v.findViewById(R.id.progressBar3);
+
+
 
     }
 
-    private void wrapData(Bundle bundle) {
+    private void setData(View v) {
+
+        //display_day.setText(day.get(position));
+        for(int i=0; i<sportsName.size(); i++){
+            if(i == sportsName.size() - 1){
+                display_sport.append(sportsName.get(i));
+            }
+            else
+                display_sport.append(sportsName.get(i) + ", ");
+        }
 
 
-        //Get Fragment A data here
-        if(bundle != null){
-            Bundle FragABundle = bundle.getBundle("fragA");
-            arr1 = FragABundle.getStringArrayList("repList");
-            arr2 = FragABundle.getStringArrayList("burntCaloriesList");
+        display_reps.setText(String.format("%.2f", totalSecondsDoneInSports / 60.0));
+       // display_cal_in.setText(String.format("%.2f", calories));
+        display_cal.setText(String.format("%.2f", totalBurntCalories));
+
+        cal_pt.setText(Double.toString(calories));
+        pro_pt.setText(Double.toString(protein));
+        carb_pt.setText(Double.toString(carbs));
+
+        int targetCal, targetProtein, targetCarbs;
 
 
-            if(arr1 != null && arr2 != null){
-                for (String data: arr1)
-                    Log.d("Success", data);
+        age_int=Integer.parseInt(age);
+        if(age_int<4){
+            targetCal=1000;
+        }else if(age_int>3 && age_int<9){
+            targetCal=2000;
+        }else if(age_int>8 && age_int<14){
+            targetCal=2600;
+        }else if(age_int>13 && age_int<19){
+            targetCal=3200;
+        }else if(age_int>18 && age_int<31){
+            targetCal=3000;
+        }else if(age_int>30 && age_int<51){
+            targetCal=3000;
+        }else{
+            targetCal=2800;
+        }
 
-                for (String data: arr2)
-                    Log.d("Success", data);
+        targetProtein = (int)(0.8*weightInDouble);
+        targetCarbs = (int)(0.55*calories);
+        //Roughly
+        pb1.setMax(targetCal);
+        pb1.setProgress((int)calories);
+        tv_calo.setText("Calories(take in)\nTarget: "+String.valueOf(targetCal)+" kcal");
 
+        pb2.setMax(targetProtein);
+        pb2.setProgress((int) protein);
+        tv_protein.setText("Protein\nTarget: "+String.valueOf(targetProtein)+" per kilo weight");
+
+
+        pb3.setMax(targetCarbs);
+        pb3.setProgress((int)carbs);
+        tv_carb.setText("Carbohydrates\nTarget: "+String.valueOf(targetCarbs)+"% of total Calories");
+
+    }
+
+    private void wrapData() {
+        //Fragment A
+        Bundle fragA = bundle.getBundle("fragA");
+        caloriesBurnt = fragA.getStringArrayList("burntCaloriesList");
+        sportType = fragA.getStringArrayList("sportstypeList");
+        secondsDoneInSport = fragA.getStringArrayList("repList");
+        //Since the data passed from fragment A is not directly usable
+        if(caloriesBurnt!= null)
+            processData();
+
+        //Fragment B
+        sharedpreferences = getActivity().getSharedPreferences(CalorieFragment.mypreference, Context.MODE_PRIVATE);
+
+        height = sharedpreferences.getString(CalorieFragment.User_Height, "");
+        weight = sharedpreferences.getString(CalorieFragment.User_Weight, "");
+
+        if(height!="" && weight!=""){
+            weightInDouble = Double.valueOf(weight);
+            heightInDouble = Double.valueOf(height);
+        }
+
+        age = sharedpreferences.getString(CalorieFragment.User_Age, "");
+        calories = Double.valueOf(sharedpreferences.getString(CalorieFragment.User_Calories, ""));
+        carbs = Double.valueOf(sharedpreferences.getString(CalorieFragment.User_Carbs, ""));
+        protein = Double.valueOf(sharedpreferences.getString(CalorieFragment.User_Protein, ""));
+        fruitPortion = sharedpreferences.getInt(CalorieFragment.User_fruitPortion, 0);
+
+
+    }
+
+    private void processData() {
+        //Three things we want to represent
+        totalBurntCalories = 0;
+        totalSecondsDoneInSports = 0;
+
+        //sportsDoneRecently;
+
+
+        for (String data: secondsDoneInSport){
+            for(int i=0; i<data.length(); i++){
+
+                if(data.charAt(i) == ':'){
+                    String seconds = "";
+                    for(int k=i+1; k<data.length(); k++)
+                        seconds+=data.charAt(k);
+
+                    totalSecondsDoneInSports+= Integer.valueOf(seconds);
+                }
 
             }
-
         }
-        //Get Fragment B data here
-//        fragAdata = getActivity().getSharedPreferences(SportInstruction.SHARED_PREFERENCE, Context.MODE_PRIVATE);
-//        repslist = fragAdata.getString(SportInstruction.REP_LIST,"");
-//        calolist = fragAdata.getString(SportInstruction.CALO_LIST,"");
-        fragBData = getActivity().getSharedPreferences(CalorieFragment.mypreference, Context.MODE_PRIVATE);
-        height = fragBData.getString(CalorieFragment.User_Height, "");
-        weight = fragBData.getString(CalorieFragment.User_Weight, "");
-        age = fragBData.getString(CalorieFragment.User_Age, "");
-        carb = fragBData.getString(CalorieFragment.User_Carbs,"");
-        calories = fragBData.getString(CalorieFragment.User_Calories, "");
-        protein = fragBData.getString(CalorieFragment.User_Protein, "");
-        fruitPortion = fragBData.getInt(CalorieFragment.User_fruitPortion, 0);
 
-        Log.d("Success", calories);
-        Log.d("Success", fruitPortion + " is eaten");
+        for (String data: caloriesBurnt){
+            for(int i=0; i<data.length(); i++){
+
+                if(data.charAt(i) == ':'){
+                    String burntCaloriesPerSet = "";
+                    for(int k=i+1; k<data.length(); k++)
+                        burntCaloriesPerSet+=data.charAt(k);
+
+                    totalBurntCalories+= Double.valueOf(burntCaloriesPerSet);
+                }
+
+            }
+        }
+
+        for (String data: sportType){
+            for(int i=0; i<data.length(); i++){
+
+                if(data.charAt(i) == ':'){
+                    String sportType = "";
+                    for(int k=i+1; k<data.length(); k++)
+                        sportType+=data.charAt(k);
+
+                    //In case of duplication
+                    if(!sportRecentDone.contains(Integer.valueOf(sportType)))
+                        sportRecentDone.add(Integer.valueOf(sportType));
+                }
+
+            }
+        }
+
+        System.out.println(totalSecondsDoneInSports);
+        System.out.println(totalBurntCalories);
+        System.out.println(sportRecentDone.size());
+        recentSportDetermination(sportRecentDone);
+
     }
 
-    public void init(View v){
-
+    private void recentSportDetermination(ArrayList<Integer> sportRecentDone) {
+        sportsName = new ArrayList<>();
+        for(int data: sportRecentDone){
+            switch (data){
+                case R.id.sport1:
+                    sportsName.add("Home Gym");
+                    break;
+                case R.id.sport2:
+                    sportsName.add("Regular Gym");
+                    break;
+                case R.id.sport3:
+                    sportsName.add("Chest Training");
+                    break;
+                case R.id.sport4:
+                    sportsName.add("Leg Training");
+                    break;
+                case R.id.sport5:
+                    sportsName.add("Yoga");
+                    break;
+                case R.id.sport6:
+                    sportsName.add("Warm up exercise");
+                    break;
+                default: break;
+            }
+        }
     }
 
-    @Override
-    public void onClick(View view) {
 
-    }
 }
