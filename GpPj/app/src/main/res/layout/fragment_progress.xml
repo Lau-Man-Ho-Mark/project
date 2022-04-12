@@ -360,12 +360,12 @@
 
         </androidx.cardview.widget.CardView>
 
-    <!-- Is this necessary?
-        <ListView
-            android:id="@+id/progresslv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-            -->
+        <!-- Is this necessary?
+            <ListView
+                android:id="@+id/progresslv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+                -->
 
     </LinearLayout>
 

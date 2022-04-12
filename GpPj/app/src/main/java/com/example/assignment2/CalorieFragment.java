@@ -173,6 +173,8 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
     public static final String User_Carbs = "Carbs_Key";
     public static final String User_fruitPortion = "User_fruitPortion";
 
+    public static boolean isFirstTime = true;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -187,6 +189,8 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_calorie, container, false);
 
+
+        loadData();
 
         Total_Calories = v.findViewById(R.id.Total_Calories);
         Total_Protein = v.findViewById(R.id.Total_Protein);
@@ -1537,14 +1541,24 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Input_Weight = v.findViewById(R.id.Input_Weight);
         Input_Age = v.findViewById(R.id.Input_Age);
 
-        sharedpreferences = this.getActivity().getSharedPreferences(mypreference,
-                Context.MODE_PRIVATE);
-
-
         Log.d("Success", "calorie fragment ready to leave");
         return v;
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_zodiac, container, false);
+    }
+
+    private void loadData() {
+        sharedpreferences = this.getActivity().getSharedPreferences(mypreference,
+                Context.MODE_PRIVATE);
+        if(isFirstTime){
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.clear();
+            editor.commit();
+            isFirstTime = false;
+        }
+        else{
+
+        }
     }
 
     @Override
@@ -1553,6 +1567,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
             case R.id.Save:
 
                     SharedPreferences.Editor editor = sharedpreferences.edit();
+
                     editor.putString(User_Height, Input_Height.getText().toString());
                     editor.putString(User_Weight, Input_Weight.getText().toString());
                     editor.putString(User_Age, Input_Age.getText().toString());
