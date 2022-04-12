@@ -29,6 +29,8 @@ import java.util.concurrent.atomic.AtomicReferenceArray;
  */
 public class ProgressFragment extends Fragment{
 
+
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -85,7 +87,7 @@ public class ProgressFragment extends Fragment{
     int totalSecondsDoneInSports = 0;
     ArrayList<Integer> sportRecentDone = new ArrayList<>();
     ArrayList<String> sportsName = new ArrayList<>();
-
+    public static boolean isFirstTime = true;
 
 
     @Override
@@ -104,6 +106,8 @@ public class ProgressFragment extends Fragment{
         View v = inflater.inflate(R.layout.fragment_progress, container, false);
 
         init(v);
+        loadData();
+
         bundle = getArguments();
         if(bundle != null)
             wrapData();
@@ -119,6 +123,46 @@ public class ProgressFragment extends Fragment{
         return v;
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_zodiac, container, false);
+    }
+
+    private void loadData() {
+        sharedpreferences = getActivity().getSharedPreferences(CalorieFragment.mypreference, Context.MODE_PRIVATE);
+
+        if(isFirstTime){
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.clear();
+            editor.commit();
+            isFirstTime = false;
+        }
+        else{
+
+            height = sharedpreferences.getString(CalorieFragment.User_Height, "");
+            weight = sharedpreferences.getString(CalorieFragment.User_Weight, "");
+            String caloriesIntake = sharedpreferences.getString(CalorieFragment.User_Calories, "");
+            String carbIntake = sharedpreferences.getString(CalorieFragment.User_Carbs, "");
+            String proteinIntake = sharedpreferences.getString(CalorieFragment.User_Protein, "");
+
+            //Fragment B
+            sharedpreferences = getActivity().getSharedPreferences(CalorieFragment.mypreference, Context.MODE_PRIVATE);
+
+            if(height!="")
+                heightInDouble = Double.valueOf(height);
+
+            if(weight!="")
+                weightInDouble = Double.valueOf(weight);
+
+            if(sharedpreferences.getString(CalorieFragment.User_Age, "") != "")
+                age = sharedpreferences.getString(CalorieFragment.User_Age, "");
+
+            if(caloriesIntake!=""){
+                calories = Double.valueOf(caloriesIntake);
+                carbs = Double.valueOf(carbIntake);
+                protein = Double.valueOf(proteinIntake);
+            }
+
+            fruitPortion = sharedpreferences.getInt(CalorieFragment.User_fruitPortion, 0);
+
+        }
     }
 
     private void init(View v) {
@@ -179,23 +223,6 @@ public class ProgressFragment extends Fragment{
         //Since the data passed from fragment A is not directly usable
         if(caloriesBurnt!= null)
             processData();
-
-        //Fragment B
-        sharedpreferences = getActivity().getSharedPreferences(CalorieFragment.mypreference, Context.MODE_PRIVATE);
-
-        height = sharedpreferences.getString(CalorieFragment.User_Height, "");
-        weight = sharedpreferences.getString(CalorieFragment.User_Weight, "");
-
-        if(height!="" && weight!=""){
-            weightInDouble = Double.valueOf(weight);
-            heightInDouble = Double.valueOf(height);
-        }
-
-        age = sharedpreferences.getString(CalorieFragment.User_Age, "");
-        calories = Double.valueOf(sharedpreferences.getString(CalorieFragment.User_Calories, ""));
-        carbs = Double.valueOf(sharedpreferences.getString(CalorieFragment.User_Carbs, ""));
-        protein = Double.valueOf(sharedpreferences.getString(CalorieFragment.User_Protein, ""));
-        fruitPortion = sharedpreferences.getInt(CalorieFragment.User_fruitPortion, 0);
 
 
     }
