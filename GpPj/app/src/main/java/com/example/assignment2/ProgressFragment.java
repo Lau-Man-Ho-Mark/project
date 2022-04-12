@@ -145,16 +145,16 @@ public class ProgressFragment extends Fragment{
             //Fragment B
             sharedpreferences = getActivity().getSharedPreferences(CalorieFragment.mypreference, Context.MODE_PRIVATE);
 
-            if(height!="")
+            if(!height.isEmpty())
                 heightInDouble = Double.valueOf(height);
 
-            if(weight!="")
+            if(!weight.isEmpty())
                 weightInDouble = Double.valueOf(weight);
 
-            if(sharedpreferences.getString(CalorieFragment.User_Age, "") != "")
+            if(!sharedpreferences.getString(CalorieFragment.User_Age, "").isEmpty())
                 age = sharedpreferences.getString(CalorieFragment.User_Age, "");
 
-            if(caloriesIntake!=""){
+            if(!caloriesIntake.isEmpty()){
                 calories = Double.valueOf(caloriesIntake);
                 carbs = Double.valueOf(carbIntake);
                 protein = Double.valueOf(proteinIntake);
