@@ -166,7 +166,7 @@ public class ProgressFragment extends Fragment{
     }
 
     private void init(View v) {
-         display_day = v.findViewById(R.id.display_day);
+         //display_day = v.findViewById(R.id.display_day);
          display_sport = v.findViewById(R.id.display_sport);
          display_reps = v.findViewById(R.id.display_reps);
          display_cal_in = v.findViewById(R.id.display_calories_in);
@@ -278,10 +278,7 @@ public class ProgressFragment extends Fragment{
 
             }
         }
-
-        System.out.println(totalSecondsDoneInSports);
-        System.out.println(totalBurntCalories);
-        System.out.println(sportRecentDone.size());
+        
         recentSportDetermination(sportRecentDone);
 
     }
