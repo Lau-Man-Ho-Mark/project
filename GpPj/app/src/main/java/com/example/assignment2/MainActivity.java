@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -33,8 +34,6 @@ public class MainActivity extends AppCompatActivity{
     ArrayList<String> caloList = new ArrayList<>();
     ArrayList<String> sportTypeList = new ArrayList<>();
 
-    boolean isChecked;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -42,11 +41,11 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        cleanSharedPref();
         i = getIntent();
         repList =  i.getStringArrayListExtra("repSecList");
         caloList =  i.getStringArrayListExtra("calorList");
         sportTypeList = i.getStringArrayListExtra("sportstypeList");
-
 
 
         home = new HomeFragment();
@@ -56,7 +55,6 @@ public class MainActivity extends AppCompatActivity{
 
         changeFragment(R.id.homeFrag);
         //Home fragment is always the first page before the bottom navigation items are being selected
-
 
         //finding the matched bottomNavigation view
         bottomView = findViewById(R.id.bottomNav);
@@ -71,6 +69,14 @@ public class MainActivity extends AppCompatActivity{
 
     }
 
+    private void cleanSharedPref() {
+        SharedPreferences preferences = getSharedPreferences(CalorieFragment.mypreference, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.commit();
+
+    }
+
     //change fragment method
     public void changeFragment(int itemId) {
 
@@ -82,7 +88,6 @@ public class MainActivity extends AppCompatActivity{
             break;
 
            case R.id.calorieFrag:
-                //passData(1);
                 getSupportFragmentManager().
                         beginTransaction().
                     replace(R.id.frameLayout, calorie).commit();
@@ -116,7 +121,5 @@ public class MainActivity extends AppCompatActivity{
         progress.setArguments(bd);
 
     }
-
-
 
 }

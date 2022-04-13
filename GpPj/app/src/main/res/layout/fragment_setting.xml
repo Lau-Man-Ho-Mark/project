@@ -1,23 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SettingFragment">
 
     <LinearLayout
+        android:weightSum="100"
+        android:id="@+id/bgll"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/teal_700"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_weight="30"
+            android:layout_width="253dp"
+            android:layout_height="129dp"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@android:mipmap/sym_def_app_icon" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/bgll"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+
+    <GridLayout
+        android:layout_marginLeft="50dp"
+        android:columnCount="2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
+            android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chinese"/>
+            android:text="@string/chinese"/>
 
         <Switch
             android:id="@+id/switchy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+        <TextView
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/darkMode"/>
+
+        <Switch
+            android:id="@+id/darkMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </GridLayout>
+
+
+
 
     </LinearLayout>
 

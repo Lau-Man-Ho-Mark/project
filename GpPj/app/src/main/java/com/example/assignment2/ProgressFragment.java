@@ -67,8 +67,8 @@ public class ProgressFragment extends Fragment{
 
 
     Bundle bundle;
-    TextView display_day, display_sport, display_reps, display_cal_in, display_cal, tv_protein, tv_carb;
-    ProgressBar pb1, pb2, pb3;
+    TextView display_day, display_sport, display_reps, display_cal_in, display_cal, tv_protein, tv_carb,tv_calo,tv_veget,cal_pt,pro_pt,carb_pt,veget_pt;
+    ProgressBar pb1, pb2, pb3,pb4;
 
     //For containing the data from fragment A
     ArrayList<String> caloriesBurnt = new ArrayList<>();
@@ -77,17 +77,20 @@ public class ProgressFragment extends Fragment{
 
     //For the data from fragment B
     SharedPreferences sharedpreferences;
-    String height, weight, age;
+    String height;
+    String weight;
+    String age;
     double weightInDouble, heightInDouble;
     double calories,  carbs, protein;
-    int fruitPortion;
+    int fruitPortion,age_int;
+
 
     //For the data from fragment A
     double totalBurntCalories = 0;
     int totalSecondsDoneInSports = 0;
     ArrayList<Integer> sportRecentDone = new ArrayList<>();
     ArrayList<String> sportsName = new ArrayList<>();
-    public static boolean isFirstTime = true;
+
 
 
     @Override
@@ -111,8 +114,6 @@ public class ProgressFragment extends Fragment{
         bundle = getArguments();
         if(bundle != null)
             wrapData();
-
-
         setData(v);
 
         /*Not used
@@ -128,58 +129,64 @@ public class ProgressFragment extends Fragment{
     private void loadData() {
         sharedpreferences = getActivity().getSharedPreferences(CalorieFragment.mypreference, Context.MODE_PRIVATE);
 
-        if(isFirstTime){
-            SharedPreferences.Editor editor = sharedpreferences.edit();
-            editor.clear();
-            editor.commit();
-            isFirstTime = false;
-        }
-        else{
 
-            height = sharedpreferences.getString(CalorieFragment.User_Height, "");
-            weight = sharedpreferences.getString(CalorieFragment.User_Weight, "");
-            String caloriesIntake = sharedpreferences.getString(CalorieFragment.User_Calories, "");
-            String carbIntake = sharedpreferences.getString(CalorieFragment.User_Carbs, "");
-            String proteinIntake = sharedpreferences.getString(CalorieFragment.User_Protein, "");
+
+        height = sharedpreferences.getString(CalorieFragment.User_Height, "");
+        weight = sharedpreferences.getString(CalorieFragment.User_Weight, "");
+        String caloriesIntake = sharedpreferences.getString(CalorieFragment.User_Calories, "");
+        String carbIntake = sharedpreferences.getString(CalorieFragment.User_Carbs, "");
+        String proteinIntake = sharedpreferences.getString(CalorieFragment.User_Protein, "");
 
             //Fragment B
-            sharedpreferences = getActivity().getSharedPreferences(CalorieFragment.mypreference, Context.MODE_PRIVATE);
+        sharedpreferences = getActivity().getSharedPreferences(CalorieFragment.mypreference, Context.MODE_PRIVATE);
 
-            if(!height.isEmpty())
-                heightInDouble = Double.valueOf(height);
+        if(!height.isEmpty())
+            heightInDouble = Double.valueOf(height);
 
-            if(!weight.isEmpty())
-                weightInDouble = Double.valueOf(weight);
+        if(!weight.isEmpty())
+            weightInDouble = Double.valueOf(weight);
 
-            if(!sharedpreferences.getString(CalorieFragment.User_Age, "").isEmpty())
-                age = sharedpreferences.getString(CalorieFragment.User_Age, "");
+        if(!sharedpreferences.getString(CalorieFragment.User_Age, "").isEmpty()){
+            age = sharedpreferences.getString(CalorieFragment.User_Age, "");
+            age_int = Integer.valueOf(age);
+        }
 
-            if(!caloriesIntake.isEmpty()){
-                calories = Double.valueOf(caloriesIntake);
-                carbs = Double.valueOf(carbIntake);
-                protein = Double.valueOf(proteinIntake);
-            }
 
-            fruitPortion = sharedpreferences.getInt(CalorieFragment.User_fruitPortion, 0);
+        if(!caloriesIntake.isEmpty()){
+            calories = Double.valueOf(caloriesIntake);
+            carbs = Double.valueOf(carbIntake);
+            protein = Double.valueOf(proteinIntake);
 
         }
+
+        fruitPortion = sharedpreferences.getInt(CalorieFragment.User_fruitPortion, 0);
+
+
+
+
+
     }
 
     private void init(View v) {
-         //display_day = v.findViewById(R.id.display_day);
-         display_sport = v.findViewById(R.id.display_sport);
-         display_reps = v.findViewById(R.id.display_reps);
-         display_cal_in = v.findViewById(R.id.display_calories_in);
-         display_cal = v.findViewById(R.id.display_calories);
-         tv_protein = v.findViewById(R.id.tv_protain);
-         tv_carb = v.findViewById(R.id.tv_carbon);
+        //display_day = v.findViewById(R.id.display_day);
+        display_sport = v.findViewById(R.id.display_sport);
+        display_reps = v.findViewById(R.id.display_reps);
+        display_cal_in = v.findViewById(R.id.display_calories_in);
+        display_cal = v.findViewById(R.id.display_calories);
+        tv_protein = v.findViewById(R.id.tv_protain);
+        tv_carb = v.findViewById(R.id.tv_carbon);
+        tv_calo=v.findViewById(R.id.tv_calor);
+        tv_veget=v.findViewById(R.id.tv_veget);
+        cal_pt=v.findViewById(R.id.cal_progress_text);
+        pro_pt=v.findViewById(R.id.pro_progress_text);
+        carb_pt=v.findViewById(R.id.carb_progress_text);
+        veget_pt=v.findViewById(R.id.veget_progress_text);
 
-            //Tv Calories is missing, update yourself
-         pb1 = v.findViewById(R.id.progressBar1);
-         pb2 = v.findViewById(R.id.progressBar2);
-         pb3 = v.findViewById(R.id.progressBar3);
 
-
+        pb1 = v.findViewById(R.id.progressBar1);
+        pb2 = v.findViewById(R.id.progressBar2);
+        pb3 = v.findViewById(R.id.progressBar3);
+        pb4=v.findViewById(R.id.progressBar4);
 
     }
 
@@ -196,21 +203,66 @@ public class ProgressFragment extends Fragment{
 
 
         display_reps.setText(String.format("%.2f", totalSecondsDoneInSports / 60.0));
-        display_cal_in.setText(String.format("%.2f", calories));
+        //display_cal_in.setText(String.format("%.2f", calories));
         display_cal.setText(String.format("%.2f", totalBurntCalories));
 
-        int targetProtein, targetCarbs;
-        targetProtein = (int)(0.8*weightInDouble);
-        targetCarbs = (int)(0.55*calories);
-        //Roughly
-        pb2.setMax(targetProtein);
-        pb2.setProgress((int) protein);
-        tv_protein.setText(String.valueOf(targetProtein));
 
+
+        cal_pt.setText(Double.toString(calories));
+        pro_pt.setText(Double.toString(protein));
+        carb_pt.setText(Double.toString(carbs));
+        veget_pt.setText(Integer.toString(fruitPortion));
+
+        int targetCal,targetProtein, targetCarbs,targetVeget;
+        int it_calo,it_pro,it_carbs,it_fp;
+
+        it_calo=(int)calories;
+        it_pro=(int)protein;
+        it_carbs=(int)carbs;
+        it_fp=(int)fruitPortion;
+
+        if(age_int<4){
+            targetCal=1000;
+        }else if(age_int>3 && age_int<9){
+            targetCal=2000;
+        }else if(age_int>8 && age_int<14){
+            targetCal=2600;
+        }else if(age_int>13 && age_int<19){
+            targetCal=3200;
+        }else if(age_int>18 && age_int<31){
+            targetCal=3000;
+        }else if(age_int>30 && age_int<51){
+            targetCal=3000;
+        }else{
+            targetCal=2800;
+        }
+
+        targetProtein = (int)(0.8*weightInDouble);
+        targetCarbs = (int)(0.55*targetCal);
+        targetVeget=(int)(4);
+
+        //Roughly
+        pb1.setMax(targetCal);
+        pb1.setProgress(it_calo);
+        pb1.setIndeterminate(false);
+        tv_calo.setText("Calories(take in)\nTarget: "+String.valueOf(targetCal)+" kcal");
+
+        pb2.setMax(targetProtein);
+        pb2.setProgress(it_pro);
+        pb2.setIndeterminate(false);
+        tv_protein.setText("Protein\nTarget: "+String.valueOf(targetProtein));
 
         pb3.setMax(targetCarbs);
-        pb3.setProgress((int)carbs);
-        tv_carb.setText(String.valueOf(targetCarbs));
+        pb3.setProgress(it_carbs);
+        pb3.setIndeterminate(false);
+        tv_carb.setText("Carbohydrates\nTarget: "+String.valueOf(targetCarbs));
+
+        pb4.setMax(targetVeget);
+        pb4.setProgress(it_fp);
+        pb4.setIndeterminate(false);
+        tv_veget.setText("Vegetable \n Target: "+targetVeget);
+
+
 
     }
 
@@ -223,8 +275,6 @@ public class ProgressFragment extends Fragment{
         //Since the data passed from fragment A is not directly usable
         if(caloriesBurnt!= null)
             processData();
-
-
     }
 
     private void processData() {
@@ -278,7 +328,7 @@ public class ProgressFragment extends Fragment{
 
             }
         }
-        
+
         recentSportDetermination(sportRecentDone);
 
     }

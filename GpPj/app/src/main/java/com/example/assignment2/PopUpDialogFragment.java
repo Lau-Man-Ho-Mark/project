@@ -1,6 +1,7 @@
 package com.example.assignment2;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,10 +33,14 @@ public class PopUpDialogFragment extends DialogFragment{
          super.onCreateView(inflater, container, savedInstanceState);
          View v = inflater.inflate(R.layout.popup, container, false);
 
+
         repsDoneNumber = v.findViewById(R.id.repsDoneNumber);
         burntCaloriesNumber = v.findViewById(R.id.burntCaloriesNumber);
 
-        //Setting the text
+        MediaPlayer player = MediaPlayer.create(v.getContext(), R.raw.cheering);
+        player.start();
+
+                //Setting the text
         repsDoneNumber.setText(String.valueOf(this.repsDone));
         burntCaloriesNumber.setText(String.format("%.2f", burntCalories));
 

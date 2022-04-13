@@ -42,7 +42,7 @@
                 android:ems="10"
                 android:fontFamily="sans-serif-condensed"
                 android:hint="@string/Hint_Height"
-                android:inputType="textPersonName"
+                android:inputType="numberDecimal"
                 android:textSize="20sp"
                 android:visibility="visible" />
 
@@ -62,7 +62,7 @@
                 android:ems="10"
                 android:fontFamily="sans-serif-condensed"
                 android:hint="@string/Hint_Weight"
-                android:inputType="textPersonName"
+                android:inputType="numberDecimal"
                 android:textSize="20sp"
                 android:visibility="visible" />
 
@@ -82,7 +82,7 @@
                 android:ems="10"
                 android:fontFamily="sans-serif-condensed"
                 android:hint="@string/Hint_Age"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="20sp"
                 android:visibility="visible" />
 
