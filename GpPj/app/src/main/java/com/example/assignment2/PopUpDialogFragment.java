@@ -18,13 +18,11 @@ public class PopUpDialogFragment extends DialogFragment{
     TextView xTv, burntCaloriesNumber, repsDoneNumber;
     double burntCalories;
     int repsDone;
-    Intent i;
 
     //Constructor
-    PopUpDialogFragment(double burntCalories, int repsDone, Intent i){
+    PopUpDialogFragment(double burntCalories, int repsDone){
         this.burntCalories = burntCalories;
         this.repsDone = repsDone;
-        this.i = i;
     }
 
     @Nullable
@@ -49,7 +47,8 @@ public class PopUpDialogFragment extends DialogFragment{
              @Override
              public void onClick(View view) {
                  //start Activity after the back button is pressed
-                 startActivity(i);
+                  getActivity().onBackPressed();
+                 //startActivity(i);
              }
          });
 

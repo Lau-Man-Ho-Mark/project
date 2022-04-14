@@ -300,13 +300,7 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
                 handler.removeCallbacks(currentSportRunnable);
 
                 saveData();
-                Intent i = new Intent(SportInstruction.this, MainActivity.class);
-                i.putStringArrayListExtra("repSecList", data);
-                i.putStringArrayListExtra("calorList", data2);
-                i.putStringArrayListExtra("sportstypeList", data3);
-
-
-                myDialog = new PopUpDialogFragment(currentBurntCalories, repsDoneTotal, i);
+                myDialog = new PopUpDialogFragment(currentBurntCalories, repsDoneTotal);
                 myDialog.show(getSupportFragmentManager(), "MyPopUpFrag");
 
                 break;

@@ -65,10 +65,25 @@ public class MyListAdapter extends ArrayAdapter<String> {
             @Override
             public void onClick(View v) {
                 double n1,n2,n3;
+
                 n1 = Double.parseDouble(Calories.get(position));
                 n2 = Double.parseDouble(Protein.get(position));
                 n3 = Double.parseDouble(Carbs.get(position));
-                Total_Minus(n1,n2,n3);
+                switch(Food.get(position)){
+                    case "Apple":
+                    case "Orange":
+                    case "Banana":
+                    case "Pear":
+                    case "Grape":
+                    case "Strawberry":
+                    case "Cherry":
+                        Total_Minus(1, n1,n2,n3);
+                        break;
+
+                    default:
+                        Total_Minus(n1,n2,n3);
+                        break;
+                }
                 Food.remove(position);
                 Quantity.remove(position);
                 Serving_size.remove(position);

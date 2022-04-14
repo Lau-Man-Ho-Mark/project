@@ -24,30 +24,16 @@ import java.util.Set;
 
 public class MainActivity extends AppCompatActivity{
 
-    static Locale locale1;
-    Intent i;
     private Fragment home, calorie, progress, setting;
     private BottomNavigationView bottomView;
-    Bundle bd;
-
-    ArrayList<String> repList = new ArrayList<>();
-    ArrayList<String> caloList = new ArrayList<>();
-    ArrayList<String> sportTypeList = new ArrayList<>();
+    public static boolean isFirstTime = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         cleanSharedPref();
-        i = getIntent();
-        repList =  i.getStringArrayListExtra("repSecList");
-        caloList =  i.getStringArrayListExtra("calorList");
-        sportTypeList = i.getStringArrayListExtra("sportstypeList");
-
-
         home = new HomeFragment();
         calorie = new CalorieFragment();
         progress = new ProgressFragment();
@@ -70,10 +56,19 @@ public class MainActivity extends AppCompatActivity{
     }
 
     private void cleanSharedPref() {
-        SharedPreferences preferences = getSharedPreferences(CalorieFragment.mypreference, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.clear();
-        editor.commit();
+        if(isFirstTime){
+            SharedPreferences preferences = getSharedPreferences(CalorieFragment.mypreference, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.clear();
+
+            preferences = getSharedPreferences(SportInstruction.SHARED_PREFERENCE, MODE_PRIVATE);
+            SharedPreferences.Editor editor2 = preferences.edit();
+            editor2.clear();
+
+            editor.commit();
+            editor2.commit();
+            isFirstTime = false;
+        }
 
     }
 
@@ -94,7 +89,6 @@ public class MainActivity extends AppCompatActivity{
                 break;
 
             case R.id.proFrag:
-               passData();
                 getSupportFragmentManager().
                         beginTransaction().
                         replace(R.id.frameLayout, progress).commit();
@@ -109,17 +103,5 @@ public class MainActivity extends AppCompatActivity{
         }
     }
 
-    private void passData() {
-
-        bd = new Bundle();
-        Bundle fragABundle = new Bundle();
-        fragABundle.putStringArrayList("repList", repList);
-        fragABundle.putStringArrayList("burntCaloriesList", caloList);
-        fragABundle.putStringArrayList("sportstypeList", sportTypeList);
-        bd.putBundle("fragA", fragABundle);
-
-        progress.setArguments(bd);
-
-    }
 
 }

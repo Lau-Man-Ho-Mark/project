@@ -65,18 +65,16 @@ public class ProgressFragment extends Fragment{
 
 
 
-
-    Bundle bundle;
     TextView display_day, display_sport, display_reps, display_cal_in, display_cal, tv_protein, tv_carb,tv_calo,tv_veget,cal_pt,pro_pt,carb_pt,veget_pt;
-    ProgressBar pb1, pb2, pb3,pb4;
+    ProgressBar pb1, pb2, pb3, pb4;
 
     //For containing the data from fragment A
-    ArrayList<String> caloriesBurnt = new ArrayList<>();
-    ArrayList<String> secondsDoneInSport = new ArrayList<>();
-    ArrayList<String> sportType = new ArrayList<>();
+    ArrayList<String> caloriesBurnt;
+    ArrayList<String> secondsDoneInSport;
+    ArrayList<String> sportType;
 
     //For the data from fragment B
-    SharedPreferences sharedpreferences;
+    SharedPreferences sharedpreferences, sharedpreferences2;
     String height;
     String weight;
     String age;
@@ -109,27 +107,36 @@ public class ProgressFragment extends Fragment{
         View v = inflater.inflate(R.layout.fragment_progress, container, false);
 
         init(v);
-        loadData();
-
-        bundle = getArguments();
-        if(bundle != null)
-            wrapData();
+        fragBData();
+        fragAData();
         setData(v);
-
-        /*Not used
-        SimpleDateFormat systime = new SimpleDateFormat("dd.MM.yyyy");
-        String currentDateandTime = systime.format(new Date());*/
-
 
         return v;
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_zodiac, container, false);
     }
 
-    private void loadData() {
+    private void fragAData() {
+        //Fragment A in shared preference approach
+        sharedpreferences2 = getActivity().getSharedPreferences(SportInstruction.SHARED_PREFERENCE, Context.MODE_PRIVATE);
+        if(sharedpreferences2.getStringSet(SportInstruction.CALO_LIST, null) == null){
+            //Dont do anything
+        }
+        else{
+            caloriesBurnt = new ArrayList<>();
+            secondsDoneInSport = new ArrayList<>();
+            sportType = new ArrayList<>();
+
+            caloriesBurnt.addAll(sharedpreferences2.getStringSet(SportInstruction.CALO_LIST, null));
+            sportType.addAll(sharedpreferences2.getStringSet(SportInstruction.TYPE_LIST, null));
+            secondsDoneInSport.addAll(sharedpreferences2.getStringSet(SportInstruction.REP_LIST, null));
+        }
+        if(caloriesBurnt!= null)
+            processData();
+    }
+
+    private void fragBData() {
         sharedpreferences = getActivity().getSharedPreferences(CalorieFragment.mypreference, Context.MODE_PRIVATE);
-
-
 
         height = sharedpreferences.getString(CalorieFragment.User_Height, "");
         weight = sharedpreferences.getString(CalorieFragment.User_Weight, "");
@@ -137,8 +144,6 @@ public class ProgressFragment extends Fragment{
         String carbIntake = sharedpreferences.getString(CalorieFragment.User_Carbs, "");
         String proteinIntake = sharedpreferences.getString(CalorieFragment.User_Protein, "");
 
-            //Fragment B
-        sharedpreferences = getActivity().getSharedPreferences(CalorieFragment.mypreference, Context.MODE_PRIVATE);
 
         if(!height.isEmpty())
             heightInDouble = Double.valueOf(height);
@@ -156,15 +161,8 @@ public class ProgressFragment extends Fragment{
             calories = Double.valueOf(caloriesIntake);
             carbs = Double.valueOf(carbIntake);
             protein = Double.valueOf(proteinIntake);
-
+            fruitPortion = sharedpreferences.getInt(CalorieFragment.User_fruitPortion, 0);
         }
-
-        fruitPortion = sharedpreferences.getInt(CalorieFragment.User_fruitPortion, 0);
-
-
-
-
-
     }
 
     private void init(View v) {
@@ -186,17 +184,21 @@ public class ProgressFragment extends Fragment{
         pb1 = v.findViewById(R.id.progressBar1);
         pb2 = v.findViewById(R.id.progressBar2);
         pb3 = v.findViewById(R.id.progressBar3);
-        pb4=v.findViewById(R.id.progressBar4);
+        pb4= v.findViewById(R.id.progressBar4);
 
     }
 
     private void setData(View v) {
+        setFragAData(v);
+        setFragBData(v);
+    }
 
+    private void setFragAData(View v) {
         //display_day.setText(day.get(position));
         for(int i=0; i<sportsName.size(); i++){
-            if(i == sportsName.size() - 1){
+            if(i == sportsName.size() - 1)
                 display_sport.append(sportsName.get(i));
-            }
+
             else
                 display_sport.append(sportsName.get(i) + ", ");
         }
@@ -206,84 +208,13 @@ public class ProgressFragment extends Fragment{
         //display_cal_in.setText(String.format("%.2f", calories));
         display_cal.setText(String.format("%.2f", totalBurntCalories));
 
-
-
-        cal_pt.setText(Double.toString(calories));
-        pro_pt.setText(Double.toString(protein));
-        carb_pt.setText(Double.toString(carbs));
-        veget_pt.setText(Integer.toString(fruitPortion));
-
-        int targetCal,targetProtein, targetCarbs,targetVeget;
-        int it_calo,it_pro,it_carbs,it_fp;
-
-        it_calo=(int)calories;
-        it_pro=(int)protein;
-        it_carbs=(int)carbs;
-        it_fp=(int)fruitPortion;
-
-        if(age_int<4){
-            targetCal=1000;
-        }else if(age_int>3 && age_int<9){
-            targetCal=2000;
-        }else if(age_int>8 && age_int<14){
-            targetCal=2600;
-        }else if(age_int>13 && age_int<19){
-            targetCal=3200;
-        }else if(age_int>18 && age_int<31){
-            targetCal=3000;
-        }else if(age_int>30 && age_int<51){
-            targetCal=3000;
-        }else{
-            targetCal=2800;
-        }
-
-        targetProtein = (int)(0.8*weightInDouble);
-        targetCarbs = (int)(0.55*targetCal);
-        targetVeget=(int)(4);
-
-        //Roughly
-        pb1.setMax(targetCal);
-        pb1.setProgress(it_calo);
-        pb1.setIndeterminate(false);
-        tv_calo.setText("Calories(take in)\nTarget: "+String.valueOf(targetCal)+" kcal");
-
-        pb2.setMax(targetProtein);
-        pb2.setProgress(it_pro);
-        pb2.setIndeterminate(false);
-        tv_protein.setText("Protein\nTarget: "+String.valueOf(targetProtein));
-
-        pb3.setMax(targetCarbs);
-        pb3.setProgress(it_carbs);
-        pb3.setIndeterminate(false);
-        tv_carb.setText("Carbohydrates\nTarget: "+String.valueOf(targetCarbs));
-
-        pb4.setMax(targetVeget);
-        pb4.setProgress(it_fp);
-        pb4.setIndeterminate(false);
-        tv_veget.setText("Vegetable \n Target: "+targetVeget);
-
-
-
     }
 
-    private void wrapData() {
-        //Fragment A
-        Bundle fragA = bundle.getBundle("fragA");
-        caloriesBurnt = fragA.getStringArrayList("burntCaloriesList");
-        sportType = fragA.getStringArrayList("sportstypeList");
-        secondsDoneInSport = fragA.getStringArrayList("repList");
-        //Since the data passed from fragment A is not directly usable
-        if(caloriesBurnt!= null)
-            processData();
-    }
 
     private void processData() {
         //Three things we want to represent
         totalBurntCalories = 0;
         totalSecondsDoneInSports = 0;
-
-        //sportsDoneRecently;
-
 
         for (String data: secondsDoneInSport){
             for(int i=0; i<data.length(); i++){
@@ -358,6 +289,107 @@ public class ProgressFragment extends Fragment{
                 default: break;
             }
         }
+    }
+
+    private void setFragBData(View v) {
+        cal_pt.setText(Double.toString(calories));
+        pro_pt.setText(Double.toString(protein));
+        carb_pt.setText(Double.toString(carbs));
+        veget_pt.setText(Integer.toString(fruitPortion));
+
+        int targetCal,targetProtein, targetCarbs,targetVeget;
+        int it_calo,it_pro,it_carbs,it_fp;
+
+
+
+
+
+        it_calo=(int)calories;
+        it_pro=(int)protein;
+        it_carbs=(int)carbs;
+        it_fp=(int)fruitPortion;
+        System.out.println(fruitPortion);
+
+
+        if(age_int<4){
+            targetCal=1000;
+        }else if(age_int>3 && age_int<9){
+            targetCal=2000;
+        }else if(age_int>8 && age_int<14){
+            targetCal=2600;
+        }else if(age_int>13 && age_int<19){
+            targetCal=3200;
+        }else if(age_int>18 && age_int<31){
+            targetCal=3000;
+        }else if(age_int>30 && age_int<51){
+            targetCal=3000;
+        }else{
+            targetCal=2800;
+        }
+
+
+        targetProtein = (int)(0.8 * weightInDouble);
+        targetCarbs = (int)(0.55 * targetCal);
+        targetVeget= 4;
+        //Roughly
+
+        if(sharedpreferences.contains(CalorieFragment.User_Calories)) {
+            pb1.setMax(targetCal);
+            pb1.setProgress(it_calo);
+            tv_calo.setText("Calories(take in)\nTarget: " + String.valueOf(targetCal) + " kcal");
+            pb1.post(new Runnable() {
+                @Override
+                public void run() {
+                    pb1.setProgress(it_calo);
+                }
+            });
+        }
+
+
+
+        if(sharedpreferences.contains(CalorieFragment.User_Protein)) {
+            pb2.setMax(targetProtein);
+            pb2.setProgress(it_pro);
+            tv_protein.setText("Protein\nTarget: " + String.valueOf(targetProtein));
+
+            pb2.post(new Runnable() {
+                @Override
+                public void run() {
+                    pb2.setProgress(it_pro);
+                }
+            });
+        }
+
+
+
+        if(sharedpreferences.contains(CalorieFragment.User_Carbs)) {
+            pb3.setMax(targetCarbs);
+            pb3.setProgress(it_carbs);
+            tv_carb.setText("Carbohydrates\nTarget: " + String.valueOf(targetCarbs));
+
+            pb3.post(new Runnable() {
+                @Override
+                public void run() {
+                    pb3.setProgress(it_carbs);
+                }
+            });
+        }
+
+
+
+        if(sharedpreferences.contains(CalorieFragment.User_fruitPortion)) {
+            pb4.setMax(targetVeget);
+            pb4.setProgress(it_fp);
+            tv_veget.setText("Vegetable \n Target: " + targetVeget);
+
+            pb4.post(new Runnable() {
+                @Override
+                public void run() {
+                    pb4.setProgress(it_fp);
+                }
+            });
+        }
+
     }
 
 
