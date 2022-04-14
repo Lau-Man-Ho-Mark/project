@@ -219,4 +219,8 @@
     <string name="Total_Carbs">0</string>
 
     <string name="Save">Save</string>
+
+    <string name="chinese"> Chinese</string>
+    <string name="darkMode"> Dark Mode</string>
+    <string name="searchSportVenue"><u>Search Sport Venues</u></string>
 </resources>

@@ -3,9 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android App/project-FragmentA/project-FragmentA/GpPj/app/src/main/res/drawable/circle.xml" value="0.1" />
-        <entry key="..\:/Android App/project-FragmentA/project-FragmentA/GpPj/app/src/main/res/layout/fragment_calorie.xml" value="0.2753623188405797" />
-        <entry key="..\:/Android App/project-FragmentA/project-FragmentA/GpPj/app/src/main/res/layout/fragment_progress.xml" value="0.33" />
         <entry key="..\:/Androidapplication/Assignment1/app/src/main/res/drawable/ic_bmi.xml" value="0.2814814814814815" />
         <entry key="..\:/Androidapplication/Assignment1/app/src/main/res/drawable/ic_home.xml" value="0.2814814814814815" />
         <entry key="..\:/Androidapplication/Assignment1/app/src/main/res/drawable/ic_zodiac.xml" value="0.396875" />
@@ -41,7 +38,7 @@
         <entry key="..\:/Git/Git repos/project/project/GpPj/app/src/main/res/layout/fragment_calorie.xml" value="0.24214517876489708" />
         <entry key="..\:/Git/Git repos/project/project/GpPj/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Git/Git repos/project/project/GpPj/app/src/main/res/layout/fragment_progress.xml" value="0.24166666666666667" />
-        <entry key="..\:/Git/Git repos/project/project/GpPj/app/src/main/res/layout/fragment_setting.xml" value="0.32407407407407407" />
+        <entry key="..\:/Git/Git repos/project/project/GpPj/app/src/main/res/layout/fragment_setting.xml" value="0.21428571428571427" />
         <entry key="..\:/Git/Git repos/project/project/GpPj/app/src/main/res/layout/popup.xml" value="0.18518518518518517" />
         <entry key="..\:/GpPj_alberVer/app/src/main/res/layout/fragment_progress.xml" value="0.1" />
         <entry key="..\:/GpPj_alberVer/app/src/main/res/layout/popup.xml" value="0.24351851851851852" />
@@ -61,6 +58,9 @@
         <entry key="..\:/Users/s7556/Desktop/GpPj/app/src/main/res/layout/fragment_progress.xml" value="0.2692502532928065" />
         <entry key="..\:/Users/s7556/Desktop/GpPj/app/src/main/res/layout/fragment_setting.xml" value="0.5430253623188406" />
         <entry key="..\:/Users/s7556/Desktop/GpPj/app/src/main/res/layout/popup.xml" value="0.2692502532928065" />
+        <entry key="..\:/Users/user/project/Av4/project-FragmentA/project-FragmentA/GpPj/app/src/main/res/drawable/circle.xml" value="0.1605" />
+        <entry key="..\:/Users/user/project/Av4/project-FragmentA/project-FragmentA/GpPj/app/src/main/res/drawable/circular_progressbar.xml" value="0.1605" />
+        <entry key="..\:/Users/user/project/Av4/project-FragmentA/project-FragmentA/GpPj/app/src/main/res/layout/fragment_progress.xml" value="0.30520833333333336" />
       </map>
     </option>
   </component>

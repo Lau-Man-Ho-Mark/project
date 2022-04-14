@@ -114,7 +114,6 @@
                                         android:layout_height="match_parent"
                                         android:background="@drawable/circle"
                                         android:indeterminate="false"
-                                        android:progress="0"
                                         android:progressDrawable="@drawable/circular_progressbar"
                                         android:textAlignment="center" />
 
@@ -185,7 +184,6 @@
                                         android:layout_height="match_parent"
                                         android:background="@drawable/circle"
                                         android:indeterminate="false"
-                                        android:progress="0"
                                         android:progressDrawable="@drawable/circular_progressbar"
                                         android:textAlignment="center" />
 
@@ -216,7 +214,6 @@
                                         android:layout_height="match_parent"
                                         android:background="@drawable/circle"
                                         android:indeterminate="false"
-                                        android:progress="0"
                                         android:progressDrawable="@drawable/circular_progressbar"
                                         android:textAlignment="center" />
 

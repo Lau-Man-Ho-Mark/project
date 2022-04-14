@@ -273,14 +273,26 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
                 android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/ShowMap"
+                <TextView
+                    android:layout_marginBottom="5dp"
+                    android:textStyle="bold|italic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Sport Venues Nearby" />
+                    android:text="@string/searchSportVenue"
+                    android:textSize="16sp" />
+
+                <ImageButton
+                    android:layout_marginBottom="70dp"
+                    android:id="@+id/ShowMap"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/fadedOrange"
+                    android:src="@android:drawable/ic_menu_search" />
+
+
 
 
             </LinearLayout>
@@ -288,7 +300,7 @@
 
         </LinearLayout>
 
-</ScrollView>
+    </ScrollView>
 
 
 

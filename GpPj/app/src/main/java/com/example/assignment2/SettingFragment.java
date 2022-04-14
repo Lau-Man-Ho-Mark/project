@@ -2,11 +2,17 @@ package com.example.assignment2;
 
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,9 +27,34 @@ import java.util.Locale;
  * Use the {@link SettingFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SettingFragment extends Fragment {
+public class SettingFragment extends Fragment implements CompoundButton.OnCheckedChangeListener {
 
-    Switch switchy;
+    Switch switchy, switchy2;
+    Locale locale;
+
+    public interface settingData{
+        public void settingData(boolean chineseMode, boolean darkMode);
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            listener = (settingData) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement onSomeEventListener");
+        }
+    }
+
+
+    settingData listener;
+
+
+    public static final String SETTINGPREFERENCE = "settingPreference";
+    public static final String DARKMODE = "darkMode";
+    public static final String CHINESE = "chinese";
+    SharedPreferences preferences;
+    boolean forChinese, forDarkMode;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -72,24 +103,60 @@ public class SettingFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_setting, container, false);
 
-        switchy = v.findViewById(R.id.switchy);
-        /*
-        switchy.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
-                    listener.passLocale(b);
-                }
-                else{
-                    listener.passLocale(!b);
-                }
+        init(v);
+        preferences = getActivity().getSharedPreferences(SETTINGPREFERENCE, Context.MODE_PRIVATE);
+        forChinese = preferences.getBoolean(CHINESE, false);
+        forDarkMode = preferences.getBoolean(DARKMODE, false);
+        setData();
 
-            }
-        });*/
+        listener.settingData(forChinese, forDarkMode);
+
+
 
         // Inflate the layout for this fragment
         return v;
     }
 
 
+    private void setData() {
+
+        switchy.setChecked(forChinese);
+        switchy2.setChecked(forDarkMode);
+    }
+
+    private void init(View v) {
+        switchy = v.findViewById(R.id.switchy);
+        switchy2 = v.findViewById(R.id.darkMode);
+
+        switchy.setOnCheckedChangeListener(this);
+        switchy2.setOnCheckedChangeListener(this);
+    }
+
+
+
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+        switch(compoundButton.getId()){
+            case R.id.switchy:
+                SharedPreferences.Editor editor = preferences.edit();
+                forChinese = b;
+                editor.putBoolean(CHINESE, b);
+                editor.commit();
+                //System.out.println(preferences.getBoolean(CHINESE, true));
+                break;
+
+            case R.id.darkMode:
+                editor = preferences.edit();
+                forDarkMode = b;
+                editor.putBoolean(DARKMODE, b);
+                editor.commit();
+                //System.out.println(preferences.getBoolean(DARKMODE, true));
+                break;
+        }
+
+
+        listener.settingData(forChinese, forDarkMode);
+
+    }
 }

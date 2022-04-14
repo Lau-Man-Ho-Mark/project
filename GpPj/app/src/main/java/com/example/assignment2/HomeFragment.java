@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 
@@ -22,7 +23,7 @@ import android.widget.ScrollView;
  */
 public class HomeFragment extends Fragment implements View.OnClickListener {
     ImageView iv1, iv2, iv3, iv4, iv5, iv6;
-    Button showMap;
+    ImageButton showMap;
     ScrollView sv1;
 
 
