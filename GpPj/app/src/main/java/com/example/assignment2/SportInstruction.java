@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Instrumentation;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Random;
 import java.util.Set;
 
 public class SportInstruction extends AppCompatActivity implements View.OnClickListener {
@@ -28,6 +30,7 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
     Runnable currentSportRunnable;
     TextView instructionTV, caloriesBurnt, repsDone;
     ArrayList<Integer> pictureList;
+    MediaPlayer soundPlayer;
     boolean isRunning = false;
 
 
@@ -41,6 +44,8 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
     ArrayList<String> data = new ArrayList<String>();
     ArrayList<String> data2 = new ArrayList<String>();
     ArrayList<String> data3 = new ArrayList<String>();
+
+    int soundEffects[] = {R.raw.go_go_go, R.raw.keep_going, R.raw.lets_go, R.raw.oh_yeah, R.raw.woo};
 
 
     @Override
@@ -262,12 +267,17 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
                 else{
                     //Since two moves = 1 reps.
                     //Change the times >= for more reps. Usually 12 reps for 1 move
+                    //if we want the image to smooth represent 12 reps, the condition puts 25
                     if(times >= 11){
+                        Random random = new Random();
+                        soundPlayer = MediaPlayer.create(getApplicationContext(), soundEffects[random.nextInt(soundEffects.length)]);
+                        soundPlayer.start();
+
                         times = 0;
                         i+=2;
                         //Wait 5 seconds here
                         try {
-                            Thread.sleep(5000);
+                            Thread.sleep(2000);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }

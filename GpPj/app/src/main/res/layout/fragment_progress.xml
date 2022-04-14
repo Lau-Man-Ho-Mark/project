@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@color/purple_700"
-            android:text="Summary"
+            android:text="Daily Summary"
             android:textAlignment="center"
             android:textColor="@color/Azure"
             android:textSize="24sp"
@@ -153,7 +153,7 @@
                                     android:layout_width="131dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Protain\nTarget: 0.8 per kilo weight"
+                                    android:text="Protain\nTarget: "
                                     android:textAlignment="center" />
 
                             </LinearLayout>
@@ -247,7 +247,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Carbohydrates\nTarget: 55% of total calor"
+                                    android:text="Carbohydrates\nTarget: "
                                     android:textAlignment="center" />
 
                                 <TextView
@@ -255,7 +255,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Vegetable \n Target: "
+                                    android:text="Vegetable \n Target: 4"
                                     android:textAlignment="center" />
 
                             </LinearLayout>
@@ -275,13 +275,14 @@
 
                         <TextView
                             android:id="@+id/typeofsport"
-                            android:layout_width="10dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Type of Sport:"
-                            android:textSize="17sp" />
+                            android:text="Recent Sport Done:"
+                            android:textSize="16sp" />
 
                         <TextView
+                            android:textSize="16sp"
+                            android:layout_marginLeft="7dp"
                             android:id="@+id/display_sport"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -297,13 +298,14 @@
 
                         <TextView
                             android:id="@+id/reps"
-                            android:layout_width="10dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="Minutes Done in Sport:"
-                            android:textSize="17sp" />
+                            android:textSize="16sp" />
 
                         <TextView
+                            android:textSize="16sp"
+                            android:layout_marginLeft="7dp"
                             android:id="@+id/display_reps"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -324,9 +326,10 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Calories (take in):"
-                            android:textSize="17sp" />
+                            android:textSize="16sp" />
 
                         <TextView
+                            android:textSize="16sp"
                             android:id="@+id/display_calories_in"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -342,17 +345,18 @@
 
                         <TextView
                             android:id="@+id/calories"
-                            android:layout_width="10dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="Calories (burn out):"
-                            android:textSize="17sp" />
+                            android:textSize="16sp" />
 
                         <TextView
+                            android:layout_marginLeft="7dp"
                             android:id="@+id/display_calories"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            android:textSize="16sp"/>
                     </LinearLayout>
 
                 </LinearLayout>
