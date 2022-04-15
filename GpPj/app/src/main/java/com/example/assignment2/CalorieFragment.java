@@ -17,6 +17,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
@@ -190,8 +191,11 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
 
 
         Total_Calories = v.findViewById(R.id.Total_Calories);
+        Total_Calories.setText(String.valueOf((int)Total_calories));
         Total_Protein = v.findViewById(R.id.Total_Protein);
+        Total_Protein.setText(String.valueOf((int)Total_protein));
         Total_Carbs = v.findViewById(R.id.Total_Carbs);
+        Total_Carbs.setText(String.valueOf((int)Total_carbs));
 
         Total_List = v.findViewById(R.id.Total_List);
         Total_list_List = v.findViewById(R.id.Total_list_List);
@@ -1572,7 +1576,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    public static void Total_Add(int isFruit, double Add_Calories,double Add_Protein,double Add_Carbs){
+    public void Total_Add(int isFruit, double Add_Calories,double Add_Protein,double Add_Carbs){
         Total_calories += Add_Calories;
         Total_protein += Add_Protein;
         Total_carbs += Add_Carbs;
@@ -1580,7 +1584,6 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Total_Protein.setText(String.valueOf((int)Total_protein));
         Total_Carbs.setText(String.valueOf((int)Total_carbs));
         fruitPortion+=1;
-
 
         if ( Total_calories != 0 ) {
             Total_List.setVisibility(View.VISIBLE);
@@ -1599,20 +1602,14 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Total_Carbs.setText(String.valueOf((int)Total_carbs));
         fruitPortion-=1;
 
-        if ( Total_calories == 0 ) {
-            Total_List.setVisibility(View.GONE);
-            Total_list_List.setVisibility(View.GONE);
-            Total_title.setVisibility(View.GONE);
-        }
     }
-    public static void Total_Add (double Add_Calories,double Add_Protein,double Add_Carbs){
+    public void Total_Add (double Add_Calories,double Add_Protein,double Add_Carbs){
         Total_calories += Add_Calories;
         Total_protein += Add_Protein;
         Total_carbs += Add_Carbs;
         Total_Calories.setText(String.valueOf((int)Total_calories));
         Total_Protein.setText(String.valueOf((int)Total_protein));
         Total_Carbs.setText(String.valueOf((int)Total_carbs));
-
 
         if ( Total_calories != 0 ) {
             Total_List.setVisibility(View.VISIBLE);
@@ -1629,11 +1626,5 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Total_Protein.setText(String.valueOf((int)Total_protein));
         Total_Carbs.setText(String.valueOf((int)Total_carbs));
 
-
-        if ( Total_calories == 0 ) {
-            Total_List.setVisibility(View.GONE);
-            Total_list_List.setVisibility(View.GONE);
-            Total_title.setVisibility(View.GONE);
-        }
     }
 }

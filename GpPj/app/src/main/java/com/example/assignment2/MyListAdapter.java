@@ -77,11 +77,11 @@ public class MyListAdapter extends ArrayAdapter<String> {
                     case "Grape":
                     case "Strawberry":
                     case "Cherry":
-                        Total_Minus(1, n1,n2,n3);
+                        CalorieFragment.Total_Minus(1, n1,n2,n3);
                         break;
 
                     default:
-                        Total_Minus(n1,n2,n3);
+                        CalorieFragment.Total_Minus(n1,n2,n3);
                         break;
                 }
                 Food.remove(position);

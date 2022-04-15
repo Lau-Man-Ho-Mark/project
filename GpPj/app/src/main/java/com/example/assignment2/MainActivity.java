@@ -24,7 +24,7 @@ import java.util.Set;
 
 public class MainActivity extends AppCompatActivity{
 
-    private Fragment home, calorie, progress, setting;
+    private Fragment home, calorie, progress;
     private BottomNavigationView bottomView;
     public static boolean isFirstTime = true;
 
@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity{
         home = new HomeFragment();
         calorie = new CalorieFragment();
         progress = new ProgressFragment();
-        setting = new SettingFragment();
-
         changeFragment(R.id.homeFrag);
         //Home fragment is always the first page before the bottom navigation items are being selected
 
@@ -92,12 +90,6 @@ public class MainActivity extends AppCompatActivity{
                 getSupportFragmentManager().
                         beginTransaction().
                         replace(R.id.frameLayout, progress).commit();
-                break;
-
-            case R.id.setFrag:
-                getSupportFragmentManager().
-                        beginTransaction().
-                        replace(R.id.frameLayout, setting).commit();
                 break;
 
         }

@@ -1,32 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/teal_200"
+    android:background="#c5cbe1"
+    android:id="@+id/scrollv1"
     tools:context=".HomeFragment">
 
 
-    <TextView
-
-        android:textColor="@color/black"
-        android:background="@color/lemonchiffon"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/titleTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:text=" Sport Guide with Posture Instruction "
-        android:textSize="18sp" />
-
-    <ScrollView
-        android:id="@+id/scrollv1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/titleTV">
-
         <LinearLayout
+            android:layout_marginTop="50dp"
             android:id="@+id/sv1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -55,6 +39,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
                             android:id="@+id/sport1"
                             android:layout_width="150dp"
                             android:layout_height="120dp"
@@ -68,9 +53,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:text="Home gym"
+                            android:text="Home Gym"
                             android:textColor="@color/black"
-                            android:textStyle="bold" />
+                            android:textStyle="bold|italic" />
 
 
                     </LinearLayout>
@@ -94,6 +79,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
                             android:id="@+id/sport2"
                             android:layout_width="150dp"
                             android:layout_height="120dp"
@@ -107,9 +93,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:text="Gym with equipment"
+                            android:text="Gym with Equipment"
                             android:textColor="@color/black"
-                            android:textStyle="bold" />
+                            android:textStyle="bold|italic" />
 
                     </LinearLayout>
 
@@ -132,6 +118,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
                             android:id="@+id/sport3"
                             android:layout_width="150dp"
                             android:layout_height="120dp"
@@ -145,9 +132,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:text="Chest training"
+                            android:text="Chest Training"
                             android:textColor="@color/black"
-                            android:textStyle="bold" />
+                            android:textStyle="bold|italic" />
 
                     </LinearLayout>
 
@@ -170,6 +157,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
                             android:id="@+id/sport4"
                             android:layout_width="150dp"
                             android:layout_height="120dp"
@@ -183,9 +171,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:text="Leg day"
+                            android:text="Leg Day"
                             android:textColor="@color/black"
-                            android:textStyle="bold" />
+                            android:textStyle="bold|italic" />
 
                     </LinearLayout>
 
@@ -208,6 +196,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
                             android:id="@+id/sport5"
                             android:layout_width="150dp"
                             android:layout_height="120dp"
@@ -223,7 +212,7 @@
                             android:layout_gravity="center_horizontal"
                             android:text="Yoga"
                             android:textColor="@color/black"
-                            android:textStyle="bold" />
+                            android:textStyle="bold|italic" />
 
                     </LinearLayout>
 
@@ -246,6 +235,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
                             android:id="@+id/sport6"
                             android:layout_width="150dp"
                             android:layout_height="120dp"
@@ -259,9 +249,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:text="Warm up"
+                            android:text="Warm Up"
                             android:textColor="@color/black"
-                            android:textStyle="bold" />
+                            android:textStyle="bold|italic" />
 
                     </LinearLayout>
 
@@ -276,23 +266,39 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_marginBottom="5dp"
-                    android:textStyle="bold|italic"
-                    android:layout_width="wrap_content"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv7"
+                    android:layout_width="140dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/searchSportVenue"
-                    android:textSize="16sp" />
+                    android:layout_marginBottom="120dp"
+                    android:backgroundTint="#ffd1c8"
+                    app:cardCornerRadius="20dp">
 
-                <ImageButton
-                    android:layout_marginBottom="70dp"
-                    android:id="@+id/ShowMap"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:background="@color/fadedOrange"
-                    android:src="@android:drawable/ic_menu_search" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
+                        <ImageButton
+                            android:layout_gravity="center_horizontal"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            android:id="@+id/ShowMap"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:src="@android:drawable/ic_menu_search" />
 
+                        <TextView
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/black"
+                            android:textStyle="bold|italic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/searchSportVenue"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
 
 
             </LinearLayout>
@@ -301,8 +307,3 @@
         </LinearLayout>
 
     </ScrollView>
-
-
-
-
-</RelativeLayout>

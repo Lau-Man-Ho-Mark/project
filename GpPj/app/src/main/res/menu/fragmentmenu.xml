@@ -15,9 +15,4 @@
         android:title="Progress"
         android:icon="@drawable/ic_baseline_article_24">
     </item>
-
-    <item android:id="@+id/setFrag"
-        android:title="Setting"
-        android:icon="@drawable/ic_baseline_settings_24">
-    </item>
 </menu>

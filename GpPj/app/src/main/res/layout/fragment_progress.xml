@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="1"
-    android:background="@color/lemonchiffon"
+    android:background="#34eba1"
     tools:context=".ProgressFragment">
 
     <LinearLayout
@@ -31,8 +31,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
-            android:layout_marginBottom="80dp"
-            android:background="@color/white"
+            android:layout_marginBottom="50dp"
             app:cardCornerRadius="5dp">>
 
 
@@ -141,19 +140,21 @@
                                 android:weightSum="2">
 
                                 <TextView
+                                    android:textColor="@color/black"
                                     android:id="@+id/tv_calor"
                                     android:layout_width="139dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Calories(take in)\nTarget: 2400kcal"
+                                    android:text="Calories(Digest)\nTarget: 2800kcal"
                                     android:textAlignment="center" />
 
                                 <TextView
+                                    android:textColor="@color/black"
                                     android:id="@+id/tv_protain"
                                     android:layout_width="131dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Protain\nTarget: "
+                                    android:text="Protein\nTarget: "
                                     android:textAlignment="center" />
 
                             </LinearLayout>
@@ -243,6 +244,7 @@
                                 android:orientation="horizontal">
 
                                 <TextView
+                                    android:textColor="@color/black"
                                     android:id="@+id/tv_carbon"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -251,11 +253,12 @@
                                     android:textAlignment="center" />
 
                                 <TextView
+                                    android:textColor="@color/black"
                                     android:id="@+id/tv_veget"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Vegetable \n Target: 4"
+                                    android:text="Fruit Portion \n Target: 4"
                                     android:textAlignment="center" />
 
                             </LinearLayout>
@@ -274,6 +277,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textColor="@color/black"
                             android:id="@+id/typeofsport"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -281,6 +285,7 @@
                             android:textSize="16sp" />
 
                         <TextView
+                            android:textColor="@color/black"
                             android:textSize="16sp"
                             android:layout_marginLeft="7dp"
                             android:id="@+id/display_sport"
@@ -297,6 +302,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textColor="@color/black"
                             android:id="@+id/reps"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -304,6 +310,7 @@
                             android:textSize="16sp" />
 
                         <TextView
+                            android:textColor="@color/black"
                             android:textSize="16sp"
                             android:layout_marginLeft="7dp"
                             android:id="@+id/display_reps"
@@ -344,6 +351,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textColor="@color/black"
                             android:id="@+id/calories"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -351,6 +359,7 @@
                             android:textSize="16sp" />
 
                         <TextView
+                            android:textColor="@color/black"
                             android:layout_marginLeft="7dp"
                             android:id="@+id/display_calories"
                             android:layout_width="wrap_content"
@@ -358,7 +367,6 @@
                             android:layout_weight="1"
                             android:textSize="16sp"/>
                     </LinearLayout>
-
                 </LinearLayout>
             </ScrollView>
 

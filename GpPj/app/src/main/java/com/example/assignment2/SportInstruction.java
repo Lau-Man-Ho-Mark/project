@@ -12,6 +12,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,7 +27,7 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
     int sport, repsDoneTotal;
     double  currentBurntCalories = 0;
     Handler handler;
-    Button stopBtn, startBtn;
+    ImageButton stopBtn, startBtn;
     Runnable currentSportRunnable;
     TextView instructionTV, caloriesBurnt, repsDone;
     ArrayList<Integer> pictureList;
@@ -306,13 +307,15 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.stopBtn:
-                isRunning = false;
-                handler.removeCallbacks(currentSportRunnable);
+                if(currentBurntCalories>0.0){
+                    isRunning = false;
+                    handler.removeCallbacks(currentSportRunnable);
 
-                saveData();
-                myDialog = new PopUpDialogFragment(currentBurntCalories, repsDoneTotal);
-                myDialog.show(getSupportFragmentManager(), "MyPopUpFrag");
+                    saveData();
+                    myDialog = new PopUpDialogFragment(currentBurntCalories, repsDoneTotal);
+                    myDialog.show(getSupportFragmentManager(), "MyPopUpFrag");
 
+                }
                 break;
 
             case R.id.startBtn:

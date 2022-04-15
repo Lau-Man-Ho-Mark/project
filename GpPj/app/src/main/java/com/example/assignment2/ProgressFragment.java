@@ -185,7 +185,6 @@ public class ProgressFragment extends Fragment{
         pb2 = v.findViewById(R.id.progressBar2);
         pb3 = v.findViewById(R.id.progressBar3);
         pb4= v.findViewById(R.id.progressBar4);
-
     }
 
     private void setData(View v) {
@@ -205,6 +204,9 @@ public class ProgressFragment extends Fragment{
 
 
         display_reps.setText(String.format("%.2f", totalSecondsDoneInSports / 60.0));
+
+
+
         //display_cal_in.setText(String.format("%.2f", calories));
         display_cal.setText(String.format("%.2f", totalBurntCalories));
 
@@ -292,26 +294,16 @@ public class ProgressFragment extends Fragment{
     }
 
     private void setFragBData(View v) {
-        cal_pt.setText(Double.toString(calories));
-        pro_pt.setText(Double.toString(protein));
-        carb_pt.setText(Double.toString(carbs));
-        veget_pt.setText(Integer.toString(fruitPortion));
 
         int targetCal,targetProtein, targetCarbs,targetVeget;
         int it_calo,it_pro,it_carbs,it_fp;
-
-
-
-
 
         it_calo=(int)calories;
         it_pro=(int)protein;
         it_carbs=(int)carbs;
         it_fp=(int)fruitPortion;
-        System.out.println(fruitPortion);
 
-
-        if(age_int<4){
+        if(age_int<4 && age_int!=0){
             targetCal=1000;
         }else if(age_int>3 && age_int<9){
             targetCal=2000;
@@ -331,6 +323,17 @@ public class ProgressFragment extends Fragment{
         targetProtein = (int)(0.8 * weightInDouble);
         targetCarbs = (int)(0.55 * targetCal);
         targetVeget= 4;
+
+        cal_pt.setText(String.format("%.2f", (calories/targetCal)*100) + "%");
+
+        if(targetProtein==0){
+            pro_pt.setText("0.00%");
+        }
+        else
+            pro_pt.setText(String.format("%.2f", (protein/targetProtein)*100)+ "%");
+
+        carb_pt.setText(String.format("%.2f", (carbs/targetCarbs)*100)+ "%");
+        veget_pt.setText( String.format("%.2f", (fruitPortion/4.0) * 100)+ "%");
         //Roughly
 
         if(sharedpreferences.contains(CalorieFragment.User_Calories)) {

@@ -222,5 +222,5 @@
 
     <string name="chinese"> Chinese</string>
     <string name="darkMode"> Dark Mode</string>
-    <string name="searchSportVenue"><u>Search Sport Venues</u></string>
+    <string name="searchSportVenue">Search Sport Venue</string>
 </resources>
