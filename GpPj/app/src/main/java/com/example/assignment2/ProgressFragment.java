@@ -65,8 +65,8 @@ public class ProgressFragment extends Fragment{
 
 
 
-    TextView display_day, display_sport, display_reps, display_cal_in, display_cal, tv_protein, tv_carb,tv_calo,tv_veget,cal_pt,pro_pt,carb_pt,veget_pt;
-    ProgressBar pb1, pb2, pb3, pb4;
+    TextView display_sport, display_reps, display_cal_in, display_cal, tv_protein, tv_carb,tv_calo,tv_veget,cal_pt,pro_pt,carb_pt,veget_pt, minuteDoneTv, burntIntakeCaloriesTV;
+    ProgressBar pb1, pb2, pb3, pb4, pb5, pb6;
 
     //For containing the data from fragment A
     ArrayList<String> caloriesBurnt;
@@ -110,10 +110,37 @@ public class ProgressFragment extends Fragment{
         fragBData();
         fragAData();
         setData(v);
-
+        setLinearProgressBarData();
         return v;
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_zodiac, container, false);
+    }
+
+    private void setLinearProgressBarData() {
+        //Minutes done in sport
+        pb5.post(new Runnable() {
+            @Override
+            public void run() {
+                pb5.setMax(1800);
+                pb5.setProgress((int) totalSecondsDoneInSports);
+                pb5.setVisibility(View.VISIBLE);
+
+            }
+        });
+        if(totalSecondsDoneInSports!=0.0)
+            minuteDoneTv.setText(String.format("%.2f", (totalSecondsDoneInSports/1800.0)*100) + "%");
+
+        //Burnt calories ratio and intake ratio
+        pb6.post(new Runnable() {
+            @Override
+            public void run() {
+                pb6.setMax((int) calories);
+                pb6.setProgress((int) totalBurntCalories);
+                pb6.setVisibility(View.VISIBLE);
+            }
+        });
+        if(calories!=0.0)
+            burntIntakeCaloriesTV.setText(String.format("%.2f", (totalBurntCalories / calories)*100) + "%");
     }
 
     private void fragAData() {
@@ -179,12 +206,18 @@ public class ProgressFragment extends Fragment{
         pro_pt=v.findViewById(R.id.pro_progress_text);
         carb_pt=v.findViewById(R.id.carb_progress_text);
         veget_pt=v.findViewById(R.id.veget_progress_text);
+        minuteDoneTv = v.findViewById(R.id.minutesDoneProgressTV);
+        burntIntakeCaloriesTV = v.findViewById(R.id.burntIntakeCaloriesRatioTV);
 
 
         pb1 = v.findViewById(R.id.progressBar1);
         pb2 = v.findViewById(R.id.progressBar2);
         pb3 = v.findViewById(R.id.progressBar3);
         pb4= v.findViewById(R.id.progressBar4);
+        pb5 = v.findViewById(R.id.pb5);
+        pb5.setScaleY(3f);
+        pb6= v.findViewById(R.id.pb6);
+        pb6.setScaleY(3f);
     }
 
     private void setData(View v) {
