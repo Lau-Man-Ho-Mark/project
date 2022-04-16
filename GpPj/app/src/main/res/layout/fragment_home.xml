@@ -285,7 +285,7 @@
                             android:id="@+id/ShowMap"
                             android:layout_width="120dp"
                             android:layout_height="wrap_content"
-                            android:background="@null"
+                            android:background="#ffd1c8"
                             android:src="@android:drawable/ic_menu_search" />
 
                         <TextView

@@ -23,7 +23,7 @@ import java.util.Set;
 
 public class SportInstruction extends AppCompatActivity implements View.OnClickListener {
     PopUpDialogFragment myDialog;
-    ImageView instructionImage;
+    ImageView instructionImage, star1, star2, star3;
     int sport, repsDoneTotal;
     double  currentBurntCalories = 0;
     Handler handler;
@@ -89,6 +89,9 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
         repsDone = findViewById(R.id.repsDone);
         startBtn = findViewById(R.id.startBtn);
         stopBtn = findViewById(R.id.stopBtn);
+        star1 = findViewById(R.id.star1);
+        star2 = findViewById(R.id.star2);
+        star3 = findViewById(R.id.star3);
         startBtn.setOnClickListener(this);
         stopBtn.setOnClickListener(this);
     }
@@ -96,25 +99,44 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
 
     private void playSportInstruction(int sport) {
         double caloriesBurntPerRep = 0;
+        int repNumber = 0;
         switch (sport)
         {
             case R.id.sport1:
+                repNumber = 5;
                 caloriesBurntPerRep = 0.8;
+                star1.setVisibility(View.VISIBLE);
+                star2.setVisibility(View.VISIBLE);
                 break;
             case R.id.sport2:
+                repNumber = 5;
                 caloriesBurntPerRep = 1.2;
+                star1.setVisibility(View.VISIBLE);
+                star2.setVisibility(View.VISIBLE);
                 break;
             case R.id.sport3:
+                repNumber = 8;
                 caloriesBurntPerRep = 1.4;
+                star1.setVisibility(View.VISIBLE);
+                star2.setVisibility(View.VISIBLE);
+                star3.setVisibility(View.VISIBLE);
                 break;
             case R.id.sport4:
+                repNumber = 8;
                 caloriesBurntPerRep = 2.4;
+                star1.setVisibility(View.VISIBLE);
+                star2.setVisibility(View.VISIBLE);
+                star3.setVisibility(View.VISIBLE);
                 break;
             case R.id.sport5:
+                repNumber = 8;
                 caloriesBurntPerRep = 0.3;
+                star1.setVisibility(View.VISIBLE);
                 break;
             case R.id.sport6:
+                repNumber = 10;
                 caloriesBurntPerRep = 0.2;
+                star1.setVisibility(View.VISIBLE);
                 break;
         }
 
@@ -124,42 +146,42 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
                 instructionTV.setText(R.string.sport1Instruc);
                 repsDoneTotal = 0;
                 sport1();
-                currentSportRunnable = createRunnable(pictureList, caloriesBurntPerRep);
+                currentSportRunnable = createRunnable(pictureList, caloriesBurntPerRep, (repNumber*2)+1);
                 break;
 
             case R.id.sport2:
                 instructionTV.setText(R.string.sport2Instruc);
                 repsDoneTotal = 0;
                 sport2();
-                currentSportRunnable = createRunnable(pictureList, caloriesBurntPerRep);
+                currentSportRunnable = createRunnable(pictureList, caloriesBurntPerRep,(repNumber*2)+1);
                 break;
 
             case R.id.sport3:
                 instructionTV.setText(R.string.sport3Instruc);
                 repsDoneTotal = 0;
                 sport3();
-                currentSportRunnable = createRunnable(pictureList, caloriesBurntPerRep);
+                currentSportRunnable = createRunnable(pictureList, caloriesBurntPerRep, (repNumber*2)+1);
                 break;
 
             case R.id.sport4:
                 instructionTV.setText(R.string.sport4Instruc);
                 repsDoneTotal = 0;
                 sport4();
-                currentSportRunnable = createRunnable(pictureList, caloriesBurntPerRep);
+                currentSportRunnable = createRunnable(pictureList, caloriesBurntPerRep, (repNumber*2)+1);
                 break;
 
             case R.id.sport5:
                 instructionTV.setText(R.string.sport5Instruc);
                 repsDoneTotal = 0;
                 sport5();
-                currentSportRunnable = createRunnable(pictureList, caloriesBurntPerRep);
+                currentSportRunnable = createRunnable(pictureList, caloriesBurntPerRep, (repNumber*2)+1);
                 break;
 
             case R.id.sport6:
                 instructionTV.setText(R.string.sport6Instruc);
                 repsDoneTotal = 0;
                 sport6();
-                currentSportRunnable = createRunnable(pictureList, caloriesBurntPerRep);
+                currentSportRunnable = createRunnable(pictureList, caloriesBurntPerRep, (repNumber*2)+1);
                 break;
 
 
@@ -254,7 +276,7 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
         pictureList.add(R.drawable.s1_six_2);
     }
 
-    private Runnable createRunnable(ArrayList<Integer> list, double caloriesBurntPerRep) {
+    private Runnable createRunnable(ArrayList<Integer> list, double caloriesBurntPerRep, int repNumber) {
         Runnable runnable = new Runnable() {
             int i=0;
             int times = 0;
@@ -269,7 +291,7 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
                     //Since two moves = 1 reps.
                     //Change the times >= for more reps. Usually 12 reps for 1 move
                     //if we want the image to smooth represent 12 reps, the condition puts 25
-                    if(times >= 11){
+                    if(times >= repNumber){
                         Random random = new Random();
                         soundPlayer = MediaPlayer.create(getApplicationContext(), soundEffects[random.nextInt(soundEffects.length)]);
                         soundPlayer.start();

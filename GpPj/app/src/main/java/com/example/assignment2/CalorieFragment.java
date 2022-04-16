@@ -1,5 +1,6 @@
 package com.example.assignment2;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,10 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +26,7 @@ import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -86,6 +91,13 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
     static TableRow Total_List,Total_list_List;
     static TextView Total_title;
 
+    //The variables used in the date picker
+    Calendar cal = Calendar.getInstance();
+    private int year = cal.get(Calendar.YEAR);
+    private int month = cal.get(Calendar.MONTH);
+    private int day = cal.get(Calendar.DAY_OF_MONTH);
+    static int forDay, forMonth, forYear;
+
     static int fruitPortion = 0;
     //Grains Table//
 
@@ -99,10 +111,10 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
     TextView Pasta_Food,Pasta_Serving_size,Pasta_Calories,Pasta_Protein,Pasta_Carbs;
     TextView Sorghum_Food,Sorghum_Serving_size,Sorghum_Calories,Sorghum_Protein,Sorghum_Carbs;
     ImageButton Rice_Add,Oats_Add,Corn_Add,Bread_Add,Pasta_Add,Sorghum_Add;
-    EditText Rice_Quantity,Oats_Quantity,Corn_Quantity,Bread_Quantity,Pasta_Quantity,Sorghum_Quantity;
+    Spinner Rice_Quantity, Oats_Quantity,Corn_Quantity,Bread_Quantity,Pasta_Quantity,Sorghum_Quantity;
+
 
     //Vegetable Table//
-
     Button Vegetable;
     TableRow Vegetable_List,Vegetable_Lettuce,Vegetable_Tomatoes,Vegetable_Potatoes,Vegetable_Carrots,Vegetable_Broccoli,Vegetable_Cucumber,Vegetable_Pumpkin,Vegetable_Okra;
 
@@ -115,7 +127,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
     TextView Pumpkin_Food,Pumpkin_Serving_size,Pumpkin_Calories,Pumpkin_Protein,Pumpkin_Carbs;
     TextView Okra_Food,Okra_Serving_size,Okra_Calories,Okra_Protein,Okra_Carbs;
     ImageButton Lettuce_Add,Tomatoes_Add,Potatoes_Add,Carrots_Add,Broccoli_Add,Cucumber_Add,Pumpkin_Add,Okra_Add;
-    EditText Lettuce_Quantity,Tomatoes_Quantity,Potatoes_Quantity,Carrots_Quantity,Broccoli_Quantity,Cucumber_Quantity,Pumpkin_Quantity,Okra_Quantity;
+    Spinner Lettuce_Quantity,Tomatoes_Quantity,Potatoes_Quantity,Carrots_Quantity,Broccoli_Quantity,Cucumber_Quantity,Pumpkin_Quantity,Okra_Quantity;
 
     //Meat And Seafood Table//
 
@@ -130,7 +142,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
     TextView Salmon_Food,Salmon_Serving_size,Salmon_Calories,Salmon_Protein,Salmon_Carbs;
     TextView Shrimp_Food,Shrimp_Serving_size,Shrimp_Calories,Shrimp_Protein,Shrimp_Carbs;
     ImageButton Beef_Add,Pork_Add,Chicken_Add,Lamb_Add,Steamed_Fish_Add,Salmon_Add,Shrimp_Add;
-    EditText Beef_Quantity,Pork_Quantity,Chicken_Quantity,Lamb_Quantity,Steamed_Fish_Quantity,Salmon_Quantity,Shrimp_Quantity;
+    Spinner Beef_Quantity,Pork_Quantity,Chicken_Quantity,Lamb_Quantity,Steamed_Fish_Quantity,Salmon_Quantity,Shrimp_Quantity;
 
     //Fruit Table//
 
@@ -145,7 +157,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
     TextView Strawberry_Food,Strawberry_Serving_size,Strawberry_Calories,Strawberry_Protein,Strawberry_Carbs;
     TextView Cherry_Food,Cherry_Serving_size,Cherry_Calories,Cherry_Protein,Cherry_Carbs;
     ImageButton Apple_Add,Banana_Add,Orange_Add,Pear_Add,Grape_Add,Strawberry_Add,Cherry_Add;
-    EditText Apple_Quantity,Banana_Quantity,Orange_Quantity,Pear_Quantity,Grape_Quantity,Strawberry_Quantity,Cherry_Quantity;
+    Spinner Apple_Quantity,Banana_Quantity,Orange_Quantity,Pear_Quantity,Grape_Quantity,Strawberry_Quantity,Cherry_Quantity;
 
     //Diary Table//
 
@@ -159,7 +171,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
     TextView Yogurt_Food,Yogurt_Serving_size,Yogurt_Calories,Yogurt_Protein,Yogurt_Carbs;
     TextView Ice_Cream_Food,Ice_Cream_Serving_size,Ice_Cream_Calories,Ice_Cream_Protein,Ice_Cream_Carbs;
     ImageButton Egg_Add,Milk_Add,Butter_Add,Cheese_Add,Yogurt_Add,Ice_Cream_Add;
-    EditText Egg_Quantity,Milk_Quantity,Butter_Quantity,Cheese_Quantity,Yogurt_Quantity,Ice_Cream_Quantity;
+    Spinner Egg_Quantity,Milk_Quantity,Butter_Quantity,Cheese_Quantity,Yogurt_Quantity,Ice_Cream_Quantity;
 
     Button Save;
     EditText Input_Height,Input_Weight,Input_Age;
@@ -399,7 +411,10 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
             }
         });
 
-        //Grains Add button//
+        //The quantity spinner for all food
+        String quan[] = {"1","2","3","4"};
+        ArrayAdapter adapter2 = new ArrayAdapter(getContext(), R.layout.support_simple_spinner_dropdown_item, quan);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         Rice_Food = v.findViewById(R.id.Rice_Food);
         Rice_Quantity = v.findViewById(R.id.Rice_Quantity);
@@ -438,11 +453,23 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Sorghum_Protein = v.findViewById(R.id.Sorghum_Protein);
         Sorghum_Carbs = v.findViewById(R.id.Sorghum_Carbs);
 
+
+        //Setting the adapters
+        Rice_Quantity.setAdapter(adapter2);
+        Oats_Quantity.setAdapter(adapter2);
+        Corn_Quantity.setAdapter(adapter2);
+        Bread_Quantity.setAdapter(adapter2);
+        Pasta_Quantity.setAdapter(adapter2);
+        Sorghum_Quantity.setAdapter(adapter2);
+
+
         Rice_Add = v.findViewById(R.id.Rice_Add);
         Rice_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Rice_Quantity.getText().toString());
+
+                //Quantity_Num = Double.parseDouble(Rice_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Rice_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Rice_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Rice_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Rice_Carbs.getText().toString());
@@ -469,7 +496,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Oats_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Oats_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Oats_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Oats_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Oats_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Oats_Carbs.getText().toString());
@@ -496,7 +523,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Corn_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Corn_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Corn_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Corn_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Corn_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Corn_Carbs.getText().toString());
@@ -523,7 +550,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Bread_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Bread_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Bread_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Bread_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Bread_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Bread_Carbs.getText().toString());
@@ -550,7 +577,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Pasta_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Pasta_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Pasta_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Pasta_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Pasta_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Pasta_Carbs.getText().toString());
@@ -577,7 +604,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Sorghum_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Sorghum_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Sorghum_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Sorghum_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Sorghum_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Sorghum_Carbs.getText().toString());
@@ -651,11 +678,21 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Okra_Protein = v.findViewById(R.id.Okra_Protein);
         Okra_Carbs = v.findViewById(R.id.Okra_Carbs);
 
+       Lettuce_Quantity.setAdapter(adapter2);
+       Tomatoes_Quantity.setAdapter(adapter2);
+       Potatoes_Quantity.setAdapter(adapter2);
+       Carrots_Quantity.setAdapter(adapter2);
+       Broccoli_Quantity.setAdapter(adapter2);
+       Cucumber_Quantity.setAdapter(adapter2);
+       Pumpkin_Quantity.setAdapter(adapter2);
+       Okra_Quantity.setAdapter(adapter2);
+
+
         Lettuce_Add = v.findViewById(R.id.Lettuce_Add);
         Lettuce_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Lettuce_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Lettuce_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Lettuce_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Lettuce_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Lettuce_Carbs.getText().toString());
@@ -682,7 +719,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Tomatoes_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Tomatoes_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Tomatoes_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Tomatoes_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Tomatoes_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Tomatoes_Carbs.getText().toString());
@@ -709,7 +746,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Potatoes_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Potatoes_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Potatoes_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Potatoes_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Potatoes_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Potatoes_Carbs.getText().toString());
@@ -736,7 +773,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Carrots_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Carrots_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Carrots_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Carrots_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Carrots_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Carrots_Carbs.getText().toString());
@@ -763,7 +800,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Broccoli_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Broccoli_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Broccoli_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Broccoli_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Broccoli_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Broccoli_Carbs.getText().toString());
@@ -790,7 +827,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Cucumber_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Cucumber_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Cucumber_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Cucumber_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Cucumber_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Cucumber_Carbs.getText().toString());
@@ -817,7 +854,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Pumpkin_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Pumpkin_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Pumpkin_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Pumpkin_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Pumpkin_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Pumpkin_Carbs.getText().toString());
@@ -844,7 +881,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Okra_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Okra_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Okra_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Okra_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Okra_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Okra_Carbs.getText().toString());
@@ -912,11 +949,20 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Shrimp_Protein = v.findViewById(R.id.Shrimp_Protein);
         Shrimp_Carbs = v.findViewById(R.id.Shrimp_Carbs);
 
+
+        Beef_Quantity.setAdapter(adapter2);
+        Pork_Quantity.setAdapter(adapter2);
+        Chicken_Quantity.setAdapter(adapter2);
+        Lamb_Quantity.setAdapter(adapter2);
+        Steamed_Fish_Quantity.setAdapter(adapter2);
+        Salmon_Quantity.setAdapter(adapter2);
+        Shrimp_Quantity.setAdapter(adapter2);
+
         Beef_Add = v.findViewById(R.id.Beef_Add);
         Beef_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Beef_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Beef_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Beef_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Beef_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Beef_Carbs.getText().toString());
@@ -943,7 +989,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Pork_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Pork_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Pork_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Pork_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Pork_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Pork_Carbs.getText().toString());
@@ -970,7 +1016,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Chicken_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Chicken_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Chicken_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Chicken_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Chicken_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Chicken_Carbs.getText().toString());
@@ -997,7 +1043,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Lamb_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Lamb_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Lamb_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Lamb_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Lamb_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Lamb_Carbs.getText().toString());
@@ -1024,7 +1070,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Steamed_Fish_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Steamed_Fish_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Steamed_Fish_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Steamed_Fish_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Steamed_Fish_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Steamed_Fish_Carbs.getText().toString());
@@ -1051,7 +1097,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Salmon_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Salmon_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Salmon_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Salmon_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Salmon_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Salmon_Carbs.getText().toString());
@@ -1078,7 +1124,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Shrimp_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Shrimp_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Shrimp_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Shrimp_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Shrimp_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Shrimp_Carbs.getText().toString());
@@ -1146,11 +1192,20 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Cherry_Protein = v.findViewById(R.id.Cherry_Protein);
         Cherry_Carbs = v.findViewById(R.id.Cherry_Carbs);
 
+
+        Apple_Quantity.setAdapter(adapter2);
+        Banana_Quantity.setAdapter(adapter2);
+        Orange_Quantity.setAdapter(adapter2);
+        Pear_Quantity.setAdapter(adapter2);
+        Grape_Quantity.setAdapter(adapter2);
+
+        Strawberry_Quantity.setAdapter(adapter2);
+        Cherry_Quantity.setAdapter(adapter2);
         Apple_Add = v.findViewById(R.id.Apple_Add);
         Apple_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Apple_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Apple_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Apple_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Apple_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Apple_Carbs.getText().toString());
@@ -1177,7 +1232,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Banana_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Banana_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Banana_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Banana_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Banana_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Banana_Carbs.getText().toString());
@@ -1204,7 +1259,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Orange_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Orange_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Orange_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Orange_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Orange_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Orange_Carbs.getText().toString());
@@ -1231,7 +1286,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Pear_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Pear_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Pear_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Pear_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Pear_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Pear_Carbs.getText().toString());
@@ -1258,7 +1313,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Grape_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Grape_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Grape_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Grape_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Grape_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Grape_Carbs.getText().toString());
@@ -1285,7 +1340,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Strawberry_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Strawberry_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Strawberry_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Strawberry_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Strawberry_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Strawberry_Carbs.getText().toString());
@@ -1312,7 +1367,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Cherry_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Cherry_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Cherry_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Cherry_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Cherry_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Cherry_Carbs.getText().toString());
@@ -1336,6 +1391,8 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         });
 
         //Diary button//
+
+
 
         Egg_Food = v.findViewById(R.id.Egg_Food);
         Egg_Quantity = v.findViewById(R.id.Egg_Quantity);
@@ -1374,11 +1431,19 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Ice_Cream_Protein = v.findViewById(R.id.Ice_Cream_Protein);
         Ice_Cream_Carbs = v.findViewById(R.id.Ice_Cream_Carbs);
 
+
+        Egg_Quantity.setAdapter(adapter2);
+        Milk_Quantity.setAdapter(adapter2);
+        Butter_Quantity.setAdapter(adapter2);
+        Cheese_Quantity.setAdapter(adapter2);
+        Yogurt_Quantity.setAdapter(adapter2);
+        Ice_Cream_Quantity.setAdapter(adapter2);
+
         Egg_Add = v.findViewById(R.id.Egg_Add);
         Egg_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Egg_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Egg_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Egg_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Egg_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Egg_Carbs.getText().toString());
@@ -1405,7 +1470,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Milk_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Milk_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Milk_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Milk_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Milk_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Milk_Carbs.getText().toString());
@@ -1432,7 +1497,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Butter_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Butter_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Butter_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Butter_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Butter_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Butter_Carbs.getText().toString());
@@ -1459,7 +1524,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Cheese_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Cheese_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Cheese_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Cheese_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Cheese_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Cheese_Carbs.getText().toString());
@@ -1486,7 +1551,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Yogurt_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Yogurt_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Yogurt_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Yogurt_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Yogurt_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Yogurt_Carbs.getText().toString());
@@ -1513,7 +1578,7 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Ice_Cream_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Quantity_Num = Double.parseDouble(Ice_Cream_Quantity.getText().toString());
+                Quantity_Num = Double.parseDouble((String) Ice_Cream_Quantity.getSelectedItem());
                 Calories_Num = Double.parseDouble(Ice_Cream_Calories.getText().toString());
                 Protein_Num = Double.parseDouble(Ice_Cream_Protein.getText().toString());
                 Carbs_Num = Double.parseDouble(Ice_Cream_Carbs.getText().toString());
@@ -1541,6 +1606,51 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Input_Height = v.findViewById(R.id.Input_Height);
         Input_Weight = v.findViewById(R.id.Input_Weight);
         Input_Age = v.findViewById(R.id.Input_Age);
+
+        //Time picker
+        Input_Age.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InputMethodManager manager = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                manager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+
+                DatePickerDialog picker = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        month = month + 1;
+                        int thisYear = Calendar.getInstance().get(Calendar.YEAR);
+                        int thisMonth = Calendar.getInstance().get(Calendar.MONTH) + 1;
+                        int today = Calendar.getInstance().get(Calendar.DATE);
+                        forDay = day;
+                        forMonth = month;
+                        forYear = year;
+                        //You cant be undergrow
+                        if(year < thisYear){
+                            if(thisMonth > month){
+                                //Yet to pass birthday
+                                Input_Age.setText(String.valueOf(thisYear-year - 1) );
+                            }
+                            else if(thisMonth == month){
+                                if(today > day)
+                                    Input_Age.setText(String.valueOf(thisYear-year - 1) );
+
+                                else
+                                    Input_Age.setText(String.valueOf(thisYear-year) );
+                            }
+                            else
+                                Input_Age.setText(String.valueOf(thisYear-year) );
+
+                        }
+                        if(year > thisYear)
+                            Input_Age.setText("Selected date is invalid");
+                        //No matter passed or not. This year born baby is zero
+                        if(year == thisYear)
+                            Input_Age.setText("0");
+                    }
+                }, year, month, day);
+                picker.show();
+            }
+        });
 
         Log.d("Success", "calorie fragment ready to leave");
         return v;
@@ -1627,4 +1737,6 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Total_Carbs.setText(String.valueOf((int)Total_carbs));
 
     }
+
+
 }

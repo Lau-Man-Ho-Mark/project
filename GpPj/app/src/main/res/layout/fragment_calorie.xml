@@ -80,10 +80,13 @@
                 android:id="@+id/Input_Age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:ems="10"
+                android:focusable="false"
                 android:fontFamily="sans-serif-condensed"
                 android:hint="@string/Hint_Age"
-                android:inputType="number"
+                android:inputType="none"
+                android:onClick="datePicker"
                 android:textSize="20sp"
                 android:visibility="visible" />
 
@@ -177,18 +180,18 @@
                     android:text="@string/Rice_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Rice_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:gravity="center_horizontal|center_vertical"
+                    android:gravity="center_horizontal"
                     android:inputType="number"
                     android:text="1" />
 
                 <TextView
                     android:id="@+id/Rice_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="73dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Rice_Serving_size" />
@@ -238,9 +241,9 @@
                     android:text="@string/Oats_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Oats_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -249,7 +252,7 @@
 
                 <TextView
                     android:id="@+id/Oats_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="73dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Oats_Serving_size" />
@@ -299,9 +302,9 @@
                     android:text="@string/Corn_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Corn_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -310,7 +313,7 @@
 
                 <TextView
                     android:id="@+id/Corn_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="73dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Corn_Serving_size" />
@@ -360,9 +363,9 @@
                     android:text="@string/Bread_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Bread_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -371,7 +374,7 @@
 
                 <TextView
                     android:id="@+id/Bread_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="73dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Bread_Serving_size" />
@@ -422,9 +425,9 @@
                     android:text="@string/Pasta_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Pasta_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -433,7 +436,7 @@
 
                 <TextView
                     android:id="@+id/Pasta_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="73dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pasta_Serving_size" />
@@ -483,9 +486,9 @@
                     android:text="@string/Sorghum_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Sorghum_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -494,7 +497,7 @@
 
                 <TextView
                     android:id="@+id/Sorghum_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="73dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Sorghum_Serving_size" />
@@ -612,9 +615,9 @@
                     android:text="@string/Lettuce_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Lettuce_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -673,9 +676,9 @@
                     android:text="@string/Tomatoes_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Tomatoes_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -735,9 +738,9 @@
                     android:text="@string/Potatoes_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Potatoes_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -796,9 +799,9 @@
                     android:text="@string/Carrots_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Carrots_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -858,9 +861,9 @@
                     android:text="@string/Broccoli_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Broccoli_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -920,9 +923,9 @@
                     android:textSize="14dp"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Cucumber_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -982,9 +985,9 @@
                     android:text="@string/Pumpkin_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Pumpkin_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -1043,9 +1046,9 @@
                     android:text="@string/Okra_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Okra_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -1172,9 +1175,9 @@
                     android:text="@string/Beef_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Beef_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -1233,9 +1236,9 @@
                     android:text="@string/Pork_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Pork_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -1295,9 +1298,9 @@
                     android:text="@string/Chicken_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Chicken_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -1356,9 +1359,9 @@
                     android:text="@string/Lamb_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Lamb_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -1419,9 +1422,9 @@
                     android:text="@string/Steamed_Fish_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Steamed_Fish_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -1480,9 +1483,9 @@
                     android:text="@string/Salmon_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Salmon_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -1542,9 +1545,9 @@
                     android:text="@string/Shrimp_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Shrimp_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -1672,9 +1675,9 @@
                     android:text="@string/Apple_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Apple_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -1733,9 +1736,9 @@
                     android:text="@string/Banana_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Banana_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -1795,9 +1798,9 @@
                     android:text="@string/Orange_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Orange_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -1856,9 +1859,9 @@
                     android:text="@string/Pear_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Pear_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -1918,9 +1921,9 @@
                     android:text="@string/Grape_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Grape_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -1979,9 +1982,9 @@
                     android:text="@string/Strawberry_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Strawberry_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -2041,9 +2044,9 @@
                     android:text="@string/Cherry_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Cherry_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -2171,9 +2174,9 @@
                     android:text="@string/Egg_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Egg_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -2232,9 +2235,9 @@
                     android:text="@string/Milk_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Milk_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -2294,9 +2297,9 @@
                     android:text="@string/Butter_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Butter_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -2355,9 +2358,9 @@
                     android:text="@string/Cheese_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Cheese_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -2417,9 +2420,9 @@
                     android:text="@string/Yogurt_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Yogurt_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
@@ -2478,9 +2481,9 @@
                     android:text="@string/Ice_Cream_Food"
                     android:visibility="visible" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/Ice_Cream_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"

@@ -17,11 +17,11 @@
     <string name="Form_Age">Age:</string>
     <string name="Hint_Height">Enter your height in cm</string>
     <string name="Hint_Weight">Enter your weight in kg</string>
-    <string name="Hint_Age">Enter your Age</string>
+    <string name="Hint_Age">Select your birthday</string>
 
     <string name="Food">Food</string>
     <string name="Quantity">Quantity</string>
-    <string name="Serving_Size">Serving size</string>
+    <string name="Serving_Size">Portion</string>
     <string name="Calories">Calories</string>
     <string name="Protein">Protein</string>
     <string name="Carbs">Carbs*</string>
