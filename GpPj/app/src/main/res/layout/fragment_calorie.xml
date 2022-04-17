@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".CalorieFragment">
@@ -108,7 +108,7 @@
 
                 <TextView
                     android:id="@+id/Grains_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:background="#FFEB3B"
                     android:fontFamily="sans-serif-condensed-medium"
@@ -119,7 +119,7 @@
 
                 <TextView
                     android:id="@+id/Grains_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
@@ -128,7 +128,7 @@
 
                 <TextView
                     android:id="@+id/Grains_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
@@ -137,7 +137,7 @@
 
                 <TextView
                     android:id="@+id/Grains_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
@@ -146,7 +146,7 @@
 
                 <TextView
                     android:id="@+id/Grains_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
@@ -155,7 +155,7 @@
 
                 <TextView
                     android:id="@+id/Grains_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
@@ -174,7 +174,7 @@
 
                 <TextView
                     android:id="@+id/Rice_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Rice_Food"
@@ -182,8 +182,8 @@
 
                 <Spinner
                     android:id="@+id/Rice_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal"
                     android:inputType="number"
@@ -191,35 +191,35 @@
 
                 <TextView
                     android:id="@+id/Rice_Serving_size"
-                    android:layout_width="73dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Rice_Serving_size" />
 
                 <TextView
                     android:id="@+id/Rice_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Rice_Calories" />
 
                 <TextView
                     android:id="@+id/Rice_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Rice_Protein" />
 
                 <TextView
                     android:id="@+id/Rice_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Rice_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Rice_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedPurple"
                     android:src="@android:drawable/ic_input_add" />
@@ -235,7 +235,7 @@
 
                 <TextView
                     android:id="@+id/Oats_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Oats_Food"
@@ -243,8 +243,8 @@
 
                 <Spinner
                     android:id="@+id/Oats_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -252,35 +252,35 @@
 
                 <TextView
                     android:id="@+id/Oats_Serving_size"
-                    android:layout_width="73dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Oats_Serving_size" />
 
                 <TextView
                     android:id="@+id/Oats_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Oats_Calories" />
 
                 <TextView
                     android:id="@+id/Oats_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Oats_Protein" />
 
                 <TextView
                     android:id="@+id/Oats_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Oats_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Oats_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedOrange"
                     android:src="@android:drawable/ic_input_add" />
@@ -296,7 +296,7 @@
 
                 <TextView
                     android:id="@+id/Corn_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Corn_Food"
@@ -304,8 +304,8 @@
 
                 <Spinner
                     android:id="@+id/Corn_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -313,35 +313,35 @@
 
                 <TextView
                     android:id="@+id/Corn_Serving_size"
-                    android:layout_width="73dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Corn_Serving_size" />
 
                 <TextView
                     android:id="@+id/Corn_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Corn_Calories" />
 
                 <TextView
                     android:id="@+id/Corn_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Corn_Protein" />
 
                 <TextView
                     android:id="@+id/Corn_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Corn_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Corn_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedPurple"
                     android:src="@android:drawable/ic_input_add" />
@@ -357,7 +357,7 @@
 
                 <TextView
                     android:id="@+id/Bread_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Bread_Food"
@@ -365,8 +365,8 @@
 
                 <Spinner
                     android:id="@+id/Bread_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -374,35 +374,35 @@
 
                 <TextView
                     android:id="@+id/Bread_Serving_size"
-                    android:layout_width="73dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Bread_Serving_size" />
 
                 <TextView
                     android:id="@+id/Bread_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Bread_Calories" />
 
                 <TextView
                     android:id="@+id/Bread_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Bread_Protein" />
 
                 <TextView
                     android:id="@+id/Bread_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Bread_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Bread_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedOrange"
                     android:src="@android:drawable/ic_input_add" />
@@ -419,7 +419,7 @@
 
                 <TextView
                     android:id="@+id/Pasta_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pasta_Food"
@@ -427,8 +427,8 @@
 
                 <Spinner
                     android:id="@+id/Pasta_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -436,35 +436,35 @@
 
                 <TextView
                     android:id="@+id/Pasta_Serving_size"
-                    android:layout_width="73dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pasta_Serving_size" />
 
                 <TextView
                     android:id="@+id/Pasta_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pasta_Calories" />
 
                 <TextView
                     android:id="@+id/Pasta_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pasta_Protein" />
 
                 <TextView
                     android:id="@+id/Pasta_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pasta_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Pasta_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedPurple"
                     android:src="@android:drawable/ic_input_add" />
@@ -480,7 +480,7 @@
 
                 <TextView
                     android:id="@+id/Sorghum_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Sorghum_Food"
@@ -488,8 +488,8 @@
 
                 <Spinner
                     android:id="@+id/Sorghum_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -497,35 +497,35 @@
 
                 <TextView
                     android:id="@+id/Sorghum_Serving_size"
-                    android:layout_width="73dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Sorghum_Serving_size" />
 
                 <TextView
                     android:id="@+id/Sorghum_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Sorghum_Calories" />
 
                 <TextView
                     android:id="@+id/Sorghum_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Sorghum_Protein" />
 
                 <TextView
                     android:id="@+id/Sorghum_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Sorghum_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Sorghum_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedOrange"
                     android:src="@android:drawable/ic_input_add" />
@@ -550,52 +550,58 @@
 
                 <TextView
                     android:id="@+id/Vegetable_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Food"
+                    android:textSize="16sp"
                     android:visibility="visible" />
 
                 <TextView
                     android:id="@+id/Vegetable_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Quantity" />
+                    android:text="@string/Quantity"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/Vegetable_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Serving_Size" />
+                    android:text="@string/Serving_Size"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/Vegetable_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Calories" />
+                    android:text="@string/Calories"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/Vegetable_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Protein" />
+                    android:text="@string/Protein"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/Vegetable_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Carbs" />
+                    android:text="@string/Carbs"
+                    android:textSize="16sp" />
 
             </TableRow>
 
@@ -609,7 +615,7 @@
 
                 <TextView
                     android:id="@+id/Lettuce_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Lettuce_Food"
@@ -617,8 +623,8 @@
 
                 <Spinner
                     android:id="@+id/Lettuce_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -626,35 +632,35 @@
 
                 <TextView
                     android:id="@+id/Lettuce_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Lettuce_Serving_size" />
 
                 <TextView
                     android:id="@+id/Lettuce_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Lettuce_Calories" />
 
                 <TextView
                     android:id="@+id/Lettuce_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Lettuce_Protein" />
 
                 <TextView
                     android:id="@+id/Lettuce_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Lettuce_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Lettuce_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedPurple"
                     android:src="@android:drawable/ic_input_add" />
@@ -670,7 +676,7 @@
 
                 <TextView
                     android:id="@+id/Tomatoes_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Tomatoes_Food"
@@ -678,8 +684,8 @@
 
                 <Spinner
                     android:id="@+id/Tomatoes_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -687,35 +693,35 @@
 
                 <TextView
                     android:id="@+id/Tomatoes_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Tomatoes_Serving_size" />
 
                 <TextView
                     android:id="@+id/Tomatoes_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Tomatoes_Calories" />
 
                 <TextView
                     android:id="@+id/Tomatoes_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Tomatoes_Protein" />
 
                 <TextView
                     android:id="@+id/Tomatoes_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Tomatoes_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Tomatoes_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedOrange"
                     android:src="@android:drawable/ic_input_add" />
@@ -732,7 +738,7 @@
 
                 <TextView
                     android:id="@+id/Potatoes_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Potatoes_Food"
@@ -740,8 +746,8 @@
 
                 <Spinner
                     android:id="@+id/Potatoes_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -749,35 +755,35 @@
 
                 <TextView
                     android:id="@+id/Potatoes_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Potatoes_Serving_size" />
 
                 <TextView
                     android:id="@+id/Potatoes_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Potatoes_Calories" />
 
                 <TextView
                     android:id="@+id/Potatoes_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Potatoes_Protein" />
 
                 <TextView
                     android:id="@+id/Potatoes_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Potatoes_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Potatoes_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedPurple"
                     android:src="@android:drawable/ic_input_add" />
@@ -793,7 +799,7 @@
 
                 <TextView
                     android:id="@+id/Carrots_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Carrots_Food"
@@ -801,8 +807,8 @@
 
                 <Spinner
                     android:id="@+id/Carrots_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -810,35 +816,35 @@
 
                 <TextView
                     android:id="@+id/Carrots_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Carrots_Serving_size" />
 
                 <TextView
                     android:id="@+id/Carrots_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Carrots_Calories" />
 
                 <TextView
                     android:id="@+id/Carrots_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Carrots_Protein" />
 
                 <TextView
                     android:id="@+id/Carrots_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Carrots_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Carrots_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedOrange"
                     android:src="@android:drawable/ic_input_add" />
@@ -855,7 +861,7 @@
 
                 <TextView
                     android:id="@+id/Broccoli_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Broccoli_Food"
@@ -863,8 +869,8 @@
 
                 <Spinner
                     android:id="@+id/Broccoli_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -872,35 +878,35 @@
 
                 <TextView
                     android:id="@+id/Broccoli_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Broccoli_Serving_size" />
 
                 <TextView
                     android:id="@+id/Broccoli_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Broccoli_Calories" />
 
                 <TextView
                     android:id="@+id/Broccoli_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Broccoli_Protein" />
 
                 <TextView
                     android:id="@+id/Broccoli_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Broccoli_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Broccoli_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedPurple"
                     android:src="@android:drawable/ic_input_add" />
@@ -916,7 +922,7 @@
 
                 <TextView
                     android:id="@+id/Cucumber_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Cucumber_Food"
@@ -925,8 +931,8 @@
 
                 <Spinner
                     android:id="@+id/Cucumber_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -934,35 +940,35 @@
 
                 <TextView
                     android:id="@+id/Cucumber_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Cucumber_Serving_size" />
 
                 <TextView
                     android:id="@+id/Cucumber_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Cucumber_Calories" />
 
                 <TextView
                     android:id="@+id/Cucumber_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Cucumber_Protein" />
 
                 <TextView
                     android:id="@+id/Cucumber_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Cucumber_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Cucumber_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedOrange"
                     android:src="@android:drawable/ic_input_add" />
@@ -979,7 +985,7 @@
 
                 <TextView
                     android:id="@+id/Pumpkin_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pumpkin_Food"
@@ -987,8 +993,8 @@
 
                 <Spinner
                     android:id="@+id/Pumpkin_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -996,35 +1002,35 @@
 
                 <TextView
                     android:id="@+id/Pumpkin_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pumpkin_Serving_size" />
 
                 <TextView
                     android:id="@+id/Pumpkin_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pumpkin_Calories" />
 
                 <TextView
                     android:id="@+id/Pumpkin_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pumpkin_Protein" />
 
                 <TextView
                     android:id="@+id/Pumpkin_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pumpkin_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Pumpkin_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedPurple"
                     android:src="@android:drawable/ic_input_add" />
@@ -1040,7 +1046,7 @@
 
                 <TextView
                     android:id="@+id/Okra_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Okra_Food"
@@ -1048,8 +1054,8 @@
 
                 <Spinner
                     android:id="@+id/Okra_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -1057,35 +1063,35 @@
 
                 <TextView
                     android:id="@+id/Okra_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Okra_Serving_size" />
 
                 <TextView
                     android:id="@+id/Okra_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Okra_Calories" />
 
                 <TextView
                     android:id="@+id/Okra_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Okra_Protein" />
 
                 <TextView
                     android:id="@+id/Okra_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Okra_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Okra_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedOrange"
                     android:src="@android:drawable/ic_input_add" />
@@ -1110,52 +1116,58 @@
 
                 <TextView
                     android:id="@+id/Meat_And_Seafood_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Food"
+                    android:textSize="16sp"
                     android:visibility="visible" />
 
                 <TextView
                     android:id="@+id/Meat_And_Seafood_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Quantity" />
+                    android:text="@string/Quantity"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/Meat_And_Seafood_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Serving_Size" />
+                    android:text="@string/Serving_Size"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/Meat_And_Seafood_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Calories" />
+                    android:text="@string/Calories"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/Meat_And_Seafood_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Protein" />
+                    android:text="@string/Protein"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/Meat_And_Seafood_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Carbs" />
+                    android:text="@string/Carbs"
+                    android:textSize="16sp" />
 
             </TableRow>
 
@@ -1169,7 +1181,7 @@
 
                 <TextView
                     android:id="@+id/Beef_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Beef_Food"
@@ -1177,8 +1189,8 @@
 
                 <Spinner
                     android:id="@+id/Beef_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -1186,35 +1198,35 @@
 
                 <TextView
                     android:id="@+id/Beef_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Beef_Serving_size" />
 
                 <TextView
                     android:id="@+id/Beef_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Beef_Calories" />
 
                 <TextView
                     android:id="@+id/Beef_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Beef_Protein" />
 
                 <TextView
                     android:id="@+id/Beef_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Beef_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Beef_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedPurple"
                     android:src="@android:drawable/ic_input_add" />
@@ -1230,7 +1242,7 @@
 
                 <TextView
                     android:id="@+id/Pork_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pork_Food"
@@ -1238,8 +1250,8 @@
 
                 <Spinner
                     android:id="@+id/Pork_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -1247,35 +1259,35 @@
 
                 <TextView
                     android:id="@+id/Pork_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pork_Serving_size" />
 
                 <TextView
                     android:id="@+id/Pork_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pork_Calories" />
 
                 <TextView
                     android:id="@+id/Pork_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pork_Protein" />
 
                 <TextView
                     android:id="@+id/Pork_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pork_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Pork_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedOrange"
                     android:src="@android:drawable/ic_input_add" />
@@ -1292,7 +1304,7 @@
 
                 <TextView
                     android:id="@+id/Chicken_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Chicken_Food"
@@ -1300,8 +1312,8 @@
 
                 <Spinner
                     android:id="@+id/Chicken_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -1309,35 +1321,35 @@
 
                 <TextView
                     android:id="@+id/Chicken_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Chicken_Serving_size" />
 
                 <TextView
                     android:id="@+id/Chicken_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Chicken_Calories" />
 
                 <TextView
                     android:id="@+id/Chicken_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Chicken_Protein" />
 
                 <TextView
                     android:id="@+id/Chicken_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Chicken_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Chicken_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedPurple"
                     android:src="@android:drawable/ic_input_add" />
@@ -1353,7 +1365,7 @@
 
                 <TextView
                     android:id="@+id/Lamb_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Lamb_Food"
@@ -1361,8 +1373,8 @@
 
                 <Spinner
                     android:id="@+id/Lamb_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -1370,35 +1382,35 @@
 
                 <TextView
                     android:id="@+id/Lamb_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Lamb_Serving_size" />
 
                 <TextView
                     android:id="@+id/Lamb_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Lamb_Calories" />
 
                 <TextView
                     android:id="@+id/Lamb_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Lamb_Protein" />
 
                 <TextView
                     android:id="@+id/Lamb_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Lamb_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Lamb_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedOrange"
                     android:src="@android:drawable/ic_input_add" />
@@ -1415,7 +1427,7 @@
 
                 <TextView
                     android:id="@+id/Steamed_Fish_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:layout_gravity="center"
                     android:gravity="center_horizontal|center_vertical"
@@ -1424,8 +1436,8 @@
 
                 <Spinner
                     android:id="@+id/Steamed_Fish_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -1433,35 +1445,35 @@
 
                 <TextView
                     android:id="@+id/Steamed_Fish_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Steamed_Fish_Serving_size" />
 
                 <TextView
                     android:id="@+id/Steamed_Fish_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Steamed_Fish_Calories" />
 
                 <TextView
                     android:id="@+id/Steamed_Fish_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Steamed_Fish_Protein" />
 
                 <TextView
                     android:id="@+id/Steamed_Fish_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Steamed_Fish_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Steamed_Fish_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedPurple"
                     android:src="@android:drawable/ic_input_add" />
@@ -1477,7 +1489,7 @@
 
                 <TextView
                     android:id="@+id/Salmon_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Salmon_Food"
@@ -1485,8 +1497,8 @@
 
                 <Spinner
                     android:id="@+id/Salmon_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -1494,35 +1506,35 @@
 
                 <TextView
                     android:id="@+id/Salmon_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Salmon_Serving_size" />
 
                 <TextView
                     android:id="@+id/Salmon_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Salmon_Calories" />
 
                 <TextView
                     android:id="@+id/Salmon_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Salmon_Protein" />
 
                 <TextView
                     android:id="@+id/Salmon_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Salmon_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Salmon_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedOrange"
                     android:src="@android:drawable/ic_input_add" />
@@ -1539,7 +1551,7 @@
 
                 <TextView
                     android:id="@+id/Shrimp_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Shrimp_Food"
@@ -1547,8 +1559,8 @@
 
                 <Spinner
                     android:id="@+id/Shrimp_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -1556,35 +1568,35 @@
 
                 <TextView
                     android:id="@+id/Shrimp_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Shrimp_Serving_size" />
 
                 <TextView
                     android:id="@+id/Shrimp_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Shrimp_Calories" />
 
                 <TextView
                     android:id="@+id/Shrimp_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Shrimp_Protein" />
 
                 <TextView
                     android:id="@+id/Shrimp_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Shrimp_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Shrimp_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedPurple"
                     android:src="@android:drawable/ic_input_add" />
@@ -1609,53 +1621,59 @@
 
                 <TextView
                     android:id="@+id/Fruit_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:background="#FFEB3B"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Food"
+                    android:textSize="16sp"
                     android:visibility="visible" />
 
                 <TextView
                     android:id="@+id/Fruit_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Quantity" />
+                    android:text="@string/Quantity"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/Fruit_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Serving_Size" />
+                    android:text="@string/Serving_Size"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/Fruit_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Calories" />
+                    android:text="@string/Calories"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/Fruit_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Protein" />
+                    android:text="@string/Protein"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/Fruit_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Carbs" />
+                    android:text="@string/Carbs"
+                    android:textSize="16sp" />
 
             </TableRow>
 
@@ -1669,7 +1687,7 @@
 
                 <TextView
                     android:id="@+id/Apple_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Apple_Food"
@@ -1677,8 +1695,8 @@
 
                 <Spinner
                     android:id="@+id/Apple_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -1686,35 +1704,35 @@
 
                 <TextView
                     android:id="@+id/Apple_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Apple_Serving_size" />
 
                 <TextView
                     android:id="@+id/Apple_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Apple_Calories" />
 
                 <TextView
                     android:id="@+id/Apple_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Apple_Protein" />
 
                 <TextView
                     android:id="@+id/Apple_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Apple_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Apple_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedOrange"
                     android:src="@android:drawable/ic_input_add" />
@@ -1730,7 +1748,7 @@
 
                 <TextView
                     android:id="@+id/Banana_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Banana_Food"
@@ -1738,8 +1756,8 @@
 
                 <Spinner
                     android:id="@+id/Banana_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -1747,35 +1765,35 @@
 
                 <TextView
                     android:id="@+id/Banana_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Banana_Serving_size" />
 
                 <TextView
                     android:id="@+id/Banana_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Banana_Calories" />
 
                 <TextView
                     android:id="@+id/Banana_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Banana_Protein" />
 
                 <TextView
                     android:id="@+id/Banana_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Banana_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Banana_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedPurple"
                     android:src="@android:drawable/ic_input_add" />
@@ -1792,7 +1810,7 @@
 
                 <TextView
                     android:id="@+id/Orange_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Orange_Food"
@@ -1800,8 +1818,8 @@
 
                 <Spinner
                     android:id="@+id/Orange_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -1809,35 +1827,35 @@
 
                 <TextView
                     android:id="@+id/Orange_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Orange_Serving_size" />
 
                 <TextView
                     android:id="@+id/Orange_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Orange_Calories" />
 
                 <TextView
                     android:id="@+id/Orange_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Orange_Protein" />
 
                 <TextView
                     android:id="@+id/Orange_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Orange_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Orange_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedOrange"
                     android:src="@android:drawable/ic_input_add" />
@@ -1853,7 +1871,7 @@
 
                 <TextView
                     android:id="@+id/Pear_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pear_Food"
@@ -1861,8 +1879,8 @@
 
                 <Spinner
                     android:id="@+id/Pear_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -1870,35 +1888,35 @@
 
                 <TextView
                     android:id="@+id/Pear_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pear_Serving_size" />
 
                 <TextView
                     android:id="@+id/Pear_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pear_Calories" />
 
                 <TextView
                     android:id="@+id/Pear_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pear_Protein" />
 
                 <TextView
                     android:id="@+id/Pear_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Pear_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Pear_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedPurple"
                     android:src="@android:drawable/ic_input_add" />
@@ -1915,7 +1933,7 @@
 
                 <TextView
                     android:id="@+id/Grape_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Grape_Food"
@@ -1923,8 +1941,8 @@
 
                 <Spinner
                     android:id="@+id/Grape_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -1932,35 +1950,35 @@
 
                 <TextView
                     android:id="@+id/Grape_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Grape_Serving_size" />
 
                 <TextView
                     android:id="@+id/Grape_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Grape_Calories" />
 
                 <TextView
                     android:id="@+id/Grape_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Grape_Protein" />
 
                 <TextView
                     android:id="@+id/Grape_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Grape_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Grape_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedOrange"
                     android:src="@android:drawable/ic_input_add" />
@@ -1984,8 +2002,8 @@
 
                 <Spinner
                     android:id="@+id/Strawberry_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="50dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -1993,35 +2011,35 @@
 
                 <TextView
                     android:id="@+id/Strawberry_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Strawberry_Serving_size" />
 
                 <TextView
                     android:id="@+id/Strawberry_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Strawberry_Calories" />
 
                 <TextView
                     android:id="@+id/Strawberry_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Strawberry_Protein" />
 
                 <TextView
                     android:id="@+id/Strawberry_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Strawberry_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Strawberry_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedPurple"
                     android:src="@android:drawable/ic_input_add" />
@@ -2038,7 +2056,7 @@
 
                 <TextView
                     android:id="@+id/Cherry_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Cherry_Food"
@@ -2046,8 +2064,8 @@
 
                 <Spinner
                     android:id="@+id/Cherry_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -2055,35 +2073,35 @@
 
                 <TextView
                     android:id="@+id/Cherry_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Cherry_Serving_size" />
 
                 <TextView
                     android:id="@+id/Cherry_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Cherry_Calories" />
 
                 <TextView
                     android:id="@+id/Cherry_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Cherry_Protein" />
 
                 <TextView
                     android:id="@+id/Cherry_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Cherry_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Cherry_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedOrange"
                     android:src="@android:drawable/ic_input_add" />
@@ -2108,53 +2126,59 @@
 
                 <TextView
                     android:id="@+id/Diary_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:background="#FFEB3B"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Food"
+                    android:textSize="16sp"
                     android:visibility="visible" />
 
                 <TextView
                     android:id="@+id/Diary_Quantity"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Quantity" />
+                    android:text="@string/Quantity"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/Diary_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Serving_Size" />
+                    android:text="@string/Serving_Size"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/Diary_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Calories" />
+                    android:text="@string/Calories"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/Diary_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Protein" />
+                    android:text="@string/Protein"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/Diary_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/Carbs" />
+                    android:text="@string/Carbs"
+                    android:textSize="16sp" />
 
             </TableRow>
 
@@ -2168,7 +2192,7 @@
 
                 <TextView
                     android:id="@+id/Egg_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Egg_Food"
@@ -2176,8 +2200,8 @@
 
                 <Spinner
                     android:id="@+id/Egg_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -2185,35 +2209,35 @@
 
                 <TextView
                     android:id="@+id/Egg_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Egg_Serving_size" />
 
                 <TextView
                     android:id="@+id/Egg_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Egg_Calories" />
 
                 <TextView
                     android:id="@+id/Egg_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Egg_Protein" />
 
                 <TextView
                     android:id="@+id/Egg_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Egg_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Egg_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedOrange"
                     android:src="@android:drawable/ic_input_add" />
@@ -2229,7 +2253,7 @@
 
                 <TextView
                     android:id="@+id/Milk_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Milk_Food"
@@ -2237,8 +2261,8 @@
 
                 <Spinner
                     android:id="@+id/Milk_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -2246,35 +2270,35 @@
 
                 <TextView
                     android:id="@+id/Milk_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65sp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Milk_Serving_size" />
 
                 <TextView
                     android:id="@+id/Milk_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Milk_Calories" />
 
                 <TextView
                     android:id="@+id/Milk_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Milk_Protein" />
 
                 <TextView
                     android:id="@+id/Milk_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Milk_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Milk_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedPurple"
                     android:src="@android:drawable/ic_input_add" />
@@ -2291,7 +2315,7 @@
 
                 <TextView
                     android:id="@+id/Butter_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Butter_Food"
@@ -2299,8 +2323,8 @@
 
                 <Spinner
                     android:id="@+id/Butter_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -2308,35 +2332,35 @@
 
                 <TextView
                     android:id="@+id/Butter_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Butter_Serving_size" />
 
                 <TextView
                     android:id="@+id/Butter_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Butter_Calories" />
 
                 <TextView
                     android:id="@+id/Butter_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Butter_Protein" />
 
                 <TextView
                     android:id="@+id/Butter_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Butter_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Butter_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedOrange"
                     android:src="@android:drawable/ic_input_add" />
@@ -2352,7 +2376,7 @@
 
                 <TextView
                     android:id="@+id/Cheese_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Cheese_Food"
@@ -2360,8 +2384,8 @@
 
                 <Spinner
                     android:id="@+id/Cheese_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -2369,35 +2393,35 @@
 
                 <TextView
                     android:id="@+id/Cheese_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Cheese_Serving_size" />
 
                 <TextView
                     android:id="@+id/Cheese_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Cheese_Calories" />
 
                 <TextView
                     android:id="@+id/Cheese_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Cheese_Protein" />
 
                 <TextView
                     android:id="@+id/Cheese_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Cheese_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Cheese_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedPurple"
                     android:src="@android:drawable/ic_input_add" />
@@ -2414,7 +2438,7 @@
 
                 <TextView
                     android:id="@+id/Yogurt_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Yogurt_Food"
@@ -2422,8 +2446,8 @@
 
                 <Spinner
                     android:id="@+id/Yogurt_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -2431,35 +2455,35 @@
 
                 <TextView
                     android:id="@+id/Yogurt_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Yogurt_Serving_size" />
 
                 <TextView
                     android:id="@+id/Yogurt_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Yogurt_Calories" />
 
                 <TextView
                     android:id="@+id/Yogurt_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Yogurt_Protein" />
 
                 <TextView
                     android:id="@+id/Yogurt_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Yogurt_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Yogurt_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedOrange"
                     android:src="@android:drawable/ic_input_add" />
@@ -2475,7 +2499,7 @@
 
                 <TextView
                     android:id="@+id/Ice_Cream_Food"
-                    android:layout_width="70dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Ice_Cream_Food"
@@ -2483,8 +2507,8 @@
 
                 <Spinner
                     android:id="@+id/Ice_Cream_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="55dp"
+                    android:layout_height="33dp"
                     android:ems="10"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
@@ -2492,35 +2516,35 @@
 
                 <TextView
                     android:id="@+id/Ice_Cream_Serving_size"
-                    android:layout_width="90dp"
+                    android:layout_width="65dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Ice_Cream_Serving_size" />
 
                 <TextView
                     android:id="@+id/Ice_Cream_Calories"
-                    android:layout_width="55dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Ice_Cream_Calories" />
 
                 <TextView
                     android:id="@+id/Ice_Cream_Protein"
-                    android:layout_width="63dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Ice_Cream_Protein" />
 
                 <TextView
                     android:id="@+id/Ice_Cream_Carbs"
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="33dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/Ice_Cream_Carbs" />
 
                 <ImageButton
                     android:id="@+id/Ice_Cream_Add"
-                    android:layout_width="match_parent"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:background="@color/fadedPurple"
                     android:src="@android:drawable/ic_input_add" />
@@ -2528,10 +2552,11 @@
             </TableRow>
 
             <Button
-                android:layout_marginBottom="5dp"
                 android:id="@+id/Save"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
                 android:text="@string/Save" />
 
             <TextView
