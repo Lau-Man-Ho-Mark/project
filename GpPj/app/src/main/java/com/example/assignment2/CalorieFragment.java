@@ -1644,8 +1644,19 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
                         if(year > thisYear)
                             Input_Age.setText("Selected date is invalid");
                         //No matter passed or not. This year born baby is zero
-                        if(year == thisYear)
-                            Input_Age.setText("0");
+                        if(year == thisYear){
+                            if(month > thisMonth)
+                                Input_Age.setText("Selected data is invalid");
+                            if(month == thisMonth){
+                                if(day > today)
+                                    Input_Age.setText("Selected data is invalid");
+                                else
+                                    Input_Age.setText("0");
+                            }
+                            else
+                                Input_Age.setText("0");
+                        }
+
                     }
                 }, year, month, day);
                 picker.show();
