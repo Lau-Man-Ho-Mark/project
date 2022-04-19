@@ -233,6 +233,9 @@ public class ProgressFragment extends Fragment{
 
             else
                 display_sport.append(sportsName.get(i) + ", ");
+
+            if(i>=2)
+                display_sport.setTextSize(10);
         }
 
 
