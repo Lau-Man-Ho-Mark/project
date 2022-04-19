@@ -18,12 +18,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@color/purple_700"
+            android:background="@color/DarkSlateBlue"
             android:text="Daily Summary"
             android:textAlignment="center"
             android:textColor="@color/Azure"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:cardCornerRadius="20dp"/>
+
+
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cardview"
             android:layout_width="match_parent"
@@ -32,7 +36,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="50dp"
-            app:cardCornerRadius="5dp">>
+            app:cardCornerRadius="20dp">>
 
 
             <ScrollView
@@ -54,8 +58,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="10dp"
                         android:orientation="vertical"
                         android:visibility="visible">
 
@@ -140,22 +144,24 @@
                                 android:weightSum="2">
 
                                 <TextView
-                                    android:textColor="@color/black"
                                     android:id="@+id/tv_calor"
                                     android:layout_width="139dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:fontFamily="sans-serif-black"
                                     android:text="Calories(Digest)\nTarget: 2800kcal"
-                                    android:textAlignment="center" />
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black" />
 
                                 <TextView
-                                    android:textColor="@color/black"
                                     android:id="@+id/tv_protain"
                                     android:layout_width="131dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:fontFamily="sans-serif-black"
                                     android:text="Protein\nTarget: "
-                                    android:textAlignment="center" />
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black" />
 
                             </LinearLayout>
 
@@ -244,22 +250,24 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:textColor="@color/black"
                                     android:id="@+id/tv_carbon"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:fontFamily="sans-serif-black"
                                     android:text="Carbohydrates\nTarget: "
-                                    android:textAlignment="center" />
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black" />
 
                                 <TextView
-                                    android:textColor="@color/black"
                                     android:id="@+id/tv_veget"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:fontFamily="sans-serif-black"
                                     android:text="Fruit Portion \n Target: 4"
-                                    android:textAlignment="center" />
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black" />
 
                             </LinearLayout>
 
@@ -271,52 +279,69 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="50dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:background="@drawable/cv1">
 
                         <TextView
-                            android:textColor="@color/black"
                             android:id="@+id/typeofsport"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="sans-serif-black"
+                            android:padding="6dp"
                             android:text="Recent Sport Done:"
+                            android:textColor="@color/black"
                             android:textSize="16sp" />
 
                         <TextView
-                            android:textColor="@color/black"
-                            android:textSize="16sp"
-                            android:layout_marginLeft="7dp"
                             android:id="@+id/display_sport"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1" />
+                            android:layout_marginLeft="7dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-black"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="50dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:background="@drawable/cv2">
 
                         <TextView
-                            android:textColor="@color/black"
                             android:id="@+id/reps"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-black"
+                            android:padding="6dp"
                             android:text="Minutes Done in Sport:"
-                            android:textSize="16sp" />
-
-                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
                             android:textColor="@color/black"
                             android:textSize="16sp"
-                            android:layout_marginLeft="7dp"
+                            />
+
+                        <TextView
+                            android:layout_marginRight="15dp"
+                            android:textAlignment="viewEnd"
                             android:id="@+id/display_reps"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1" />
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="7dp"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-black"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -345,101 +370,134 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="50dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:background="@drawable/cv3">
 
                         <TextView
-                            android:textColor="@color/black"
                             android:id="@+id/calories"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-black"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:padding="6dp"
                             android:text="Calories (burn out):"
+                            android:textColor="@color/black"
                             android:textSize="16sp" />
 
                         <TextView
-                            android:textColor="@color/black"
-                            android:layout_marginLeft="7dp"
+                            android:layout_marginRight="15dp"
+                            android:textAlignment="viewEnd"
                             android:id="@+id/display_calories"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="7dp"
                             android:layout_weight="1"
-                            android:textSize="16sp"/>
+                            android:fontFamily="sans-serif-black"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
 
                     </LinearLayout>
-
-                    <TextView
-                        android:layout_gravity="center_horizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="16sp"
-                        android:textColor="@color/black"
-                        android:text="Sport Time Progress (30 mins)"/>
 
                     <LinearLayout
                         android:weightSum="100"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                    <ProgressBar
-                        android:progressTint="#c42974"
-                        android:layout_marginLeft="5dp"
-                        android:layout_weight="80"
-                        android:id="@+id/pb5"
-                        android:indeterminate="false"
-                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                        <TextView
-                            android:layout_marginRight="5dp"
-                            android:textColor="@color/black"
-                            android:textAlignment="viewEnd"
-                            android:layout_weight="20"
-                            android:id="@+id/minutesDoneProgressTV"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="16sp"/>
-
-                    </LinearLayout>
+                        android:layout_height="60dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/cv4"
+                        >
 
                     <TextView
-                        android:layout_gravity="center_horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="16sp"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="sans-serif-black"
+                        android:padding="6dp"
+                        android:text="Sport Time Progress (30 mins)"
                         android:textColor="@color/black"
-                        android:text="Burnt:Intake Calories Ratio"/>
+
+                        android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:weightSum="100"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal"
+
+                            >
+                        <ProgressBar
+                            android:id="@+id/pb5"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_weight="80"
+                            android:indeterminate="false"
+                            android:progressTint="#c42974" />
+
+                            <TextView
+                                android:id="@+id/minutesDoneProgressTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:layout_weight="20"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
 
                 <LinearLayout
                     android:weightSum="100"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
+                    android:background="@drawable/cv5"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="sans-serif-black"
+                        android:padding="6dp"
+                        android:text="Burnt: Intake Calories Ratio"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                <LinearLayout
+                    android:weightSum="100"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
                     android:orientation="horizontal">
 
                     <ProgressBar
                         android:progressTint="#4c32a8"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_weight="80"
                         android:id="@+id/pb6"
                         android:indeterminate="false"
                         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="25dp"/>
 
                     <TextView
-                        android:layout_marginRight="5dp"
-                        android:textColor="@color/black"
-                        android:textAlignment="viewEnd"
-                        android:layout_weight="20"
                         android:id="@+id/burntIntakeCaloriesRatioTV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="16sp"/>
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="20"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
                 </LinearLayout>
-
+                </LinearLayout>
                 </LinearLayout>
             </ScrollView>
 

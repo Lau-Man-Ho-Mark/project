@@ -75,11 +75,12 @@ public class SportInstruction extends AppCompatActivity implements View.OnClickL
             isFirstTime = false;
         }
         else{
-            data.addAll(preferences.getStringSet(REP_LIST, null));
-            data2.addAll(preferences.getStringSet(CALO_LIST, null));
-            data3.addAll(preferences.getStringSet(TYPE_LIST, null));
+            if(preferences.getStringSet(CALO_LIST, null) != null){
+                data.addAll(preferences.getStringSet(REP_LIST, null));
+                data2.addAll(preferences.getStringSet(CALO_LIST, null));
+                data3.addAll(preferences.getStringSet(TYPE_LIST, null));
+            }
         }
-
     }
 
     public void init(){
