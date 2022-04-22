@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -33,7 +34,7 @@ import java.util.Calendar;
  * Use the {@link CalorieFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CalorieFragment extends Fragment implements View.OnClickListener {
+public class CalorieFragment extends Fragment implements View.OnClickListener{
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -217,10 +218,21 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         MyListAdapter adapter=new MyListAdapter(getActivity(),Food,Quantity,Serving_size,Calories,Protein,Carbs);
         lv1.setAdapter(adapter);
 
-        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lv1.setOnTouchListener(new ListView.OnTouchListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = event.getAction();
+                switch (action) {
+                    case MotionEvent.ACTION_DOWN:
+                        v.getParent().requestDisallowInterceptTouchEvent(true);
+                        break;
 
+                    case MotionEvent.ACTION_UP:
+                        v.getParent().requestDisallowInterceptTouchEvent(false);
+                        break;
+                }
+                v.onTouchEvent(event);
+                return true;
             }
         });
 
@@ -1748,6 +1760,5 @@ public class CalorieFragment extends Fragment implements View.OnClickListener {
         Total_Carbs.setText(String.valueOf((int)Total_carbs));
 
     }
-
 
 }
