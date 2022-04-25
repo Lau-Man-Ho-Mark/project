@@ -29,12 +29,14 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fillViewport="true">
+            android:fillViewport="true"
+            android:scrollbarSize="3dp"
+            android:scrollbarThumbVertical="@color/fadedBlue">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/Azure"
+                android:background="@drawable/fruit10"
                 android:orientation="vertical">
 
                 <TextView
@@ -43,17 +45,23 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="casual"
                     android:text=" Height:"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:visibility="visible" />
 
                 <EditText
                     android:id="@+id/Input_Height"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/edittext_changed"
+                    android:drawablePadding="20dp"
                     android:ems="10"
                     android:fontFamily="monospace"
                     android:hint="@string/Hint_Height"
                     android:inputType="numberDecimal"
+                    android:paddingLeft="10dp"
                     android:textSize="20sp"
                     android:visibility="visible" />
 
@@ -63,17 +71,23 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="casual"
                     android:text=" Weight:"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:visibility="visible" />
 
                 <EditText
                     android:id="@+id/Input_Weight"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/edittext_changed"
+                    android:drawablePadding="20dp"
                     android:ems="10"
                     android:fontFamily="monospace"
                     android:hint="@string/Hint_Weight"
                     android:inputType="numberDecimal"
+                    android:paddingLeft="10dp"
                     android:textSize="20sp"
                     android:visibility="visible" />
 
@@ -83,20 +97,26 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="casual"
                     android:text=" Age:"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:visibility="visible" />
 
                 <EditText
                     android:id="@+id/Input_Age"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/edittext_changed"
                     android:clickable="true"
+                    android:drawablePadding="20dp"
                     android:ems="10"
                     android:focusable="false"
                     android:fontFamily="monospace"
                     android:hint="@string/Hint_Age"
                     android:inputType="none"
                     android:onClick="datePicker"
+                    android:paddingLeft="10dp"
                     android:textSize="20sp"
                     android:visibility="visible" />
 
@@ -192,6 +212,7 @@
                         android:id="@+id/Rice_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Rice_Food"
                         android:visibility="visible" />
@@ -200,6 +221,7 @@
                         android:id="@+id/Rice_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="@color/purple_500"
                         android:ems="10"
                         android:gravity="center_horizontal"
                         android:inputType="number"
@@ -209,6 +231,7 @@
                         android:id="@+id/Rice_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Rice_Serving_size" />
 
@@ -216,6 +239,7 @@
                         android:id="@+id/Rice_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Rice_Calories" />
 
@@ -223,6 +247,7 @@
                         android:id="@+id/Rice_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Rice_Protein" />
 
@@ -230,6 +255,7 @@
                         android:id="@+id/Rice_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Rice_Carbs" />
 
@@ -254,6 +280,7 @@
                         android:id="@+id/Oats_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Oats_Food"
                         android:visibility="visible" />
@@ -262,6 +289,7 @@
                         android:id="@+id/Oats_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -271,6 +299,7 @@
                         android:id="@+id/Oats_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Oats_Serving_size" />
 
@@ -278,6 +307,7 @@
                         android:id="@+id/Oats_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Oats_Calories" />
 
@@ -285,6 +315,7 @@
                         android:id="@+id/Oats_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Oats_Protein" />
 
@@ -292,6 +323,7 @@
                         android:id="@+id/Oats_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Oats_Carbs" />
 
@@ -315,6 +347,7 @@
                         android:id="@+id/Corn_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Corn_Food"
                         android:visibility="visible" />
@@ -323,6 +356,7 @@
                         android:id="@+id/Corn_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -332,6 +366,7 @@
                         android:id="@+id/Corn_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Corn_Serving_size" />
 
@@ -339,6 +374,7 @@
                         android:id="@+id/Corn_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Corn_Calories" />
 
@@ -346,6 +382,7 @@
                         android:id="@+id/Corn_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Corn_Protein" />
 
@@ -353,6 +390,7 @@
                         android:id="@+id/Corn_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Corn_Carbs" />
 
@@ -377,6 +415,7 @@
                         android:id="@+id/Bread_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Bread_Food"
                         android:visibility="visible" />
@@ -385,6 +424,7 @@
                         android:id="@+id/Bread_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -394,6 +434,7 @@
                         android:id="@+id/Bread_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Bread_Serving_size" />
 
@@ -401,6 +442,7 @@
                         android:id="@+id/Bread_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Bread_Calories" />
 
@@ -408,6 +450,7 @@
                         android:id="@+id/Bread_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Bread_Protein" />
 
@@ -415,6 +458,7 @@
                         android:id="@+id/Bread_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Bread_Carbs" />
 
@@ -439,6 +483,7 @@
                         android:id="@+id/Pasta_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pasta_Food"
                         android:visibility="visible" />
@@ -447,6 +492,7 @@
                         android:id="@+id/Pasta_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -456,6 +502,7 @@
                         android:id="@+id/Pasta_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pasta_Serving_size" />
 
@@ -463,6 +510,7 @@
                         android:id="@+id/Pasta_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pasta_Calories" />
 
@@ -470,6 +518,7 @@
                         android:id="@+id/Pasta_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pasta_Protein" />
 
@@ -477,6 +526,7 @@
                         android:id="@+id/Pasta_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pasta_Carbs" />
 
@@ -501,6 +551,7 @@
                         android:id="@+id/Sorghum_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Sorghum_Food"
                         android:visibility="visible" />
@@ -509,6 +560,7 @@
                         android:id="@+id/Sorghum_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -518,6 +570,7 @@
                         android:id="@+id/Sorghum_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Sorghum_Serving_size" />
 
@@ -525,6 +578,7 @@
                         android:id="@+id/Sorghum_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Sorghum_Calories" />
 
@@ -532,6 +586,7 @@
                         android:id="@+id/Sorghum_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Sorghum_Protein" />
 
@@ -539,6 +594,7 @@
                         android:id="@+id/Sorghum_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Sorghum_Carbs" />
 
@@ -637,6 +693,7 @@
                         android:id="@+id/Lettuce_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Lettuce_Food"
                         android:visibility="visible" />
@@ -645,6 +702,7 @@
                         android:id="@+id/Lettuce_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -654,6 +712,7 @@
                         android:id="@+id/Lettuce_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Lettuce_Serving_size" />
 
@@ -661,6 +720,7 @@
                         android:id="@+id/Lettuce_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Lettuce_Calories" />
 
@@ -668,6 +728,7 @@
                         android:id="@+id/Lettuce_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Lettuce_Protein" />
 
@@ -675,6 +736,7 @@
                         android:id="@+id/Lettuce_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Lettuce_Carbs" />
 
@@ -699,6 +761,7 @@
                         android:id="@+id/Tomatoes_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Tomatoes_Food"
                         android:visibility="visible" />
@@ -707,6 +770,7 @@
                         android:id="@+id/Tomatoes_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -716,6 +780,7 @@
                         android:id="@+id/Tomatoes_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Tomatoes_Serving_size" />
 
@@ -723,6 +788,7 @@
                         android:id="@+id/Tomatoes_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Tomatoes_Calories" />
 
@@ -730,6 +796,7 @@
                         android:id="@+id/Tomatoes_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Tomatoes_Protein" />
 
@@ -737,6 +804,7 @@
                         android:id="@+id/Tomatoes_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Tomatoes_Carbs" />
 
@@ -761,6 +829,7 @@
                         android:id="@+id/Potatoes_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Potatoes_Food"
                         android:visibility="visible" />
@@ -769,6 +838,7 @@
                         android:id="@+id/Potatoes_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -778,6 +848,7 @@
                         android:id="@+id/Potatoes_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Potatoes_Serving_size" />
 
@@ -785,6 +856,7 @@
                         android:id="@+id/Potatoes_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Potatoes_Calories" />
 
@@ -792,6 +864,7 @@
                         android:id="@+id/Potatoes_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Potatoes_Protein" />
 
@@ -799,6 +872,7 @@
                         android:id="@+id/Potatoes_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Potatoes_Carbs" />
 
@@ -823,6 +897,7 @@
                         android:id="@+id/Carrots_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Carrots_Food"
                         android:visibility="visible" />
@@ -831,6 +906,7 @@
                         android:id="@+id/Carrots_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -840,6 +916,7 @@
                         android:id="@+id/Carrots_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Carrots_Serving_size" />
 
@@ -847,6 +924,7 @@
                         android:id="@+id/Carrots_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Carrots_Calories" />
 
@@ -854,6 +932,7 @@
                         android:id="@+id/Carrots_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Carrots_Protein" />
 
@@ -861,6 +940,7 @@
                         android:id="@+id/Carrots_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Carrots_Carbs" />
 
@@ -885,6 +965,7 @@
                         android:id="@+id/Broccoli_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Broccoli_Food"
                         android:visibility="visible" />
@@ -893,6 +974,7 @@
                         android:id="@+id/Broccoli_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -902,6 +984,7 @@
                         android:id="@+id/Broccoli_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Broccoli_Serving_size" />
 
@@ -909,6 +992,7 @@
                         android:id="@+id/Broccoli_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Broccoli_Calories" />
 
@@ -916,6 +1000,7 @@
                         android:id="@+id/Broccoli_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Broccoli_Protein" />
 
@@ -923,6 +1008,7 @@
                         android:id="@+id/Broccoli_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Broccoli_Carbs" />
 
@@ -947,15 +1033,17 @@
                         android:id="@+id/Cucumber_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Cucumber_Food"
-                        android:textSize="14dp"
+                        android:textSize="12sp"
                         android:visibility="visible" />
 
                     <Spinner
                         android:id="@+id/Cucumber_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -965,6 +1053,7 @@
                         android:id="@+id/Cucumber_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Cucumber_Serving_size" />
 
@@ -972,6 +1061,7 @@
                         android:id="@+id/Cucumber_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Cucumber_Calories" />
 
@@ -979,6 +1069,7 @@
                         android:id="@+id/Cucumber_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Cucumber_Protein" />
 
@@ -986,6 +1077,7 @@
                         android:id="@+id/Cucumber_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Cucumber_Carbs" />
 
@@ -1010,6 +1102,7 @@
                         android:id="@+id/Pumpkin_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pumpkin_Food"
                         android:visibility="visible" />
@@ -1018,6 +1111,7 @@
                         android:id="@+id/Pumpkin_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -1027,6 +1121,7 @@
                         android:id="@+id/Pumpkin_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pumpkin_Serving_size" />
 
@@ -1034,6 +1129,7 @@
                         android:id="@+id/Pumpkin_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pumpkin_Calories" />
 
@@ -1041,6 +1137,7 @@
                         android:id="@+id/Pumpkin_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pumpkin_Protein" />
 
@@ -1048,6 +1145,7 @@
                         android:id="@+id/Pumpkin_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pumpkin_Carbs" />
 
@@ -1072,6 +1170,7 @@
                         android:id="@+id/Okra_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Okra_Food"
                         android:visibility="visible" />
@@ -1080,6 +1179,7 @@
                         android:id="@+id/Okra_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -1089,6 +1189,7 @@
                         android:id="@+id/Okra_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Okra_Serving_size" />
 
@@ -1096,6 +1197,7 @@
                         android:id="@+id/Okra_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Okra_Calories" />
 
@@ -1103,6 +1205,7 @@
                         android:id="@+id/Okra_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Okra_Protein" />
 
@@ -1110,6 +1213,7 @@
                         android:id="@+id/Okra_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Okra_Carbs" />
 
@@ -1208,6 +1312,7 @@
                         android:id="@+id/Beef_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Beef_Food"
                         android:visibility="visible" />
@@ -1216,6 +1321,7 @@
                         android:id="@+id/Beef_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -1225,6 +1331,7 @@
                         android:id="@+id/Beef_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Beef_Serving_size" />
 
@@ -1232,6 +1339,7 @@
                         android:id="@+id/Beef_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Beef_Calories" />
 
@@ -1239,6 +1347,7 @@
                         android:id="@+id/Beef_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Beef_Protein" />
 
@@ -1246,6 +1355,7 @@
                         android:id="@+id/Beef_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Beef_Carbs" />
 
@@ -1270,6 +1380,7 @@
                         android:id="@+id/Pork_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pork_Food"
                         android:visibility="visible" />
@@ -1278,6 +1389,7 @@
                         android:id="@+id/Pork_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -1287,6 +1399,7 @@
                         android:id="@+id/Pork_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pork_Serving_size" />
 
@@ -1294,6 +1407,7 @@
                         android:id="@+id/Pork_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pork_Calories" />
 
@@ -1301,6 +1415,7 @@
                         android:id="@+id/Pork_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pork_Protein" />
 
@@ -1308,6 +1423,7 @@
                         android:id="@+id/Pork_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pork_Carbs" />
 
@@ -1332,6 +1448,7 @@
                         android:id="@+id/Chicken_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Chicken_Food"
                         android:visibility="visible" />
@@ -1340,6 +1457,7 @@
                         android:id="@+id/Chicken_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -1349,6 +1467,7 @@
                         android:id="@+id/Chicken_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Chicken_Serving_size" />
 
@@ -1356,6 +1475,7 @@
                         android:id="@+id/Chicken_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Chicken_Calories" />
 
@@ -1363,6 +1483,7 @@
                         android:id="@+id/Chicken_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Chicken_Protein" />
 
@@ -1370,6 +1491,7 @@
                         android:id="@+id/Chicken_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Chicken_Carbs" />
 
@@ -1394,6 +1516,7 @@
                         android:id="@+id/Lamb_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Lamb_Food"
                         android:visibility="visible" />
@@ -1402,6 +1525,7 @@
                         android:id="@+id/Lamb_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -1411,6 +1535,7 @@
                         android:id="@+id/Lamb_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Lamb_Serving_size" />
 
@@ -1418,6 +1543,7 @@
                         android:id="@+id/Lamb_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Lamb_Calories" />
 
@@ -1425,6 +1551,7 @@
                         android:id="@+id/Lamb_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Lamb_Protein" />
 
@@ -1432,6 +1559,7 @@
                         android:id="@+id/Lamb_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Lamb_Carbs" />
 
@@ -1457,6 +1585,7 @@
                         android:layout_width="65dp"
                         android:layout_height="33dp"
                         android:layout_gravity="center"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Steamed_Fish_Food"
                         android:visibility="visible" />
@@ -1465,6 +1594,7 @@
                         android:id="@+id/Steamed_Fish_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -1474,6 +1604,7 @@
                         android:id="@+id/Steamed_Fish_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Steamed_Fish_Serving_size" />
 
@@ -1481,6 +1612,7 @@
                         android:id="@+id/Steamed_Fish_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Steamed_Fish_Calories" />
 
@@ -1488,6 +1620,7 @@
                         android:id="@+id/Steamed_Fish_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Steamed_Fish_Protein" />
 
@@ -1495,6 +1628,7 @@
                         android:id="@+id/Steamed_Fish_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Steamed_Fish_Carbs" />
 
@@ -1519,6 +1653,7 @@
                         android:id="@+id/Salmon_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Salmon_Food"
                         android:visibility="visible" />
@@ -1527,6 +1662,7 @@
                         android:id="@+id/Salmon_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -1536,6 +1672,7 @@
                         android:id="@+id/Salmon_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Salmon_Serving_size" />
 
@@ -1543,6 +1680,7 @@
                         android:id="@+id/Salmon_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Salmon_Calories" />
 
@@ -1550,6 +1688,7 @@
                         android:id="@+id/Salmon_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Salmon_Protein" />
 
@@ -1557,6 +1696,7 @@
                         android:id="@+id/Salmon_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Salmon_Carbs" />
 
@@ -1581,6 +1721,7 @@
                         android:id="@+id/Shrimp_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Shrimp_Food"
                         android:visibility="visible" />
@@ -1589,6 +1730,7 @@
                         android:id="@+id/Shrimp_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -1598,6 +1740,7 @@
                         android:id="@+id/Shrimp_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Shrimp_Serving_size" />
 
@@ -1605,6 +1748,7 @@
                         android:id="@+id/Shrimp_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Shrimp_Calories" />
 
@@ -1612,6 +1756,7 @@
                         android:id="@+id/Shrimp_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Shrimp_Protein" />
 
@@ -1619,6 +1764,7 @@
                         android:id="@+id/Shrimp_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Shrimp_Carbs" />
 
@@ -1718,6 +1864,7 @@
                         android:id="@+id/Apple_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Apple_Food"
                         android:visibility="visible" />
@@ -1726,6 +1873,7 @@
                         android:id="@+id/Apple_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -1735,6 +1883,7 @@
                         android:id="@+id/Apple_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Apple_Serving_size" />
 
@@ -1742,6 +1891,7 @@
                         android:id="@+id/Apple_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Apple_Calories" />
 
@@ -1749,6 +1899,7 @@
                         android:id="@+id/Apple_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Apple_Protein" />
 
@@ -1756,6 +1907,7 @@
                         android:id="@+id/Apple_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Apple_Carbs" />
 
@@ -1780,6 +1932,7 @@
                         android:id="@+id/Banana_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Banana_Food"
                         android:visibility="visible" />
@@ -1788,6 +1941,7 @@
                         android:id="@+id/Banana_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -1797,6 +1951,7 @@
                         android:id="@+id/Banana_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Banana_Serving_size" />
 
@@ -1804,6 +1959,7 @@
                         android:id="@+id/Banana_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Banana_Calories" />
 
@@ -1811,6 +1967,7 @@
                         android:id="@+id/Banana_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Banana_Protein" />
 
@@ -1818,6 +1975,7 @@
                         android:id="@+id/Banana_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Banana_Carbs" />
 
@@ -1842,6 +2000,7 @@
                         android:id="@+id/Orange_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Orange_Food"
                         android:visibility="visible" />
@@ -1859,6 +2018,7 @@
                         android:id="@+id/Orange_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Orange_Serving_size" />
 
@@ -1866,6 +2026,7 @@
                         android:id="@+id/Orange_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Orange_Calories" />
 
@@ -1873,6 +2034,7 @@
                         android:id="@+id/Orange_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Orange_Protein" />
 
@@ -1880,6 +2042,7 @@
                         android:id="@+id/Orange_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Orange_Carbs" />
 
@@ -1904,6 +2067,7 @@
                         android:id="@+id/Pear_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pear_Food"
                         android:visibility="visible" />
@@ -1912,6 +2076,7 @@
                         android:id="@+id/Pear_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -1921,6 +2086,7 @@
                         android:id="@+id/Pear_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pear_Serving_size" />
 
@@ -1928,6 +2094,7 @@
                         android:id="@+id/Pear_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pear_Calories" />
 
@@ -1935,6 +2102,7 @@
                         android:id="@+id/Pear_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pear_Protein" />
 
@@ -1942,6 +2110,7 @@
                         android:id="@+id/Pear_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Pear_Carbs" />
 
@@ -1966,6 +2135,7 @@
                         android:id="@+id/Grape_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Grape_Food"
                         android:visibility="visible" />
@@ -1974,6 +2144,7 @@
                         android:id="@+id/Grape_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -1983,6 +2154,7 @@
                         android:id="@+id/Grape_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Grape_Serving_size" />
 
@@ -1990,6 +2162,7 @@
                         android:id="@+id/Grape_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Grape_Calories" />
 
@@ -1997,6 +2170,7 @@
                         android:id="@+id/Grape_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Grape_Protein" />
 
@@ -2004,6 +2178,7 @@
                         android:id="@+id/Grape_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Grape_Carbs" />
 
@@ -2028,6 +2203,7 @@
                         android:id="@+id/Strawberry_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Strawberry_Food"
                         android:textSize="12sp"
@@ -2037,6 +2213,7 @@
                         android:id="@+id/Strawberry_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -2046,6 +2223,7 @@
                         android:id="@+id/Strawberry_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Strawberry_Serving_size" />
 
@@ -2053,6 +2231,7 @@
                         android:id="@+id/Strawberry_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Strawberry_Calories" />
 
@@ -2060,6 +2239,7 @@
                         android:id="@+id/Strawberry_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Strawberry_Protein" />
 
@@ -2067,6 +2247,7 @@
                         android:id="@+id/Strawberry_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Strawberry_Carbs" />
 
@@ -2091,6 +2272,7 @@
                         android:id="@+id/Cherry_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Cherry_Food"
                         android:visibility="visible" />
@@ -2099,6 +2281,7 @@
                         android:id="@+id/Cherry_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -2108,6 +2291,7 @@
                         android:id="@+id/Cherry_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Cherry_Serving_size" />
 
@@ -2115,6 +2299,7 @@
                         android:id="@+id/Cherry_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Cherry_Calories" />
 
@@ -2122,6 +2307,7 @@
                         android:id="@+id/Cherry_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Cherry_Protein" />
 
@@ -2129,6 +2315,7 @@
                         android:id="@+id/Cherry_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Cherry_Carbs" />
 
@@ -2228,6 +2415,7 @@
                         android:id="@+id/Egg_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Egg_Food"
                         android:visibility="visible" />
@@ -2236,6 +2424,7 @@
                         android:id="@+id/Egg_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -2245,6 +2434,7 @@
                         android:id="@+id/Egg_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Egg_Serving_size" />
 
@@ -2252,6 +2442,7 @@
                         android:id="@+id/Egg_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Egg_Calories" />
 
@@ -2259,6 +2450,7 @@
                         android:id="@+id/Egg_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Egg_Protein" />
 
@@ -2290,6 +2482,7 @@
                         android:id="@+id/Milk_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Milk_Food"
                         android:visibility="visible" />
@@ -2298,6 +2491,7 @@
                         android:id="@+id/Milk_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -2307,6 +2501,7 @@
                         android:id="@+id/Milk_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Milk_Serving_size" />
 
@@ -2314,6 +2509,7 @@
                         android:id="@+id/Milk_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Milk_Calories" />
 
@@ -2321,6 +2517,7 @@
                         android:id="@+id/Milk_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Milk_Protein" />
 
@@ -2328,6 +2525,7 @@
                         android:id="@+id/Milk_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Milk_Carbs" />
 
@@ -2352,6 +2550,7 @@
                         android:id="@+id/Butter_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Butter_Food"
                         android:visibility="visible" />
@@ -2360,6 +2559,7 @@
                         android:id="@+id/Butter_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -2369,6 +2569,7 @@
                         android:id="@+id/Butter_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Butter_Serving_size" />
 
@@ -2376,6 +2577,7 @@
                         android:id="@+id/Butter_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Butter_Calories" />
 
@@ -2383,6 +2585,7 @@
                         android:id="@+id/Butter_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Butter_Protein" />
 
@@ -2390,6 +2593,7 @@
                         android:id="@+id/Butter_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Butter_Carbs" />
 
@@ -2414,6 +2618,7 @@
                         android:id="@+id/Cheese_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Cheese_Food"
                         android:visibility="visible" />
@@ -2422,6 +2627,7 @@
                         android:id="@+id/Cheese_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -2431,6 +2637,7 @@
                         android:id="@+id/Cheese_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Cheese_Serving_size" />
 
@@ -2438,6 +2645,7 @@
                         android:id="@+id/Cheese_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Cheese_Calories" />
 
@@ -2445,6 +2653,7 @@
                         android:id="@+id/Cheese_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Cheese_Protein" />
 
@@ -2452,6 +2661,7 @@
                         android:id="@+id/Cheese_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Cheese_Carbs" />
 
@@ -2476,6 +2686,7 @@
                         android:id="@+id/Yogurt_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Yogurt_Food"
                         android:visibility="visible" />
@@ -2484,6 +2695,7 @@
                         android:id="@+id/Yogurt_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -2493,6 +2705,7 @@
                         android:id="@+id/Yogurt_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Yogurt_Serving_size" />
 
@@ -2500,6 +2713,7 @@
                         android:id="@+id/Yogurt_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Yogurt_Calories" />
 
@@ -2507,6 +2721,7 @@
                         android:id="@+id/Yogurt_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Yogurt_Protein" />
 
@@ -2514,6 +2729,7 @@
                         android:id="@+id/Yogurt_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Yogurt_Carbs" />
 
@@ -2538,6 +2754,7 @@
                         android:id="@+id/Ice_Cream_Food"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Ice_Cream_Food"
                         android:visibility="visible" />
@@ -2546,6 +2763,7 @@
                         android:id="@+id/Ice_Cream_Quantity"
                         android:layout_width="73dp"
                         android:layout_height="33dp"
+                        android:backgroundTint="#673AB7"
                         android:ems="10"
                         android:gravity="center_horizontal|center_vertical"
                         android:inputType="number"
@@ -2555,6 +2773,7 @@
                         android:id="@+id/Ice_Cream_Serving_size"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Ice_Cream_Serving_size" />
 
@@ -2562,6 +2781,7 @@
                         android:id="@+id/Ice_Cream_Calories"
                         android:layout_width="65dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Ice_Cream_Calories" />
 
@@ -2569,6 +2789,7 @@
                         android:id="@+id/Ice_Cream_Protein"
                         android:layout_width="60dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Ice_Cream_Protein" />
 
@@ -2576,6 +2797,7 @@
                         android:id="@+id/Ice_Cream_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Ice_Cream_Carbs" />
 
@@ -2594,6 +2816,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="5dp"
+                    android:backgroundTint="#4CAF50"
                     android:text="@string/Save" />
 
                 <TextView
@@ -2622,6 +2845,7 @@
                         android:fontFamily="sans-serif-condensed-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Food"
+                        android:textSize="16sp"
                         android:visibility="visible" />
 
                     <TextView
@@ -2630,7 +2854,8 @@
                         android:layout_height="33dp"
                         android:fontFamily="sans-serif-condensed-medium"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/Quantity" />
+                        android:text="@string/Quantity"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/Total_list_Serving_size"
@@ -2638,7 +2863,8 @@
                         android:layout_height="33dp"
                         android:fontFamily="sans-serif-condensed-medium"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/Serving_Size" />
+                        android:text="@string/Serving_Size"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/Total_list_Calories"
@@ -2646,7 +2872,8 @@
                         android:layout_height="33dp"
                         android:fontFamily="sans-serif-condensed-medium"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/Calories" />
+                        android:text="@string/Calories"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/Total_list_Protein"
@@ -2654,7 +2881,8 @@
                         android:layout_height="33dp"
                         android:fontFamily="sans-serif-condensed-medium"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/Protein" />
+                        android:text="@string/Protein"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/Total_list_Carbs"
@@ -2662,7 +2890,8 @@
                         android:layout_height="33dp"
                         android:fontFamily="sans-serif-condensed-medium"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/Carbs" />
+                        android:text="@string/Carbs"
+                        android:textSize="16sp" />
 
                 </TableRow>
 
@@ -2689,12 +2918,14 @@
                         android:fontFamily="sans-serif-condensed-medium"
                         android:gravity="right|center_vertical"
                         android:text="@string/Total"
+                        android:textSize="16sp"
                         android:visibility="visible" />
 
                     <TextView
                         android:id="@+id/Total_Calories"
                         android:layout_width="55dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-condensed-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Total_Calories" />
 
@@ -2702,6 +2933,7 @@
                         android:id="@+id/Total_Protein"
                         android:layout_width="63dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-condensed-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Total_Protein" />
 
@@ -2709,6 +2941,7 @@
                         android:id="@+id/Total_Carbs"
                         android:layout_width="50dp"
                         android:layout_height="33dp"
+                        android:fontFamily="sans-serif-condensed-medium"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/Total_Carbs" />
 

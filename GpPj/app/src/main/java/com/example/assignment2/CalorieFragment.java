@@ -1640,17 +1640,17 @@ public class CalorieFragment extends Fragment implements View.OnClickListener{
                         if(year < thisYear){
                             if(thisMonth > month){
                                 //Yet to pass birthday
-                                Input_Age.setText(String.valueOf(thisYear-year - 1) );
+                                Input_Age.setText(String.valueOf(thisYear-year) );
                             }
                             else if(thisMonth == month){
                                 if(today > day)
-                                    Input_Age.setText(String.valueOf(thisYear-year - 1) );
+                                    Input_Age.setText(String.valueOf(thisYear-year) );
 
                                 else
-                                    Input_Age.setText(String.valueOf(thisYear-year) );
+                                    Input_Age.setText(String.valueOf(thisYear-year - 1) );
                             }
                             else
-                                Input_Age.setText(String.valueOf(thisYear-year) );
+                                Input_Age.setText(String.valueOf(thisYear-year - 1) );
 
                         }
                         if(year > thisYear)
