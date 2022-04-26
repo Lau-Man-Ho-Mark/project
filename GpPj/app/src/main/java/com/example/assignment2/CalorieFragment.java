@@ -1225,7 +1225,8 @@ public class CalorieFragment extends Fragment implements View.OnClickListener{
                 Calories_Num = Calories_Num * Quantity_Num;
                 Protein_Num = Protein_Num * Quantity_Num;
                 Carbs_Num = Carbs_Num * Quantity_Num;
-                Total_Add(1, Calories_Num,Protein_Num,Carbs_Num);
+                int fruitNum = Integer.valueOf((String)Apple_Quantity.getSelectedItem());
+                Total_Add(fruitNum, Calories_Num,Protein_Num,Carbs_Num);
 
                 Food.add(Apple_Food.getText().toString());
                 Quantity.add(String.valueOf((int)Quantity_Num));
@@ -1252,7 +1253,8 @@ public class CalorieFragment extends Fragment implements View.OnClickListener{
                 Calories_Num = Calories_Num * Quantity_Num;
                 Protein_Num = Protein_Num * Quantity_Num;
                 Carbs_Num = Carbs_Num * Quantity_Num;
-                Total_Add(1, Calories_Num,Protein_Num,Carbs_Num);
+                int fruitNum = Integer.valueOf((String)Banana_Quantity.getSelectedItem());
+                Total_Add(fruitNum, Calories_Num,Protein_Num,Carbs_Num);
 
                 Food.add(Banana_Food.getText().toString());
                 Quantity.add(String.valueOf((int)Quantity_Num));
@@ -1279,7 +1281,8 @@ public class CalorieFragment extends Fragment implements View.OnClickListener{
                 Calories_Num = Calories_Num * Quantity_Num;
                 Protein_Num = Protein_Num * Quantity_Num;
                 Carbs_Num = Carbs_Num * Quantity_Num;
-                Total_Add(1, Calories_Num,Protein_Num,Carbs_Num);
+                int fruitNum = Integer.valueOf((String)Orange_Quantity.getSelectedItem());
+                Total_Add(fruitNum, Calories_Num,Protein_Num,Carbs_Num);
 
                 Food.add(Orange_Food.getText().toString());
                 Quantity.add(String.valueOf((int)Quantity_Num));
@@ -1306,7 +1309,8 @@ public class CalorieFragment extends Fragment implements View.OnClickListener{
                 Calories_Num = Calories_Num * Quantity_Num;
                 Protein_Num = Protein_Num * Quantity_Num;
                 Carbs_Num = Carbs_Num * Quantity_Num;
-                Total_Add(1, Calories_Num,Protein_Num,Carbs_Num);
+                int fruitNum = Integer.valueOf((String)Pear_Quantity.getSelectedItem());
+                Total_Add(fruitNum, Calories_Num,Protein_Num,Carbs_Num);
 
                 Food.add(Pear_Food.getText().toString());
                 Quantity.add(String.valueOf((int)Quantity_Num));
@@ -1333,7 +1337,8 @@ public class CalorieFragment extends Fragment implements View.OnClickListener{
                 Calories_Num = Calories_Num * Quantity_Num;
                 Protein_Num = Protein_Num * Quantity_Num;
                 Carbs_Num = Carbs_Num * Quantity_Num;
-                Total_Add(1, Calories_Num,Protein_Num,Carbs_Num);
+                int fruitNum = Integer.valueOf((String)Grape_Quantity.getSelectedItem());
+                Total_Add(fruitNum, Calories_Num,Protein_Num,Carbs_Num);
 
                 Food.add(Grape_Food.getText().toString());
                 Quantity.add(String.valueOf((int)Quantity_Num));
@@ -1360,7 +1365,8 @@ public class CalorieFragment extends Fragment implements View.OnClickListener{
                 Calories_Num = Calories_Num * Quantity_Num;
                 Protein_Num = Protein_Num * Quantity_Num;
                 Carbs_Num = Carbs_Num * Quantity_Num;
-                Total_Add(1, Calories_Num,Protein_Num,Carbs_Num);
+                int fruitNum = Integer.valueOf((String)Strawberry_Quantity.getSelectedItem());
+                Total_Add(fruitNum, Calories_Num,Protein_Num,Carbs_Num);
 
                 Food.add(Strawberry_Food.getText().toString());
                 Quantity.add(String.valueOf((int)Quantity_Num));
@@ -1387,7 +1393,8 @@ public class CalorieFragment extends Fragment implements View.OnClickListener{
                 Calories_Num = Calories_Num * Quantity_Num;
                 Protein_Num = Protein_Num * Quantity_Num;
                 Carbs_Num = Carbs_Num * Quantity_Num;
-                Total_Add(1, Calories_Num,Protein_Num,Carbs_Num);
+                int fruitNum = Integer.valueOf((String)Cherry_Quantity.getSelectedItem());
+                Total_Add(fruitNum, Calories_Num,Protein_Num,Carbs_Num);
 
                 Food.add(Cherry_Food.getText().toString());
                 Quantity.add(String.valueOf((int)Quantity_Num));
@@ -1716,7 +1723,8 @@ public class CalorieFragment extends Fragment implements View.OnClickListener{
         Total_Calories.setText(String.valueOf((int)Total_calories));
         Total_Protein.setText(String.valueOf((int)Total_protein));
         Total_Carbs.setText(String.valueOf((int)Total_carbs));
-        fruitPortion+=1;
+        for(int i=0; i< isFruit; i++)
+            fruitPortion+=1;
 
         if ( Total_calories != 0 ) {
             Total_List.setVisibility(View.VISIBLE);
@@ -1733,7 +1741,9 @@ public class CalorieFragment extends Fragment implements View.OnClickListener{
         Total_Calories.setText(String.valueOf((int)Total_calories));
         Total_Protein.setText(String.valueOf((int)Total_protein));
         Total_Carbs.setText(String.valueOf((int)Total_carbs));
-        fruitPortion-=1;
+
+        for(int i=0; i<isFruit; i++)
+            fruitPortion-=1;
 
     }
     public void Total_Add (double Add_Calories,double Add_Protein,double Add_Carbs){

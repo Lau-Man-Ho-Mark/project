@@ -3,6 +3,7 @@ package com.example.assignment2;
 import static com.example.assignment2.CalorieFragment.Total_Minus;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +66,6 @@ public class MyListAdapter extends ArrayAdapter<String> {
             @Override
             public void onClick(View v) {
                 double n1,n2,n3;
-
                 n1 = Double.parseDouble(Calories.get(position));
                 n2 = Double.parseDouble(Protein.get(position));
                 n3 = Double.parseDouble(Carbs.get(position));
@@ -77,7 +77,7 @@ public class MyListAdapter extends ArrayAdapter<String> {
                     case "Grape":
                     case "Strawberry":
                     case "Cherry":
-                        CalorieFragment.Total_Minus(1, n1,n2,n3);
+                        CalorieFragment.Total_Minus(Integer.valueOf(Quantity.get(position)), n1,n2,n3);
                         break;
 
                     default:
